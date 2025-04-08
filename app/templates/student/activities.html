@@ -18,11 +18,39 @@
   padding-bottom: 10px;
   border-bottom: 1px solid var(--m3-outline-variant);
 }
+
+.view-button {
+  background-color: var(--m3-primary);
+  color: var(--m3-on-primary);
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--m3-shape-small);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-right: 10px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.view-button:hover {
+  background-color: #4a310c;
+  text-decoration: underline;
+}
+
+.view-button a {
+  color: var(--m3-on-primary);
+  text-decoration: none;
+  display: block;
+}
 {% endblock %}
 
 {% block content %}
 <div class="content-container">
   <h1 class="page-title">Activities</h1>
-  <p>Content for this page is coming soon.</p>
+  
+  <a href="https://saketcollege.edu.in/Docs/Student%20Notice/Activity/WDC.pdf?_t=1735833741" class="view-button">WDC</a>
+  <a href="https://saketcollege.edu.in/Docs/Student%20Notice/Activity/Values%20Rights%20Responsiblity.pdf?_t=1735833854" class="view-button">Values Rights Responsiblity</a>
 </div>
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Student Support - Saket College{% endblock %}
+{% block title %}alumini - Saket College{% endblock %}
 
 {% block styles %}
 .content-container {
@@ -18,6 +18,7 @@
   padding-bottom: 10px;
   border-bottom: 1px solid var(--m3-outline-variant);
 }
+
 .view-button {
   background-color: var(--m3-primary);
   color: var(--m3-on-primary);
@@ -27,6 +28,7 @@
   cursor: pointer;
   transition: background-color 0.2s;
   margin-right: 10px;
+  margin-bottom: 15px;
   display: inline-block;
   text-align: center;
   text-decoration: none;
@@ -47,9 +49,11 @@
 
 {% block content %}
 <div class="content-container">
-  <h1 class="page-title">Student Support</h1>
-  <a href="https://saketcollege.edu.in/Docs/Grievence%20Redressal%20Committee.pdf?_t=1710918926" class="view-button">Student Grievances</a>
-  <a href="https://saketcollege.edu.in/Docs/Anti%20Ragging%2C%20High%20Level%20Committee.pdf?_t=1710918943" class="view-button">Anti Ragging</a>
-  <a href="https://saketcollege.edu.in/Docs/ICC%2C%20Anti%20Sexual%20Committee.pdf?_t=1710918935" class="view-button">ICC</a>
+  <h1 class="page-title">Alumni</h1>
+  
+  <a href="{{ url_for('frontend.student', subpath='alumni-association') }}" class="view-button">Alumni Association</a>
+  <a href="{{ url_for('frontend.student', subpath='alumni-interaction') }}" class="view-button">Alumni Interaction</a>
+  <a href="{{ url_for('frontend.student', subpath='our-eminent-alumni') }}" class="view-button">Our Eminent Alumni</a>
+  <a href="{{ url_for('frontend.student', subpath='testimonials') }}" class="view-button">Testimonials</a>
 </div>
 {% endblock %}
