@@ -1,0 +1,504 @@
+<body >
+        <div>
+                        <div data-elementor-type="wp-post" data-elementor-id="3886" class="elementor elementor-3886">
+               
+                                                <h2 style="text-align: center;font-size:30pt;font-family:'roboto',sans-serif;">Non-teaching Staff</h2>				</div>
+                                        </div>
+                                                </div>
+                                        </div>
+                        <div >
+                                                <div >
+                                        <div class="elementor-element elementor-element-03a6960 elementor-widget elementor-widget-shortcode" data-id="03a6960" data-element_type="widget" data-widget_type="shortcode.default">
+                                        <div class="elementor-widget-container">
+                                                                <div class="elementor-shortcode">
+        <div class="wpdt-c row wpDataTableContainerSimpleTable wpDataTables wpDataTablesWrapper
+        ">
+                <table  style="font-family:'roboto',sans-serif;
+                           border-spacing:0px;" class="wpdtSimpleTable wpDataTable" data-column="5" data-rows="23" data-wpid="46" data-responsive="0" data-has-header="0">
+        
+                            <tbody>        <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-bc-9A6300 wpdt-tc-FFFFFF" data-cell-id="A1" data-col-index="0" data-row-index="0" style=" width:4.9881235154394%;                    padding:10px;
+                            ">
+                                                Sr. No.                    </td>
+                                                        <td class="wpdt-cell wpdt-bc-9A6300 wpdt-tc-FFFFFF" data-cell-id="B1" data-col-index="1" data-row-index="0" style=" width:23.75296912114%;                    padding:10px;
+                            ">
+                                                Name of the Staff                    </td>
+                                                        <td class="wpdt-cell wpdt-bc-9A6300 wpdt-tc-FFFFFF" data-cell-id="C1" data-col-index="2" data-row-index="0" style=" width:23.75296912114%;                    padding:10px;
+                            ">
+                                                Designation                    </td>
+                                                        <td class="wpdt-cell wpdt-bc-9A6300 wpdt-tc-FFFFFF" data-cell-id="D1" data-col-index="3" data-row-index="0" style=" width:23.75296912114%;                    padding:10px;
+                            ">
+                                                Qualification                    </td>
+                                                        <td class="wpdt-cell wpdt-bc-9A6300 wpdt-tc-FFFFFF" data-cell-id="E1" data-col-index="4" data-row-index="0" style=" width:23.75296912114%;                    padding:10px;
+                            ">
+                                                Date of Joining                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A2" data-col-index="0" data-row-index="1" style="                    padding:10px;
+                            ">
+                                                1                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B2" data-col-index="1" data-row-index="1" style="                    padding:10px;
+                            ">
+                                                Mr. Khade
+          Kishor M.                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C2" data-col-index="2" data-row-index="1" style="                    padding:10px;
+                            ">
+                                                &nbsp;Office&nbsp; Superintendent                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D2" data-col-index="3" data-row-index="1" style="                    padding:10px;
+                            ">
+                                                B.Com                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E2" data-col-index="4" data-row-index="1" style="                    padding:10px;
+                            ">
+                                                1-Dec-2011                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A3" data-col-index="0" data-row-index="2" style="                    padding:10px;
+                            ">
+                                                2                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B3" data-col-index="1" data-row-index="2" style="                    padding:10px;
+                            ">
+                                                Mrs. Rema S
+          Nair                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C3" data-col-index="2" data-row-index="2" style="                    padding:10px;
+                            ">
+                                                &nbsp;Accounts Manager
+                              </td>
+                                                        <td class="wpdt-cell " data-cell-id="D3" data-col-index="3" data-row-index="2" style="                    padding:10px;
+                            ">
+                                                PGDCA                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E3" data-col-index="4" data-row-index="2" style="                    padding:10px;
+                            ">
+                                                29-Nov-2017                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A4" data-col-index="0" data-row-index="3" style="                    padding:10px;
+                            ">
+                                                &nbsp; 3                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B4" data-col-index="1" data-row-index="3" style="                    padding:10px;
+                            ">
+                                                Mr. A. Damodaran
+          Menon                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C4" data-col-index="2" data-row-index="3" style="                    padding:10px;
+                            ">
+                                                &nbsp;Pur. &amp; Main.&nbsp; Incharge                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D4" data-col-index="3" data-row-index="3" style="                    padding:10px;
+                            ">
+                                                HSC                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E4" data-col-index="4" data-row-index="3" style="                    padding:10px;
+                            ">
+                                                1-Apr-2016                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A5" data-col-index="0" data-row-index="4" style="                    padding:10px;
+                            ">
+                                                4                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B5" data-col-index="1" data-row-index="4" style="                    padding:10px;
+                            ">
+                                                Mr. Santosh
+          Dherange                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C5" data-col-index="2" data-row-index="4" style="                    padding:10px;
+                            ">
+                                                &nbsp;Purchase
+          Executive                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D5" data-col-index="3" data-row-index="4" style="                    padding:10px;
+                            ">
+                                                B.Com                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E5" data-col-index="4" data-row-index="4" style="                    padding:10px;
+                            ">
+                                                6-Sep-2022                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A6" data-col-index="0" data-row-index="5" style="                    padding:10px;
+                            ">
+                                                5                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B6" data-col-index="1" data-row-index="5" style="                    padding:10px;
+                            ">
+                                                Mr. Mahesh
+          Varma                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C6" data-col-index="2" data-row-index="5" style="                    padding:10px;
+                            ">
+                                                &nbsp;Senior
+          Clerk&nbsp;                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D6" data-col-index="3" data-row-index="5" style="                    padding:10px;
+                            ">
+                                                M.Com                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E6" data-col-index="4" data-row-index="5" style="                    padding:10px;
+                            ">
+                                                22-Aug-2005                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A7" data-col-index="0" data-row-index="6" style="                    padding:10px;
+                            ">
+                                                6                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B7" data-col-index="1" data-row-index="6" style="                    padding:10px;
+                            ">
+                                                Mr. Pradip
+          Gurav                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C7" data-col-index="2" data-row-index="6" style="                    padding:10px;
+                            ">
+                                                &nbsp;Accounts
+          Assistant                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D7" data-col-index="3" data-row-index="6" style="                    padding:10px;
+                            ">
+                                                B.Com                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E7" data-col-index="4" data-row-index="6" style="                    padding:10px;
+                            ">
+                                                1-Sep-2023                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A8" data-col-index="0" data-row-index="7" style="                    padding:10px;
+                            ">
+                                                7                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B8" data-col-index="1" data-row-index="7" style="                    padding:10px;
+                            ">
+                                                Mr.&nbsp; Nanasaheb Shirole                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C8" data-col-index="2" data-row-index="7" style="                    padding:10px;
+                            ">
+                                                &nbsp;Junior Clerk                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D8" data-col-index="3" data-row-index="7" style="                    padding:10px;
+                            ">
+                                                B.Sc.                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E8" data-col-index="4" data-row-index="7" style="                    padding:10px;
+                            ">
+                                                13-Sep-2005                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A9" data-col-index="0" data-row-index="8" style="                    padding:10px;
+                            ">
+                                                8                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B9" data-col-index="1" data-row-index="8" style="                    padding:10px;
+                            ">
+                                                Mrs.
+          Swati Chavan                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C9" data-col-index="2" data-row-index="8" style="                    padding:10px;
+                            ">
+                                                &nbsp;Junior Clerk                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D9" data-col-index="3" data-row-index="8" style="                    padding:10px;
+                            ">
+                                                B.Com                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E9" data-col-index="4" data-row-index="8" style="                    padding:10px;
+                            ">
+                                                26-Apr-2022                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A10" data-col-index="0" data-row-index="9" style="                    padding:10px;
+                            ">
+                                                9                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B10" data-col-index="1" data-row-index="9" style="                    padding:10px;
+                            ">
+                                                Ms.
+          Supriya Vishe                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C10" data-col-index="2" data-row-index="9" style="                    padding:10px;
+                            ">
+                                                &nbsp;Junior Clerk                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D10" data-col-index="3" data-row-index="9" style="                    padding:10px;
+                            ">
+                                                B.Com                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E10" data-col-index="4" data-row-index="9" style="                    padding:10px;
+                            ">
+                                                21-Jun-2022                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A11" data-col-index="0" data-row-index="10" style="                    padding:10px;
+                            ">
+                                                10                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B11" data-col-index="1" data-row-index="10" style="                    padding:10px;
+                            ">
+                                                Ms.
+          Sayali Vichare                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C11" data-col-index="2" data-row-index="10" style="                    padding:10px;
+                            ">
+                                                &nbsp;Junior Clerk                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D11" data-col-index="3" data-row-index="10" style="                    padding:10px;
+                            ">
+                                                B.A.                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E11" data-col-index="4" data-row-index="10" style="                    padding:10px;
+                            ">
+                                                3-Apr-2023                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A12" data-col-index="0" data-row-index="11" style="                    padding:10px;
+                            ">
+                                                11                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B12" data-col-index="1" data-row-index="11" style="                    padding:10px;
+                            ">
+                                                Ms.
+          Namrata Ingle                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C12" data-col-index="2" data-row-index="11" style="                    padding:10px;
+                            ">
+                                                &nbsp;Junior Clerk                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D12" data-col-index="3" data-row-index="11" style="                    padding:10px;
+                            ">
+                                                M.Com                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E12" data-col-index="4" data-row-index="11" style="                    padding:10px;
+                            ">
+                                                5-Sep-2023                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A13" data-col-index="0" data-row-index="12" style="                    padding:10px;
+                            ">
+                                                12                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B13" data-col-index="1" data-row-index="12" style="                    padding:10px;
+                            ">
+                                                Mrs.
+          Savita Attarde                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C13" data-col-index="2" data-row-index="12" style="                    padding:10px;
+                            ">
+                                                &nbsp;Junior Clerk                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D13" data-col-index="3" data-row-index="12" style="                    padding:10px;
+                            ">
+                                                B.Sc.                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E13" data-col-index="4" data-row-index="12" style="                    padding:10px;
+                            ">
+                                                1-Dec-2023                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A14" data-col-index="0" data-row-index="13" style="                    padding:10px;
+                            ">
+                                                13                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B14" data-col-index="1" data-row-index="13" style="                    padding:10px;
+                            ">
+                                                Mr.
+          Kiran Burte                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C14" data-col-index="2" data-row-index="13" style="                    padding:10px;
+                            ">
+                                                &nbsp;Junior Clerk                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D14" data-col-index="3" data-row-index="13" style="                    padding:10px;
+                            ">
+                                                B.Com                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E14" data-col-index="4" data-row-index="13" style="                    padding:10px;
+                            ">
+                                                13-Jun-2023                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A15" data-col-index="0" data-row-index="14" style="                    padding:10px;
+                            ">
+                                                14                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B15" data-col-index="1" data-row-index="14" style="                    padding:10px;
+                            ">
+                                                Ms.
+          Bhagyashree Gambhirrao                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C15" data-col-index="2" data-row-index="14" style="                    padding:10px;
+                            ">
+                                                Junior Clerk                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="D15" data-col-index="3" data-row-index="14" style="                    padding:10px;
+                            ">
+                                                BCS                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E15" data-col-index="4" data-row-index="14" style="                    padding:10px;
+                            ">
+                                                18-Dec-2023                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A16" data-col-index="0" data-row-index="15" style="                    padding:10px;
+                            ">
+                                                15                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B16" data-col-index="1" data-row-index="15" style="                    padding:10px;
+                            ">
+                                                Mr.
+          Nitesh Kadam                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C16" data-col-index="2" data-row-index="15" style="                    padding:10px;
+                            ">
+                                                &nbsp;Comp. Lab.
+          Asstt.                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D16" data-col-index="3" data-row-index="15" style="                    padding:10px;
+                            ">
+                                                HSC with ITI                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E16" data-col-index="4" data-row-index="15" style="                    padding:10px;
+                            ">
+                                                2-Dec-2019                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A17" data-col-index="0" data-row-index="16" style="                    padding:10px;
+                            ">
+                                                16                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B17" data-col-index="1" data-row-index="16" style="                    padding:10px;
+                            ">
+                                                Mr. Sudarshan
+          Mane                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C17" data-col-index="2" data-row-index="16" style="                    padding:10px;
+                            ">
+                                                &nbsp;Comp. Lab.
+          Asstt.                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D17" data-col-index="3" data-row-index="16" style="                    padding:10px;
+                            ">
+                                                HSC with ITI                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E17" data-col-index="4" data-row-index="16" style="                    padding:10px;
+                            ">
+                                                27-Sep-2022                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A18" data-col-index="0" data-row-index="17" style="                    padding:10px;
+                            ">
+                                                17                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B18" data-col-index="1" data-row-index="17" style="                    padding:10px;
+                            ">
+                                                Ms. Kavita D
+          Jaiswar                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C18" data-col-index="2" data-row-index="17" style="                    padding:10px;
+                            ">
+                                                &nbsp;Lab. Assist                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D18" data-col-index="3" data-row-index="17" style="                    padding:10px;
+                            ">
+                                                B.Sc.                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E18" data-col-index="4" data-row-index="17" style="                    padding:10px;
+                            ">
+                                                9-Dec-2021                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A19" data-col-index="0" data-row-index="18" style="                    padding:10px;
+                            ">
+                                                18                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B19" data-col-index="1" data-row-index="18" style="                    padding:10px;
+                            ">
+                                                Ms. Himanshi
+          G Jaiswar                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C19" data-col-index="2" data-row-index="18" style="                    padding:10px;
+                            ">
+                                                &nbsp;Lab. Assist                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D19" data-col-index="3" data-row-index="18" style="                    padding:10px;
+                            ">
+                                                B.Sc.                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E19" data-col-index="4" data-row-index="18" style="                    padding:10px;
+                            ">
+                                                9-Dec-2021                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A20" data-col-index="0" data-row-index="19" style="                    padding:10px;
+                            ">
+                                                19                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B20" data-col-index="1" data-row-index="19" style="                    padding:10px;
+                            ">
+                                                Mr. Manish
+          Gupta                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C20" data-col-index="2" data-row-index="19" style="                    padding:10px;
+                            ">
+                                                &nbsp;Lab. Assist.                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D20" data-col-index="3" data-row-index="19" style="                    padding:10px;
+                            ">
+                                                B.E.                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E20" data-col-index="4" data-row-index="19" style="                    padding:10px;
+                            ">
+                                                18-Nov-2022                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A21" data-col-index="0" data-row-index="20" style="                    padding:10px;
+                            ">
+                                                20                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B21" data-col-index="1" data-row-index="20" style="                    padding:10px;
+                            ">
+                                                Mr. Shyam M. Soure
+                              </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C21" data-col-index="2" data-row-index="20" style="                    padding:10px;
+                            ">
+                                                &nbsp;Office Assistant
+                              </td>
+                                                        <td class="wpdt-cell " data-cell-id="D21" data-col-index="3" data-row-index="20" style="                    padding:10px;
+                            ">
+                                                B.A.                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E21" data-col-index="4" data-row-index="20" style="                    padding:10px;
+                            ">
+                                                7-Jun-2004                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A22" data-col-index="0" data-row-index="21" style="                    padding:10px;
+                            ">
+                                                21                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B22" data-col-index="1" data-row-index="21" style="                    padding:10px;
+                            ">
+                                                Mr.&nbsp; Rajendra Wagh                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C22" data-col-index="2" data-row-index="21" style="                    padding:10px;
+                            ">
+                                                &nbsp;Peon                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D22" data-col-index="3" data-row-index="21" style="                    padding:10px;
+                            ">
+                                                HSC                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E22" data-col-index="4" data-row-index="21" style="                    padding:10px;
+                            ">
+                                                7-Aug-2006                    </td>
+                                                </tr>
+                                    <tr class="wpdt-cell-row ">
+                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="A23" data-col-index="0" data-row-index="22" style="                    padding:10px;
+                            ">
+                                                22                    </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="B23" data-col-index="1" data-row-index="22" style="                    padding:10px;
+                            ">
+                                                Mrs. Shinde
+          Sharda Haribhau                     </td>
+                                                        <td class="wpdt-cell wpdt-tc-714901" data-cell-id="C23" data-col-index="2" data-row-index="22" style="                    padding:10px;
+                            ">
+                                                &nbsp;Peon                     </td>
+                                                        <td class="wpdt-cell " data-cell-id="D23" data-col-index="3" data-row-index="22" style="                    padding:10px;
+                            ">
+                                                SSC                    </td>
+                                                        <td class="wpdt-cell " data-cell-id="E23" data-col-index="4" data-row-index="22" style="                    padding:10px;
+                            ">
+                                                1-Aug-2015                    </td>
+                                                </tr>
+                            </tbody></table>
+        </div><style id="wpdt-custom-style-46">
+        .wpdt-bc-9A6300 { background-color: #9A6300 !important;}
+        .wpdt-tc-FFFFFF { color: #FFFFFF !important;}
+        .wpdt-tc-714901 { color: #714901 !important;}
+        </style>
+        </div>
+                                                        </div>
+                                        </div>
+                                                </div>
+                                        </div>
+                                        </div>
+                                </div><!-- .entry-content -->
+        
+                </article><!-- #post-## -->
+                                </div>
+                                </main><!-- #main -->
+        <div class="ekit-template-content-markup ekit-template-content-footer ekit-template-content-theme-support">
+                        <div data-elementor-type="wp-post" data-elementor-id="3960" class="elementor elementor-3960">
+                                                                        
+                                                <section class="elementor-section elementor-top-section elementor-element elementor-element-49b736bf premium-shape-divider-yes premium-shape5 elementor-section-boxed elementor-section-height-default elementor-section-height-default wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no premium-shape-divider__default premium-shape-divider-anime-yes premium-sh-no-stretch-yes premium-shape-divider__bottom" data-id="49b736bf" data-element_type="section" id="xs_footer_13" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;opacity-tilt&quot;}">
+                                                                
+        <div class="cb__drawer-canvas"></div>			<script>
+                                        const lazyloadRunObserver = () => {
+                                                const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+                                                const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+                                                        entries.forEach( ( entry ) => {
+                                                                if ( entry.isIntersecting ) {
+                                                                        let lazyloadBackground = entry.target;
+                                                                        if( lazyloadBackground ) {
+                                                                                lazyloadBackground.classList.add( 'e-lazyloaded' );
+                                                                        }
+                                                                        lazyloadBackgroundObserver.unobserve( entry.target );
+                                                                }
+                                                        });
+                                                }, { rootMargin: '200px 0px 200px 0px' } );
+                                                lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+                                                        lazyloadBackgroundObserver.observe( lazyloadBackground );
+                                                } );
+                                        };
+                                        const events = [
+                                                'DOMContentLoaded',
+                                                'elementor/lazyload/observe',
+                                        ];
+                                        events.forEach( ( event ) => {
+                                                document.addEventListener( event, lazyloadRunObserver );
+                                        } );
+                                </script>
+                                <link rel="stylesheet" id="widget-image-css" href="https://saketcollege.edu.in/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=3.28.0" media="all">
+        <link rel="stylesheet" id="wpr-link-animations-css-css" href="https://saketcollege.edu.in/wp-content/plugins/royal-elementor-addons/assets/css/lib/animations/wpr-link-animations.min.css?ver=1.7.1012" media="all">
+        <link rel="stylesheet" id="wdt-simple-table-css" href="https://saketcollege.edu.in/wp-content/plugins/wpdatatables/assets/css/wdt.simpleTable.min.css?ver=3.4.2.42" media="all">
+        <link rel="stylesheet" id="wdt-font-style-css" href="https://saketcollege.edu.in/wp-content/plugins/wpdatatables/assets/css/style.min.css?ver=3.4.2.42" media="all">
+        <link rel="stylesheet" id="widget-text-editor-css" href="https://saketcollege.edu.in/wp-content/plugins/elementor/assets/css/widget-text-editor.min.css?ver=3.28.0" media="all">
+        <link rel="stylesheet" id="widget-google_maps-css" href="https://saketcollege.edu.in/wp-content/plugins/elementor/assets/css/widget-google_maps.min.css?ver=3.28.0" media="all">
+        <link rel="stylesheet" id="e-shapes-css" href="https://saketcollege.edu.in/wp-content/plugins/elementor/assets/css/conditionals/shapes.min.css?ver=3.28.0" media="all">
+        <link rel="stylesheet" id="pa-shape-divider-css" href="https://saketcollege.edu.in/wp-content/plugins/premium-addons-for-elementor/assets/frontend/min-css/premium-shape-divider.min.css?ver=4.10.89" media="all">
+        <script id="essential-blocks-blocks-localize-js-extra">
+        var eb_conditional_localize = [];
+        var EssentialBlocksLocalize = {"eb_plugins_url":"https:\/\/saketcollege.edu.in\/wp-content\/plugins\/essential-blocks\/","image_url":"https:\/\/saketcollege.edu.in\/wp-content\/plugins\/essential-blocks\/assets\/images","eb_wp_version":"6.7","eb_version":"5.3.2","eb_admin_url":"https:\/\/saketcollege.edu.in\/wp-admin\/","rest_rootURL":"https:\/\/saketcollege.edu.in\/wp-json\/","ajax_url":"https:\/\/saketcollege.edu.in\/wp-admin\/admin-ajax.php","nft_nonce":"8268292915","post_grid_pagination_nonce":"da4a7170dd","placeholder_image":"https:\/\/saketcollege.edu.in\/wp-content\/plugins\/essential-blocks\/assets\/images\/placeholder.png","is_pro_active":"false","upgrade_pro_url":"https:\/\/essential-blocks.com\/upgrade","responsiveBreakpoints":{"tablet":1024,"mobile":767}};
+        </script>
+       
+                                                        
+                                                        
+                                                                
+                        
+        
+        
+        </body>

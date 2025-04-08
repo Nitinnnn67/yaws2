@@ -1,0 +1,616 @@
+<body>
+    <div class="ekit-template-content-markup ekit-template-content-header ekit-template-content-theme-support">
+            <div data-elementor-type="wp-post" data-elementor-id="3886" class="elementor elementor-3886">
+                    <div class="elementor-element elementor-element-bea7ef6 e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-parent e-lazyloaded" data-id="bea7ef6" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+            <div class="elementor-element elementor-element-5a5caf5 e-con-full e-flex wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no e-con e-child" data-id="5a5caf5" data-element_type="container">
+                
+                        <h2 style="text-align: center;font-size:30pt;font-family:'roboto',sans-serif;">Teaching Staff - Degree</h2></div>
+                    </div>
+                        </div>
+                    </div>
+            <div >
+                        <div >
+                    <div>
+                    <div >
+                                <div >
+    <div class="wpdt-c row wpDataTableContainerSimpleTable wpDataTables wpDataTablesWrapper
+    ">
+            <table  style="font-family:'roboto',sans-serif;
+                       border-spacing:0px;" class="wpdtSimpleTable wpDataTable" data-column="4" data-rows="35" data-wpid="49" data-responsive="0" data-has-header="0">
+    
+                        <tbody>        <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-tc-FFFFFF wpdt-bold wpdt-align-center wpdt-bc-936700" data-cell-id="A1" data-col-index="0" data-row-index="0" style=" width:7.6923076923077%;font-family:roboto sans serif;padding:10px;">
+                                            Sr.No                    </td>
+                                                    <td class="wpdt-cell wpdt-tc-FFFFFF wpdt-bold wpdt-align-center wpdt-bc-936700" data-cell-id="B1" data-col-index="1" data-row-index="0" style=" width:30.769230769231%;                    padding:10px;
+                        ">
+                                            Name of the staff                    </td>
+                                                    <td class="wpdt-cell wpdt-tc-FFFFFF wpdt-bold wpdt-align-center wpdt-bc-936700" data-cell-id="C1" data-col-index="2" data-row-index="0" style=" width:30.769230769231%;                    padding:10px;
+                        ">
+                                            Designation                    </td>
+                                                    <td class="wpdt-cell wpdt-tc-FFFFFF wpdt-bold wpdt-align-center wpdt-bc-936700" data-cell-id="D1" data-col-index="3" data-row-index="0" style=" width:30.769230769231%;                    padding:10px;
+                        ">
+                                            Qualification                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A2" data-col-index="0" data-row-index="1" style="                    padding:10px;
+                        ">
+                                            1                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B2" data-col-index="1" data-row-index="1" style="                    padding:10px;
+                        ">
+                                            Prof.
+      (Dr.) Vasant D. Barhate                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C2" data-col-index="2" data-row-index="1" style="                    padding:10px;
+                        ">
+                                            Principal                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D2" data-col-index="3" data-row-index="1" style="                    padding:10px;
+                        ">
+                                            Ph.
+      D (Chemistry)                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A3" data-col-index="0" data-row-index="2" style="                    padding:10px;
+                        ">
+                                            2                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B3" data-col-index="1" data-row-index="2" style="                    padding:10px;
+                        ">
+                                            Dr.
+      Praseena Biju                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C3" data-col-index="2" data-row-index="2" style="                    padding:10px;
+                        ">
+                                            Vice
+      Principal &amp; IQAC Coordinator                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D3" data-col-index="3" data-row-index="2" style="                    padding:10px;
+                        ">
+                                            Ph.D.,
+      M.C.A.                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A4" data-col-index="0" data-row-index="3" style="                    padding:10px;
+                        ">
+                                            3                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B4" data-col-index="1" data-row-index="3" style="                    padding:10px;
+                        ">
+                                            Dr.
+      Hema Tiwari                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C4" data-col-index="2" data-row-index="3" style="                    padding:10px;
+                        ">
+                                            IQAC
+      Co-Coordinator                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D4" data-col-index="3" data-row-index="3" style="                    padding:10px;
+                        ">
+                                            Ph.D.
+      (Hindi)                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A5" data-col-index="0" data-row-index="4" style="                    padding:10px;
+                        ">
+                                            4                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B5" data-col-index="1" data-row-index="4" style="                    padding:10px;
+                        ">
+                                            Dr.
+      Shahaji Kamble                     </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C5" data-col-index="2" data-row-index="4" style="                    padding:10px;
+                        ">
+                                            Assistant
+      Professor &amp; Exam Chairperson                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D5" data-col-index="3" data-row-index="4" style="                    padding:10px;
+                        ">
+                                            Ph.
+      D. History, M.A, M. Phil.                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A6" data-col-index="0" data-row-index="5" style="                    padding:10px;
+                        ">
+                                            5                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B6" data-col-index="1" data-row-index="5" style="                    padding:10px;
+                        ">
+                                            Mrs.
+      Priya Nerlekar                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C6" data-col-index="2" data-row-index="5" style="                    padding:10px;
+                        ">
+                                            Academic
+      Coordinator, Arts Coordinator                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D6" data-col-index="3" data-row-index="5" style="                    padding:10px;
+                        ">
+                                            M.A
+      (Marathi), NET, SET                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A7" data-col-index="0" data-row-index="6" style="                    padding:10px;
+                        ">
+                                            6                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B7" data-col-index="1" data-row-index="6" style="                    padding:10px;
+                        ">
+                                            Dr.
+      Prakash Jadhav                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C7" data-col-index="2" data-row-index="6" style="                    padding:10px;
+                        ">
+                                            Assistant
+      Professor, B.Com &amp; M. Com Coordinator                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D7" data-col-index="3" data-row-index="6" style="                    padding:10px;
+                        ">
+                                            Ph.D.,
+      M.Com, B. Ed, GDCA                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A8" data-col-index="0" data-row-index="7" style="                    padding:10px;
+                        ">
+                                            7                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B8" data-col-index="1" data-row-index="7" style="                    padding:10px;
+                        ">
+                                            Mrs. Rajeshree Mundhe                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C8" data-col-index="2" data-row-index="7" style="                    padding:10px;
+                        ">
+                                            Assistant Professor, IT/CS Coordinator                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D8" data-col-index="3" data-row-index="7" style="                    padding:10px;
+                        ">
+                                            M.Sc.IT                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A9" data-col-index="0" data-row-index="8" style="                    padding:10px;
+                        ">
+                                            8                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B9" data-col-index="1" data-row-index="8" style="                    padding:10px;
+                        ">
+                                            Mr. Sanjay Chaudhary                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C9" data-col-index="2" data-row-index="8" style="                    padding:10px;
+                        ">
+                                            Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D9" data-col-index="3" data-row-index="8" style="                    padding:10px;
+                        ">
+                                            M.A                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A10" data-col-index="0" data-row-index="9" style="                    padding:10px;
+                        ">
+                                            9                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B10" data-col-index="1" data-row-index="9" style="                    padding:10px;
+                        ">
+                                            Ms. Manjula S. Pillai                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C10" data-col-index="2" data-row-index="9" style="                    padding:10px;
+                        ">
+                                            Assistant Professor, BAF Coordinator                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D10" data-col-index="3" data-row-index="9" style="                    padding:10px;
+                        ">
+                                            M.Com                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A11" data-col-index="0" data-row-index="10" style="                    padding:10px;
+                        ">
+                                            10                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B11" data-col-index="1" data-row-index="10" style="                    padding:10px;
+                        ">
+                                            Mrs.
+      Pranali Bhosale                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C11" data-col-index="2" data-row-index="10" style="                    padding:10px;
+                        ">
+                                            Assistant
+      Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D11" data-col-index="3" data-row-index="10" style="                    padding:10px;
+                        ">
+                                            M.A,
+      B.ED, M. Phil (Economics)                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A12" data-col-index="0" data-row-index="11" style="                    padding:10px;
+                        ">
+                                            11                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B12" data-col-index="1" data-row-index="11" style="                    padding:10px;
+                        ">
+                                            Mr.
+      Krishnamurthy Velar                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C12" data-col-index="2" data-row-index="11" style="                    padding:10px;
+                        ">
+                                            Assistant
+      Professor, Placement Coordinator                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D12" data-col-index="3" data-row-index="11" style="                    padding:10px;
+                        ">
+                                            CMA,
+      CIP FA, UGC-SET, GDCA, M.Com                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A13" data-col-index="0" data-row-index="12" style="                    padding:10px;
+                        ">
+                                            12                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B13" data-col-index="1" data-row-index="12" style="                    padding:10px;
+                        ">
+                                            Mr.
+      Sumit Sawant                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C13" data-col-index="2" data-row-index="12" style="                    padding:10px;
+                        ">
+                                            Assistant
+      Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D13" data-col-index="3" data-row-index="12" style="                    padding:10px;
+                        ">
+                                            M.Com
+      (Advance Accountancy), SET                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A14" data-col-index="0" data-row-index="13" style="                    padding:10px;
+                        ">
+                                            13                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B14" data-col-index="1" data-row-index="13" style="                    padding:10px;
+                        ">
+                                            Mrs.
+      Pradnya Jagtap                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C14" data-col-index="2" data-row-index="13" style="                    padding:10px;
+                        ">
+                                            Assistant
+      Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D14" data-col-index="3" data-row-index="13" style="                    padding:10px;
+                        ">
+                                            M.Sc.IT                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A15" data-col-index="0" data-row-index="14" style="                    padding:10px;
+                        ">
+                                            14                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B15" data-col-index="1" data-row-index="14" style="                    padding:10px;
+                        ">
+                                            Mrs. Heer Bolakani                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C15" data-col-index="2" data-row-index="14" style="                    padding:10px;
+                        ">
+                                            Assistant Professor, DLLE Coordinator                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D15" data-col-index="3" data-row-index="14" style="                    padding:10px;
+                        ">
+                                            M.A in English                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A16" data-col-index="0" data-row-index="15" style="                    padding:10px;
+                        ">
+                                            15                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B16" data-col-index="1" data-row-index="15" style="                    padding:10px;
+                        ">
+                                            Mr.
+      Nilesh Kushwaha                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C16" data-col-index="2" data-row-index="15" style="                    padding:10px;
+                        ">
+                                            Assistant
+      Professor, NSS Coordinator                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D16" data-col-index="3" data-row-index="15" style="                    padding:10px;
+                        ">
+                                            M.A.
+      (Economics)                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A17" data-col-index="0" data-row-index="16" style="                    padding:10px;
+                        ">
+                                            16                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B17" data-col-index="1" data-row-index="16" style="                    padding:10px;
+                        ">
+                                            Mrs. Sanchita Panda                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C17" data-col-index="2" data-row-index="16" style="                    padding:10px;
+                        ">
+                                            Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D17" data-col-index="3" data-row-index="16" style="                    padding:10px;
+                        ">
+                                            M.Com., B. Ed                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A18" data-col-index="0" data-row-index="17" style="                    padding:10px;
+                        ">
+                                            17                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B18" data-col-index="1" data-row-index="17" style="                    padding:10px;
+                        ">
+                                            Ms.
+      Nikita Shiwale                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C18" data-col-index="2" data-row-index="17" style="                    padding:10px;
+                        ">
+                                            Assistant
+      Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D18" data-col-index="3" data-row-index="17" style="                    padding:10px;
+                        ">
+                                            M.Com.,
+      NET                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A19" data-col-index="0" data-row-index="18" style="                    padding:10px;
+                        ">
+                                            18                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B19" data-col-index="1" data-row-index="18" style="                    padding:10px;
+                        ">
+                                            Ms. Sneha Menon                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C19" data-col-index="2" data-row-index="18" style="                    padding:10px;
+                        ">
+                                            Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D19" data-col-index="3" data-row-index="18" style="                    padding:10px;
+                        ">
+                                            M. Sc. C.S.                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A20" data-col-index="0" data-row-index="19" style="                    padding:10px;
+                        ">
+                                            19                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B20" data-col-index="1" data-row-index="19" style="                    padding:10px;
+                        ">
+                                            Ms. Mohini Singh                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C20" data-col-index="2" data-row-index="19" style="                    padding:10px;
+                        ">
+                                            Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D20" data-col-index="3" data-row-index="19" style="                    padding:10px;
+                        ">
+                                            Master in Business
+      Management                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A21" data-col-index="0" data-row-index="20" style="                    padding:10px;
+                        ">
+                                            20                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B21" data-col-index="1" data-row-index="20" style="                    padding:10px;
+                        ">
+                                            Mrs. Swarangi Bhosale                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C21" data-col-index="2" data-row-index="20" style="                    padding:10px;
+                        ">
+                                            Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D21" data-col-index="3" data-row-index="20" style="                    padding:10px;
+                        ">
+                                            MCA                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A22" data-col-index="0" data-row-index="21" style="                    padding:10px;
+                        ">
+                                            21                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B22" data-col-index="1" data-row-index="21" style="                    padding:10px;
+                        ">
+                                            Ms. Bushra Khan                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C22" data-col-index="2" data-row-index="21" style="                    padding:10px;
+                        ">
+                                            Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D22" data-col-index="3" data-row-index="21" style="                    padding:10px;
+                        ">
+                                            M.Com.(Accountancy)                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="A23" data-col-index="0" data-row-index="22" style="                    padding:10px;
+                        ">
+                                            22                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B23" data-col-index="1" data-row-index="22" style="                    padding:10px;
+                        ">
+                                            Ms. Suchitra Shirsat                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="C23" data-col-index="2" data-row-index="22" style="                    padding:10px;
+                        ">
+                                            Librarian                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D23" data-col-index="3" data-row-index="22" style="                    padding:10px;
+                        ">
+                                            M.A, M. Lib                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell " data-cell-id="A24" data-col-index="0" data-row-index="23" style="                    padding:10px;
+                        ">
+                                            23                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B24" data-col-index="1" data-row-index="23" style="                    padding:10px;
+                        ">
+                                            Mr. Umesh Sonavane                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="C24" data-col-index="2" data-row-index="23" style="                    padding:10px;
+                        ">
+                                            Physical Director, Sports Coordinator                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D24" data-col-index="3" data-row-index="23" style="                    padding:10px;
+                        ">
+                                            M.Com, Mp. Ed                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell " data-cell-id="A25" data-col-index="0" data-row-index="24" style="                    padding:10px;
+                        ">
+                                            24                    </td>
+                                                    <td class="wpdt-cell wpdt-align-center" data-cell-id="B25" data-col-index="1" data-row-index="24" style="                    padding:10px;
+                        ">
+                                            Ms. Kavita Rohilla                     </td>
+                                                    <td class="wpdt-cell " data-cell-id="C25" data-col-index="2" data-row-index="24" style="                    padding:10px;
+                        ">
+                                            Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D25" data-col-index="3" data-row-index="24" style="                    padding:10px;
+                        ">
+                                            M. Tech in ECE                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell " data-cell-id="A26" data-col-index="0" data-row-index="25" style="                    padding:10px;
+                        ">
+                                            25                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="B26" data-col-index="1" data-row-index="25" style="                    padding:10px;
+                        ">
+                                            Ms. Renuka Shingole                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="C26" data-col-index="2" data-row-index="25" style="                    padding:10px;
+                        ">
+                                            Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D26" data-col-index="3" data-row-index="25" style="                    padding:10px;
+                        ">
+                                            M.A., B. Ed                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell " data-cell-id="A27" data-col-index="0" data-row-index="26" style="                    padding:10px;
+                        ">
+                                            26                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="B27" data-col-index="1" data-row-index="26" style="                    padding:10px;
+                        ">
+                                            Ms. Agnus Idicula                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="C27" data-col-index="2" data-row-index="26" style="                    padding:10px;
+                        ">
+                                            Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D27" data-col-index="3" data-row-index="26" style="                    padding:10px;
+                        ">
+                                            M.Sc.IT                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell " data-cell-id="A28" data-col-index="0" data-row-index="27" style="                    padding:10px;
+                        ">
+                                            27                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="B28" data-col-index="1" data-row-index="27" style="                    padding:10px;
+                        ">
+                                            Mrs. Sampurna Mishra                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="C28" data-col-index="2" data-row-index="27" style="                    padding:10px;
+                        ">
+                                            Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D28" data-col-index="3" data-row-index="27" style="                    padding:10px;
+                        ">
+                                            M.Sc.IT                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell " data-cell-id="A29" data-col-index="0" data-row-index="28" style="                    padding:10px;
+                        ">
+                                            28                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="B29" data-col-index="1" data-row-index="28" style="                    padding:10px;
+                        ">
+                                            Mrs. Ankita Gaikwad                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="C29" data-col-index="2" data-row-index="28" style="                    padding:10px;
+                        ">
+                                            Assistant Professor, BMS Coordinator                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D29" data-col-index="3" data-row-index="28" style="                    padding:10px;
+                        ">
+                                            MBA- HR                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell " data-cell-id="A30" data-col-index="0" data-row-index="29" style="                    padding:10px;
+                        ">
+                                            29                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="B30" data-col-index="1" data-row-index="29" style="                    padding:10px;
+                        ">
+                                            Mrs. Ritu Singh                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="C30" data-col-index="2" data-row-index="29" style="                    padding:10px;
+                        ">
+                                            Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D30" data-col-index="3" data-row-index="29" style="                    padding:10px;
+                        ">
+                                            M.Com                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell " data-cell-id="A31" data-col-index="0" data-row-index="30" style="                    padding:10px;
+                        ">
+                                            30                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="B31" data-col-index="1" data-row-index="30" style="                    padding:10px;
+                        ">
+                                            Mrs. Padmaja S. Nair                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="C31" data-col-index="2" data-row-index="30" style="                    padding:10px;
+                        ">
+                                            Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D31" data-col-index="3" data-row-index="30" style="                    padding:10px;
+                        ">
+                                            M.Com                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell " data-cell-id="A32" data-col-index="0" data-row-index="31" style="                    padding:10px;
+                        ">
+                                            31                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="B32" data-col-index="1" data-row-index="31" style="                    padding:10px;
+                        ">
+                                            Mr. Kuldeep Kori                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="C32" data-col-index="2" data-row-index="31" style="                    padding:10px;
+                        ">
+                                            Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D32" data-col-index="3" data-row-index="31" style="                    padding:10px;
+                        ">
+                                            MBA                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell " data-cell-id="A33" data-col-index="0" data-row-index="32" style="                    padding:10px;
+                        ">
+                                            32                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="B33" data-col-index="1" data-row-index="32" style="                    padding:10px;
+                        ">
+                                            Mrs. Snehal A. Waingade                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="C33" data-col-index="2" data-row-index="32" style="                    padding:10px;
+                        ">
+                                            Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D33" data-col-index="3" data-row-index="32" style="                    padding:10px;
+                        ">
+                                            M.C.A.                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell " data-cell-id="A34" data-col-index="0" data-row-index="33" style="                    padding:10px;
+                        ">
+                                            33                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="B34" data-col-index="1" data-row-index="33" style="                    padding:10px;
+                        ">
+                                            Mrs. Pranali S. Jadhav                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="C34" data-col-index="2" data-row-index="33" style="                    padding:10px;
+                        ">
+                                            Assistant Professor, BBI Coordinator                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D34" data-col-index="3" data-row-index="33" style="                    padding:10px;
+                        ">
+                                            M.Com, MMS Finance                    </td>
+                                            </tr>
+                                <tr class="wpdt-cell-row ">
+                                    <td class="wpdt-cell " data-cell-id="A35" data-col-index="0" data-row-index="34" style="                    padding:10px;
+                        ">
+                                            34                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="B35" data-col-index="1" data-row-index="34" style="                    padding:10px;
+                        ">
+                                            Mrs. Priya Mishra                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="C35" data-col-index="2" data-row-index="34" style="                    padding:10px;
+                        ">
+                                            &nbsp;
+      Assistant Professor                    </td>
+                                                    <td class="wpdt-cell " data-cell-id="D35" data-col-index="3" data-row-index="34" style="                    padding:10px;
+                        ">
+                                            &nbsp;
+      M.Com, B.ed                    </td>
+                                            </tr>
+                        </tbody></table>
+    </div><style id="wpdt-custom-style-49">
+    .wpdt-tc-FFFFFF { color: #FFFFFF !important;}
+    .wpdt-bc-936700 { background-color: #936700 !important;}
+    </style>
+    </div>
+                            </div>
+                    </div>
+                        </div>
+                    </div>
+                    </div>
+                </div><!-- .entry-content -->
+    
+        </article><!-- #post-## -->
+                </div>
+                </main><!-- #main -->
+    <div class="ekit-template-content-markup ekit-template-content-footer ekit-template-content-theme-support">
+            <div data-elementor-type="wp-post" data-elementor-id="3960" class="elementor elementor-3960">
+                                    
+                        <section class="elementor-section elementor-top-section elementor-element elementor-element-49b736bf premium-shape-divider-yes premium-shape5 elementor-section-boxed elementor-section-height-default elementor-section-height-default wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no premium-shape-divider__default premium-shape-divider-anime-yes premium-sh-no-stretch-yes premium-shape-divider__bottom" data-id="49b736bf" data-element_type="section" id="xs_footer_13" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;opacity-tilt&quot;}">
+                                
+    <div class="cb__drawer-canvas"></div>			<script>
+                    const lazyloadRunObserver = () => {
+                        const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+                        const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+                            entries.forEach( ( entry ) => {
+                                if ( entry.isIntersecting ) {
+                                    let lazyloadBackground = entry.target;
+                                    if( lazyloadBackground ) {
+                                        lazyloadBackground.classList.add( 'e-lazyloaded' );
+                                    }
+                                    lazyloadBackgroundObserver.unobserve( entry.target );
+                                }
+                            });
+                        }, { rootMargin: '200px 0px 200px 0px' } );
+                        lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+                            lazyloadBackgroundObserver.observe( lazyloadBackground );
+                        } );
+                    };
+                    const events = [
+                        'DOMContentLoaded',
+                        'elementor/lazyload/observe',
+                    ];
+                    events.forEach( ( event ) => {
+                        document.addEventListener( event, lazyloadRunObserver );
+                    } );
+                </script>
+                <link rel="stylesheet" id="widget-image-css" href="https://saketcollege.edu.in/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=3.28.0" media="all">
+    <link rel="stylesheet" id="wpr-link-animations-css-css" href="https://saketcollege.edu.in/wp-content/plugins/royal-elementor-addons/assets/css/lib/animations/wpr-link-animations.min.css?ver=1.7.1012" media="all">
+    <link rel="stylesheet" id="wdt-simple-table-css" href="https://saketcollege.edu.in/wp-content/plugins/wpdatatables/assets/css/wdt.simpleTable.min.css?ver=3.4.2.42" media="all">
+    <link rel="stylesheet" id="wdt-font-style-css" href="https://saketcollege.edu.in/wp-content/plugins/wpdatatables/assets/css/style.min.css?ver=3.4.2.42" media="all">
+    <link rel="stylesheet" id="widget-text-editor-css" href="https://saketcollege.edu.in/wp-content/plugins/elementor/assets/css/widget-text-editor.min.css?ver=3.28.0" media="all">
+    <link rel="stylesheet" id="widget-google_maps-css" href="https://saketcollege.edu.in/wp-content/plugins/elementor/assets/css/widget-google_maps.min.css?ver=3.28.0" media="all">
+    <link rel="stylesheet" id="e-shapes-css" href="https://saketcollege.edu.in/wp-content/plugins/elementor/assets/css/conditionals/shapes.min.css?ver=3.28.0" media="all">
+    <link rel="stylesheet" id="pa-shape-divider-css" href="https://saketcollege.edu.in/wp-content/plugins/premium-addons-for-elementor/assets/frontend/min-css/premium-shape-divider.min.css?ver=4.10.89" media="all">
+    <script id="essential-blocks-blocks-localize-js-extra">
+    var eb_conditional_localize = [];
+    var EssentialBlocksLocalize = {"eb_plugins_url":"https:\/\/saketcollege.edu.in\/wp-content\/plugins\/essential-blocks\/","image_url":"https:\/\/saketcollege.edu.in\/wp-content\/plugins\/essential-blocks\/assets\/images","eb_wp_version":"6.7","eb_version":"5.3.2","eb_admin_url":"https:\/\/saketcollege.edu.in\/wp-admin\/","rest_rootURL":"https:\/\/saketcollege.edu.in\/wp-json\/","ajax_url":"https:\/\/saketcollege.edu.in\/wp-admin\/admin-ajax.php","nft_nonce":"8268292915","post_grid_pagination_nonce":"da4a7170dd","placeholder_image":"https:\/\/saketcollege.edu.in\/wp-content\/plugins\/essential-blocks\/assets\/images\/placeholder.png","is_pro_active":"false","upgrade_pro_url":"https:\/\/essential-blocks.com\/upgrade","responsiveBreakpoints":{"tablet":1024,"mobile":767}};
+    </script>
+   
+    
+    
+                            
+                            
+                               
+            
+    
+    
+    </body>
+    </html>
