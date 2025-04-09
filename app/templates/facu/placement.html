@@ -4,6 +4,58 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/placement.css') }}">
+<style>
+  /* Dropdown styles */
+  .m3-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+    /* Make all navigation buttons consistent */
+    .placement-nav .m3-button {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 16px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .placement-nav .m3-button a {
+    color: var(--m3-on-primary, #fff);
+    text-decoration: none;
+  }
+  .placement-nav .m3-button:hover {
+    background-color: var(--m3-primary-container, #6200ee);
+    color: var(--m3-on-primary-container, #fff);
+  }
+  .m3-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--m3-surface-container-high, #f0f0f0);
+    min-width: 200px;
+    box-shadow: var(--m3-shadow-2, 0 3px 6px rgba(0,0,0,0.16));
+    border-radius: var(--m3-shape-small, 4px);
+    z-index: 1000;
+  }
+  
+  .m3-dropdown-menu.show {
+    display: block;
+  }
+  
+  .m3-dropdown-menu a {
+    color: var(--m3-on-surface, #000);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s;
+  }
+  
+  .m3-dropdown-menu a:hover {
+    background-color: var(--m3-surface-container-highest, #e0e0e0);
+  }
+</style>
 {% endblock %}
 
 {% block content %}
@@ -25,13 +77,13 @@
 
     <!-- Navigation -->
     <nav class="placement-nav">
-      <a href="#recruiters" class="m3-button">Recruiters</a>
-      <a href="#objective" class="m3-button">Objective</a>
-      <a href="#activity-picture" class="m3-button">Activity Pictures</a>
-      <a href="#mega-job-fair" class="m3-button">Mega Job Fair</a>
+      <button class="m3-button"><a href="#recruiters">Recruiters</a></button>
+      <button class="m3-button"><a href="#objective">Objective</a></button>
+      <button class="m3-button"><a href="#activity-picture">Activity Pictures</a></button>
+      <button class="m3-button"><a href="#mega-job-fair">Mega Job Fair</a></button>
       <div class="m3-dropdown">
-        <button class="m3-button dropdown-trigger">Placement Cell/Records</button>
-        <div class="m3-dropdown-menu">
+        <button class="m3-button dropdown-trigger" id="placement-dropdown-btn">Placement Cell/Records</button>
+        <div class="m3-dropdown-menu" id="placement-dropdown-menu">
           <a href="https://saketcollege.edu.in/Docs/Committee/Traning%20%26%20Placement%20Committee.pdf">Placement Cell</a>
           <a href="{{ url_for('static', filename='docs/placement-record.pdf') }}">Placement Record</a>
         </div>
@@ -90,4 +142,23 @@
     </section>
   </div>
 </main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownBtn = document.getElementById('placement-dropdown-btn');
+    const dropdownMenu = document.getElementById('placement-dropdown-menu');
+    
+    if (dropdownBtn && dropdownMenu) {
+      dropdownBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        dropdownMenu.classList.toggle('show');
+      });
+      document.addEventListener('click', function(e) {
+        if (!dropdownBtn.contains(e.target)) {
+          dropdownMenu.classList.remove('show');
+        }
+      });
+    }
+  });
+</script>
 {% endblock %}

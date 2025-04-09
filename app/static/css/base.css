@@ -315,7 +315,7 @@ header {
 }
 
 .nav-list a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--m3-primary-container);
 }
 
 .dropdown-menu {
