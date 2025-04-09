@@ -1,0 +1,19 @@
+about saket gyaanpeeth
+footer of best practices page
+Extension activities (DLLE & NSS)
+library navbar
+library comittee
+exam timetable
+exam results
+notice and circulars (under examination)
+feedback forms (linking nav btns with microsoft form links, and add action taken report)
+'more' btn, remove unnessary buttons.
+alumni page (should be only in quick link above or navbar too? confused.)
+careers [contact] page (for hiring.)
+----------LAST-CHANGES------------------------------------------------------------------
+add images wherever required
+upload documents on the server from saketcollege.edu.in and link them wherever required
+Admin panel -
+    - backend for table contents that change periodically  
+    - proper role based admin panel logging.
+    - minify and optimize the codes (code clean up)
