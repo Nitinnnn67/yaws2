@@ -47,9 +47,11 @@
       <li class="dropdown">
         <a href="#academics">About us <i class="material-icons nav-dropdown-icon">expand_more</i></a>
         <ul class="dropdown-menu">
+          <li><a href="{{ url_for('frontend.about', subpath='About saket gyanpeeths')}}">About Saket Gyanpeeth</a></li>
           <li><a href="{{ url_for('frontend.about', subpath='message')}}">Message</a></li>
           <li><a href="{{ url_for('frontend.about', subpath='commitee')}}">Commitee</a></li>
           <li><a href="{{ url_for('frontend.about', subpath='organogram')}}">Organogram</a></li>
+          
         </ul>
       </li>
       <li class="dropdown">
@@ -125,7 +127,7 @@
         <ul class="dropdown-menu">
           <li><a href="{{ url_for('frontend.more', subpath='press-reports') }}">Press Reports & Newsletters</a></li>
           <li><a href="{{ url_for('frontend.more', subpath='rti') }}">RTI</a></li>
-          <li><a href="{{ url_for('frontend.more', subpath='some-more') }}">Contact/careers</a></li>
+          <li><a href="{{ url_for('frontend.more', subpath='contact/careers') }}">Contact/careers</a></li>
          
         </ul>
       </li>
