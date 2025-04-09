@@ -1,37 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}Committee - Saket College{% endblock %}
+{% block title %}Examination Committee - Saket College{% endblock %}
 
 {% block styles %}
-.content-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: var(--m3-surface);
-  border-radius: var(--m3-shape-medium);
-  box-shadow: var(--m3-shadow-1);
-}
-
-.page-title {
-  color: var(--m3-primary);
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--m3-outline-variant);
-}
-
-.pdf-viewer {
-  width: 100%;
-  height: 800px;
-  border: none;
-  border-radius: var(--m3-shape-medium);
-  margin-top: 24px;
-  box-shadow: var(--m3-shadow-1);
-}
+/* No additional styles needed */
 {% endblock %}
 
 {% block content %}
-<div class="content-container">
-  <h1 class="page-title">Examination Committee</h1>
-  <iframe class="pdf-viewer" src="https://saketcollege.edu.in/Docs/Committee/Examination%20Committee.pdf" type="application/pdf" allowfullscreen></iframe>
-</div>
+<script>
+  // Redirect directly to the PDF when the page loads
+  window.onload = function() {
+    window.location.href = "https://saketcollege.edu.in/Docs/Committee/Examination%20Committee.pdf";
+  }
+</script>
 {% endblock %}
