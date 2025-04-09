@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+
+{% block title %}Careers - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.careers-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .careers-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-info {
+  padding: 20px;
+  background-color: var(--m3-surface-variant);
+  border-radius: var(--m3-shape-medium);
+}
+
+.contact-info h3 {
+  color: var(--m3-primary);
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.contact-info p {
+  margin-bottom: 16px;
+  color: var(--m3-on-surface);
+}
+
+.opening-hours {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.contact-form {
+  background-color: var(--m3-surface);
+  padding: 20px;
+  border-radius: var(--m3-shape-medium);
+  border: 1px solid var(--m3-outline-variant);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--m3-on-surface);
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--m3-outline);
+  border-radius: var(--m3-shape-small);
+  background-color: var(--m3-surface);
+  color: var(--m3-on-surface);
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--m3-primary);
+  outline: none;
+}
+
+.form-button {
+  padding: 12px 24px;
+  background-color: var(--m3-primary);
+  color: var(--m3-on-primary);
+  border: none;
+  border-radius: var(--m3-shape-small);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-button:hover {
+  background-color: var(--m3-primary-hover);
+}
+
+.section-title {
+  color: var(--m3-primary);
+  margin-bottom: 16px;
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">Careers at Saket College</h1>
+  
+  <div class="careers-layout">
+    <!-- Contact Information -->
+    <div class="contact-info">
+      <h2 class="section-title">Reach Us</h2>
+      <p>If you have any general or Admission enquiry, feel free to contact us. Our Team will response asap.</p>
+      
+      <h3>Address</h3>
+      <p>Saket Vidyanagari Marg, Kalyan East, Dist. Thane (MAH), India – 421 306</p>
+      
+      <h3>Phone</h3>
+      <p>+91- 8356901298</p>
+      
+      <h3>Email</h3>
+      <p><a href="mailto:info@saketcollege.edu.in">info@saketcollege.edu.in</a></p>
+      
+      <h3>Opening Hours</h3>
+      <div class="opening-hours">
+        <div>
+          <p>Mon – Sat</p>
+        </div>
+        <div>
+          <p>10:00 – 6:00</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <div>
+        <h2 class="section-title">Drop us a message</h2>
+      </div>
+      <div>
+        <p>Please Submit the below details given in the form. Our HR Admin Team will contact you.</p>
+      </div>
+      <div>
+        <form method="post" enctype="multipart/form-data" action="{{ url_for('more.careers_submit') }}">
+          <div class="form-group">
+            <label>Your name
+              <input type="text" name="your-name" class="form-control" required>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label>Your email
+              <input type="email" name="your-email" class="form-control" required>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label>Your Contact Number
+              <input type="tel" name="tel-404" class="form-control" required>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label>Upload your Resume
+              <input type="file" name="file-894" class="form-control" accept=".pdf,.doc,.docx" required>
+            </label>
+            <small style="display: block; margin-top: 4px; color: var(--m3-outline);">Accepted formats: PDF, DOC, DOCX</small>
+          </div>
+          
+          <div class="form-group">
+            <label>Your message (optional)
+              <textarea name="your-message" rows="5" class="form-control"></textarea>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <input type="submit" value="Submit" class="form-button">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
