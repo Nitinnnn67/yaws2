@@ -472,8 +472,37 @@ header {
 } */}
 
 @media (max-width: 968px) {
+  /* Ultra minimal facu section for mobile view */
   .facu {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin: 10px 0 0 0;
+    padding: 5px 0;
+  }
+  
+  .facu a {
+    display: inline-block;
+    padding: 2px 6px;
+    color: var(--m3-primary);
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: transparent;
+    border: none;
+    transition: all 0.2s ease;
+  }
+  
+  .facu a:hover, .facu a:active {
+    color: var(--m3-primary-container);
+    text-decoration: underline;
+  }
+  
+  .facu a:not(:last-child)::after {
+    content: none;
   }
   
   .college-name h1 {
@@ -555,9 +584,13 @@ header {
 .footer {
   background: var(--m3-primary);
   color: var(--m3-on-primary);
-  padding: 64px 5% 32px;
+  padding: 40px 5% 32px;
   margin-top: 48px;
   border-radius: var(--m3-shape-large) var(--m3-shape-large) 0 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-width: 100vw;
 }
 
 .footer-content {
@@ -618,19 +651,28 @@ header {
 
 .contact-info {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   margin-bottom: 16px;
 }
 
 .contact-info .material-icons {
   opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.contact-info p {
+  margin: 0;
+  word-break: break-word;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .social-links {
   display: flex;
   gap: 12px;
   margin-top: 24px;
+  flex-wrap: wrap;
 }
 
 .m3-icon-button {
@@ -660,11 +702,100 @@ header {
 
 .m3-form {
   margin-top: 16px;
+  width: 100%;
+}
+
+.m3-form .m3-text-field {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.m3-form .m3-text-field input {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .m3-form .m3-button {
   margin-top: 8px;
   width: 100%;
+}
+
+/* Mobile responsive footer adjustments */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 4% 20px;
+    border-radius: var(--m3-shape-medium) var(--m3-shape-medium) 0 0;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 16px;
+  }
+  
+  .footer-section {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .m3-form .m3-text-field input {
+    padding: 8px 12px;
+  }
+  
+  .contact-info {
+    align-items: flex-start;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  .footer {
+    padding: 20px 4% 16px;
+    margin-top: 32px;
+    border-radius: var(--m3-shape-small) var(--m3-shape-small) 0 0;
+  }
+  
+  .footer-content {
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  
+  .m3-list li a {
+    padding: 4px 6px;
+  }
+  
+  .contact-info {
+    margin-bottom: 12px;
+  }
+  
+  .social-links {
+    gap: 8px;
+  }
+  
+  .m3-icon-button {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .contact-info p {
+    font-size: 14px;
+  }
+  
+  .footer-bottom {
+    padding-top: 20px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.1rem;
+  }
 }
 
 /* Contact Us Styles */
