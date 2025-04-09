@@ -112,7 +112,8 @@ h6 { font-size: 1rem; }
 
 .m3-button:hover {
   box-shadow: var(--m3-shadow-2);
-  background-color: #4a310c;
+  background-color: var(--m3-primary-container);
+  color: var(--m3-on-primary-container);
 }
 
 .m3-button:active {

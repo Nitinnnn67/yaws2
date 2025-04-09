@@ -144,7 +144,8 @@
   }
   
   .hero button:hover {
-    background-color: #4d3109;
+    background-color: var(--m3-primary-container);
+    color: var(--m3-on-primary-container);
     box-shadow: var(--m3-shadow-2);
     transform: translateY(-3px);
   }
@@ -298,8 +299,8 @@
   }
   
   .load-more-btn:hover {
-    background: var(--m3-primary);
-    color: var(--m3-on-primary);
+    background: var(--m3-primary-container);
+    color: var(--m3-on-primary-container);
   }
   
   /* Scrollbar styling for notices */
@@ -1197,4 +1198,4 @@
   .parallax-section {
     background-attachment: scroll;
   }
-} 
+}

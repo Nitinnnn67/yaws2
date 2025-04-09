@@ -115,7 +115,8 @@
 }
 
 .view-btn button:hover {
-  background-color: #654321;
+  background-color: var(--m3-primary-container);
+  color: var(--m3-on-primary-container);
 }
 
 .view-btn {
@@ -131,7 +132,8 @@
 }
 
 .view-btn:hover {
-  background-color: #654321;
+  background-color: var(--m3-primary-container);
+  color: var(--m3-on-primary-container);
 }
 
 /* Tab styles */
