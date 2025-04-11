@@ -184,8 +184,114 @@ h6 { font-size: 1rem; }
 
 /*Material 3 Designs for rest of the element tags*/
 
+/* ============================================
+   Material 3 Table Styles
+============================================ */
+table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin-top: 20px !important;
+  background: var(--m3-surface-container) !important;
+  border-radius: var(--m3-shape-small) !important;
+  overflow: hidden !important;
+  box-shadow: var(--m3-shadow-1) !important;
+}
 
+table th,
+table td {
+  padding: 12px 16px !important;
+  text-align: left !important;
+  border-bottom: 1px solid var(--m3-outline-variant) !important;
+}
 
+table th {
+  background: var(--m3-primary) !important;
+  color: var(--m3-on-primary) !important;
+  font-weight: 500 !important;
+}
+
+table tr:last-child td {
+  border-bottom: none !important;
+}
+
+table tr:hover {
+  background: var(--m3-surface-variant) !important;
+}
+
+/* View button style for consistency across tables */
+table a.view-button,
+.view-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 8px 16px !important;
+  background-color: var(--m3-primary) !important;
+  color: var(--m3-on-primary) !important;
+  border: none !important;
+  border-radius: var(--m3-shape-small) !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: var(--m3-shadow-1) !important;
+}
+
+table a.view-button:hover,
+.view-button:hover {
+  background-color: var(--m3-primary-container) !important;
+  color: var(--m3-on-primary-container) !important;
+  box-shadow: var(--m3-shadow-2) !important;
+}
+
+/* Content container for tables */
+.content-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 20px !important;
+  background-color: var(--m3-surface) !important;
+  border-radius: var(--m3-shape-medium) !important;
+  box-shadow: var(--m3-shadow-1) !important;
+}
+
+.page-title {
+  color: var(--m3-primary) !important;
+  margin-bottom: 20px !important;
+  padding-bottom: 10px !important;
+  border-bottom: 1px solid var(--m3-outline-variant) !important;
+}
+
+/* Table container for responsive tables */
+.table-responsive {
+  overflow-x: auto !important;
+  border-radius: var(--m3-shape-small) !important;
+  box-shadow: var(--m3-shadow-1) !important;
+}
+
+/* Mobile responsive table adjustments */
+@media (max-width: 768px) {
+  table th, 
+  table td {
+    padding: 10px 12px !important;
+  }
+  
+  .view-button {
+    padding: 6px 12px !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  table th, 
+  table td {
+    padding: 8px 10px !important;
+    font-size: 0.875rem !important;
+  }
+  
+  .view-button {
+    padding: 4px 10px !important;
+    font-size: 0.75rem !important;
+  }
+}
 
 /* ============================================
    Header, Logo & College Name
