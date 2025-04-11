@@ -94,30 +94,194 @@
 
 .contact-info a {
   color: var(--m3-tertiary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: var(--m3-tertiary-container);
+  text-decoration: underline;
+}
+
+.opening-hours {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding-left: 1.5rem;
+  background-color: rgba(var(--m3-primary-rgb), 0.1);
+  border-radius: var(--m3-shape-small);
+  padding: 0.8rem;
+}
+
+.opening-hours p {
+  padding-left: 0;
+  margin-bottom: 0;
   font-weight: 500;
+}
+
+.contact-form {
+  background-color: var(--m3-surface);
+  padding: 2rem;
+  border-radius: var(--m3-shape-medium);
+  border: 1px solid var(--m3-outline-variant);
+  box-shadow: var(--m3-shadow-1);
+  position: relative;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--m3-shadow-3);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--m3-on-surface);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--m3-outline);
+  border-radius: var(--m3-shape-small);
+  background-color: var(--m3-surface-1);
+  color: var(--m3-on-surface);
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: var(--m3-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--m3-primary-rgb), 0.2);
+}
+
+.form-control::placeholder {
+  color: var(--m3-outline);
+  opacity: 0.7;
+}
+
+input[type="file"].form-control {
+  padding: 0.6rem;
+  background-color: rgba(var(--m3-surface-variant-rgb), 0.5);
+}
+
+.form-button {
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, var(--m3-primary) 0%, var(--m3-primary-container) 100%);
+  color: var(--m3-on-primary);
+  border: none;
+  border-radius: var(--m3-shape-medium);
+  font-weight: 600;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 0.5px;
+  box-shadow: var(--m3-shadow-1);
 }
 
 .form-button:hover {
-  background-color: var(--m3-primary-hover);
+  background: linear-gradient(135deg, var(--m3-primary-hover) 0%, var(--m3-primary) 100%);
+  box-shadow: var(--m3-shadow-2);
+  transform: translateY(-2px);
 }
 
 .section-title {
   color: var(--m3-primary);
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background-color: var(--m3-tertiary);
+  border-radius: 2px;
+}
+
+.form-description {
+  margin-bottom: 1.5rem;
+  color: var(--m3-on-surface-variant);
+  font-size: 1.05rem;
+}
+
+.highlight {
+  color: var(--m3-tertiary);
+  font-weight: 500;
+}
+
+.file-upload-info {
+  display: block; 
+  margin-top: 0.5rem; 
+  color: var(--m3-on-surface-variant);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.file-upload-info::before {
+  content: "📎";
+  margin-right: 0.3rem;
+}
+
+.required-mark {
+  color: var(--m3-error);
+  margin-left: 3px;
+}
+
+.join-us-banner {
+  background: linear-gradient(135deg, rgba(var(--m3-primary-rgb), 0.1) 0%, rgba(var(--m3-tertiary-rgb), 0.1) 100%);
+  padding: 1.5rem;
+  border-radius: var(--m3-shape-medium);
+  margin-bottom: 2rem;
+  text-align: center;
+  border-left: 4px solid var(--m3-primary);
+}
+
+.join-us-banner h2 {
+  color: var(--m3-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.join-us-banner p {
+  color: var(--m3-on-surface);
+  font-size: 1.1rem;
 }
 {% endblock %}
 
 {% block content %}
 <div class="content-container">
-  <h1 class="page-title">Wanna work with us?</h1>
+  <h1 class="page-title">Join Our Team</h1>
+  <p class="page-subtitle">Be part of our journey to shape the future of education</p>
+  
+  <div class="join-us-banner">
+    <h2>Why Work With Us?</h2>
+    <p>We offer a collaborative environment, competitive benefits, and the opportunity to make a real impact on students' lives.</p>
+  </div>
   
   <div class="careers-layout">
     <!-- Contact Information -->
     <div class="contact-info">
       <h2 class="section-title">Reach Us</h2>
-      <p>If you have any general or Admission enquiry, feel free to contact us. Our Team will response asap.</p>
+      <p>If you have any queries regarding career opportunities or admissions, feel free to contact us. Our team will respond as soon as possible.</p>
       
       <h3>Address</h3>
       <p>Saket Vidyanagari Marg, Kalyan East, Dist. Thane (MAH), India – 421 306</p>
@@ -134,7 +298,7 @@
           <p>Mon – Sat</p>
         </div>
         <div>
-          <p>10:00 – 6:00</p>
+          <p>10:00 AM – 6:00 PM</p>
         </div>
       </div>
     </div>
@@ -142,46 +306,59 @@
     <!-- Contact Form -->
     <div class="contact-form">
       <div>
-        <h2 class="section-title">Drop us a message</h2>
+        <h2 class="section-title">Apply Now</h2>
       </div>
-      <div>
-        <p>Please Submit the below details given in the form. Our HR Admin Team will contact you.</p>
+      <div class="form-description">
+        <p>Please submit your details below. Our <span class="highlight">HR Team</span> will review your application and get back to you shortly.</p>
       </div>
       <div>
         <form method="post" enctype="multipart/form-data" action="#?Not-Implemented">
           <div class="form-group">
-            <label>Your name
-              <input type="text" name="your-name" class="form-control" required>
+            <label>Full Name <span class="required-mark">*</span>
+              <input type="text" name="your-name" class="form-control" placeholder="Enter your full name" required>
             </label>
           </div>
           
           <div class="form-group">
-            <label>Your email
-              <input type="email" name="your-email" class="form-control" required>
+            <label>Email Address <span class="required-mark">*</span>
+              <input type="email" name="your-email" class="form-control" placeholder="Enter your email address" required>
             </label>
           </div>
           
           <div class="form-group">
-            <label>Your Contact Number
-              <input type="tel" name="tel-404" class="form-control" required>
+            <label>Contact Number <span class="required-mark">*</span>
+              <input type="tel" name="tel-404" class="form-control" placeholder="Enter your contact number" required>
             </label>
           </div>
           
           <div class="form-group">
-            <label>Upload your Resume
+            <label>Position You're Applying For <span class="required-mark">*</span>
+              <select name="position" class="form-control" required>
+                <option value="">-- Select a position --</option>
+                <option value="faculty">Faculty</option>
+                <option value="admin">Administrative Staff</option>
+                <option value="research">Research Associate</option>
+                <option value="technical">Technical Support</option>
+                <option value="other">Other</option>
+              </select>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label>Upload your Resume <span class="required-mark">*</span>
               <input type="file" name="file-894" class="form-control" accept=".pdf,.doc,.docx" required>
             </label>
-            <small style="display: block; margin-top: 4px; color: var(--m3-outline);">Accepted formats: PDF, DOC, DOCX</small>
+            <small class="file-upload-info">Accepted formats: PDF, DOC, DOCX (Max size: 5MB)</small>
           </div>
           
           <div class="form-group">
-            <label>Your message (optional)
-              <textarea name="your-message" rows="5" class="form-control"></textarea>
+            <label>Why do you want to join us? (optional)
+              <textarea name="your-message" rows="4" class="form-control" placeholder="Tell us about your motivation to join Saket College..."></textarea>
             </label>
           </div>
           
           <div class="form-group">
-            <input type="submit" value="Submit" class="form-button">
+            <input type="submit" value="Submit Application" class="form-button">
           </div>
         </form>
       </div>
