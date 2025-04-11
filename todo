@@ -1,4 +1,4 @@
-# about saket gyaanpeeth
+# about saket gyaanpeeth (make it responsive for mobile)
 footer of best practices page
 # Extension activities (DLLE & NSS)
 library navbar
@@ -6,11 +6,11 @@ library navbar
 # exam timetable
 # exam results
 # notice and circulars (under examination)
-# feedback forms (linking nav btns with microsoft form links, and add action taken report)
-# 'more' btn, remove unnessary buttons.
+# feedback forms (linking nav btns with microsoft form links, and add action taken report) - check
+# 'more' btn, remove unnessary buttons. - check
 # alumni page (should be only in quick link above or navbar too? confused.)
-# careers [contact] page (for hiring.)
-# desktop's quick link on mobile devices, somewhere on the page.
+# careers [contact] page (for hiring.) - check
+# desktop's quick link on mobile devices, somewhere on the page. - check
 ----------LAST-CHANGES------------------------------------------------------------------
 add images wherever required
 upload documents on the server from saketcollege.edu.in and link them wherever required
