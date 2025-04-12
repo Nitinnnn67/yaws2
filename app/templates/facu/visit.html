@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+
+{% block title %}Visit - Saket College{% endblock %}
+
+{% block styles %}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--m3-surface);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.page-title {
+  color: var(--m3-primary);
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+  text-align: center;
+}
+
+.visit-section {
+  margin-bottom: 40px;
+}
+
+.visit-section h2 {
+  color: var(--m3-primary);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--m3-outline-variant);
+}
+
+.visit-section p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.image-container {
+  flex: 1;
+  min-width: 250px;
+  height: 200px;
+  border: 1px dashed var(--m3-outline);
+  border-radius: var(--m3-shape-small);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--m3-surface-variant);
+  margin-bottom: 10px;
+}
+
+.image-placeholder {
+  color: var(--m3-outline);
+  text-align: center;
+  padding: 10px;
+}
+
+.map-container {
+  width: 100%;
+  height: 450px;
+  border: 1px dashed var(--m3-outline);
+  border-radius: var(--m3-shape-small);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--m3-surface-variant);
+  margin: 20px 0;
+}
+
+.contact-details {
+  background-color: var(--m3-surface-variant);
+  padding: 20px;
+  border-radius: var(--m3-shape-small);
+  margin-top: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.contact-item .material-icons {
+  margin-right: 15px;
+  color: var(--m3-primary);
+}
+
+.directions-list {
+  margin: 20px 0;
+}
+
+.directions-list li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.transport-option {
+  background-color: var(--m3-surface);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: var(--m3-shape-small);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.transport-option h3 {
+  color: var(--m3-primary);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .image-row {
+    flex-direction: column;
+  }
+  
+  .image-container {
+    width: 100%;
+  }
+}
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <h1 class="page-title">Visit Saket College</h1>
+  
+  <div class="visit-section">
+    <h2>About Our Campus</h2>
+    <p>Saket College is located in the vibrant city of Kalyan. Our campus spans across a beautiful landscape, offering state-of-the-art facilities for academic and extracurricular activities. We welcome prospective students, parents, alumni, and visitors to explore our campus.</p>
+    
+    <div class="image-row">
+      <div class="image-container">
+        <div class="image-placeholder">Campus Main Building Image</div>
+      </div>
+      <div class="image-container">
+        <div class="image-placeholder">Campus Garden Image</div>
+      </div>
+      <div class="image-container">
+        <div class="image-placeholder">Campus Library Image</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="visit-section">
+    <h2>How to Reach</h2>
+    <p>Saket College is easily accessible through various modes of transportation. Located in Kalyan (East), our campus can be reached via local trains, buses, and private vehicles.</p>
+    
+    <div class="transport-option">
+      <h3>By Train</h3>
+      <p>Kalyan Junction is the nearest railway station, located approximately 2 km from the college campus. You can take a local train from CST, Dadar, Thane or any station on the central line to reach Kalyan. From Kalyan station, you can take an auto-rickshaw or bus to reach the college campus.</p>
+    </div>
+    
+    <div class="transport-option">
+      <h3>By Bus</h3>
+      <p>Several NMMT and KDMT buses operate to and from Kalyan. Alight at the Saket College bus stop. The college is just a short walk from the bus stop.</p>
+    </div>
+    
+    <div class="transport-option">
+      <h3>By Road</h3>
+      <p>If you are coming by private vehicle, the college is easily accessible via Saket Vidyanagari Marg. Ample parking space is available inside the campus.</p>
+    </div>
+  </div>
+  
+  <div class="visit-section">
+    <h2>Campus Tour</h2>
+    <p>We offer guided tours of our campus to prospective students and visitors. The tour includes visits to academic buildings, library, laboratories, sports facilities, and other areas of interest. Campus tours are available on weekdays (Monday to Friday) from 10:00 AM to 3:00 PM.</p>
+    <p>To schedule a campus tour, please contact our administrative office at least two days in advance.</p>
+    
+    <div class="image-container" style="width: 100%; height: 300px;">
+      <div class="image-placeholder">Campus Panoramic View Image</div>
+    </div>
+  </div>
+  
+  <div class="visit-section">
+    <h2>Location & Directions</h2>
+    <p>Our campus is located at Saket Vidyanagari Marg, Kalyan (East), Maharashtra - 421306.</p>
+    
+    <div class="map-container">
+      <div class="image-placeholder">Google Maps Location will be embedded here</div>
+      <!-- When ready, uncomment the iframe below and add the correct Google Maps embed URL -->
+      <!-- <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_URL" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+    </div>
+  </div>
+  
+  <div class="visit-section">
+    <h2>Contact Information</h2>
+    <p>For more information about campus visits or to schedule a tour, please contact us:</p>
+    
+    <div class="contact-details">
+      <div class="contact-item">
+        <span class="material-icons">location_on</span>
+        <div>
+          <strong>Address:</strong>
+          <p>Saket College of Arts, Science & Commerce<br>
+          Saket Vidyanagari Marg, Kalyan (East)<br>
+          Maharashtra - 421306</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <span class="material-icons">phone</span>
+        <div>
+          <strong>Phone:</strong>
+          <p>+91 72080 20258</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <span class="material-icons">email</span>
+        <div>
+          <strong>Email:</strong>
+          <p>info@saketcollege.edu</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <span class="material-icons">access_time</span>
+        <div>
+          <strong>Office Hours:</strong>
+          <p>Monday to Saturday: 9:00 AM - 5:00 PM<br>
+          Sunday: Closed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
