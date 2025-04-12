@@ -26,7 +26,7 @@
       <div class="facu">
         <a href="{{ url_for('frontend.facu', subpath='naac') }}">NAAC/IQAC</a>
         <a href="{{ url_for('frontend.facu', subpath='staffs') }}">Staffs</a>
-        <a href="#">Alumni</a>
+        <a href="{{ url_for('frontend.facu', subpath='alumni') }}">Alumni</a>
         <a href="{{ url_for('frontend.facu', subpath='placement') }}">Placement</a>
         <a href="#">Visit</a>
       </div>
@@ -71,15 +71,6 @@
           <li><a href="{{ url_for('frontend.student', subpath='program-outcome') }}">Program Outcome</a></li>
           <li><a href="{{ url_for('frontend.student', subpath='student-support') }}">Student Support</a></li>
           <li><a href="{{ url_for('frontend.student', subpath='code-of-conduct') }}">Code Of Conduct</a></li>
-          <li class="nested-dropdown">
-            <a href="#">Alumni <i class="material-icons">chevron_right</i></a>
-            <ul class="nested-dropdown-menu">
-              <li><a href="{{ url_for('frontend.student', subpath='alumni-association') }}">Alumni Association</a></li>
-              <li><a href="{{ url_for('frontend.student', subpath='alumni-interaction') }}">Alumni Interaction</a></li>
-              <li><a href="{{ url_for('frontend.student', subpath='our-eminent-alumni') }}">Our Eminent Alumni</a></li>
-              <li><a href="{{ url_for('frontend.student', subpath='testimonials') }}">Testimonials</a></li>
-            </ul>
-          </li>
         </ul>
       </li>
       <li class="dropdown">
