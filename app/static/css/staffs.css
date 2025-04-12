@@ -41,6 +41,8 @@
 
 .staff-nav li {
   margin: 0.25rem;
+  background-color: var(--m3-primary);
+  border-radius: var(--m3-shape-small);
 }
 
 .view-btn {

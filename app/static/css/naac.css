@@ -28,6 +28,9 @@
 
 .naac-nav ul li {
   list-style: none;
+  color: var(--m3-on-surface);
+  background-color: var(--m3-primary);
+  border-radius: var(--m3-shape-small);
 }
 
 .naac-nav a {
