@@ -56,6 +56,26 @@
   justify-content: center;
   background-color: var(--m3-surface-variant);
   margin-bottom: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.image-container::after {
+  content: "Click to enlarge";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover::after {
+  opacity: 1;
 }
 
 .image-placeholder {
@@ -115,6 +135,76 @@
   color: var(--m3-primary);
   margin-bottom: 10px;
   font-size: 1.2rem;
+}
+
+/* Modal styles for enlarged image */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  overflow: auto;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.enlarged-image {
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+  border: 5px solid white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.zoom-controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.zoom-btn {
+  background-color: var(--m3-primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.zoom-btn:hover {
+  background-color: var(--m3-primary-dark);
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
@@ -292,5 +382,84 @@
       </div>
     </div>
   </div>
+  
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <img id="enlargedImage" class="enlarged-image" alt="Enlarged Campus Image">
+      <div class="zoom-controls">
+        <button class="zoom-btn" onclick="zoomIn()"><span class="material-icons">add</span></button>
+        <button class="zoom-btn" onclick="zoomOut()"><span class="material-icons">remove</span></button>
+        <button class="zoom-btn" onclick="resetZoom()"><span class="material-icons">refresh</span></button>
+      </div>
+    </div>
+  </div>
 </div>
+
+<script>
+  // Add click event listeners to all image containers
+  document.addEventListener('DOMContentLoaded', function() {
+    const imageContainers = document.querySelectorAll('.image-container');
+    imageContainers.forEach(function(container, index) {
+      container.addEventListener('click', function() {
+        openModal('image' + (index + 1), this.querySelector('.image-placeholder').innerText);
+      });
+    });
+  });
+
+  // Modal functionality
+  const modal = document.getElementById('imageModal');
+  const enlargedImage = document.getElementById('enlargedImage');
+  let currentZoom = 1;
+  
+  function openModal(imageId, altText) {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling while modal is open
+    
+    // In production, replace with actual image path
+    // For now using placeholder logic
+    if (document.querySelector(`[data-image="${imageId}"]`)) {
+      // If an actual image exists with data-image attribute
+      enlargedImage.src = document.querySelector(`[data-image="${imageId}"]`).src;
+    } else {
+      // Use a placeholder image
+      enlargedImage.src = "/static/images/default-profile.png";
+    }
+    
+    enlargedImage.alt = altText || "Campus Image";
+    
+    currentZoom = 1;
+    enlargedImage.style.transform = `scale(${currentZoom})`;
+  }
+  
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = ''; // Re-enable scrolling
+  }
+  
+  function zoomIn() {
+    currentZoom += 0.2;
+    if (currentZoom > 3) currentZoom = 3; // Maximum zoom
+    enlargedImage.style.transform = `scale(${currentZoom})`;
+  }
+  
+  function zoomOut() {
+    currentZoom -= 0.2;
+    if (currentZoom < 0.5) currentZoom = 0.5; // Minimum zoom
+    enlargedImage.style.transform = `scale(${currentZoom})`;
+  }
+  
+  function resetZoom() {
+    currentZoom = 1;
+    enlargedImage.style.transform = `scale(${currentZoom})`;
+  }
+  
+  // Close modal when clicking outside the image
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      closeModal();
+    }
+  }
+</script>
 {% endblock %}
