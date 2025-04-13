@@ -394,14 +394,15 @@ header {
   text-align: center;
   padding: 5px 8px;
   border-radius: var(--m3-shape-small);
-  transition: background-color 0.3s;
+  transition: all 0.2s ease;
   font-weight: 500;
+  position: relative;
 }
 
 .facu a:hover {
-  background-color: var(--m3-surface-variant);
+  color: var(--m3-primary-container);
   text-decoration: underline;
-  color: var(--m3-on-surface);
+  background-color: transparent;
 }
 
 /* ============================================
@@ -744,22 +745,24 @@ header {
   color: var(--m3-on-primary);
   text-decoration: none;
   opacity: 0.85;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 6px 8px;
   border-radius: var(--m3-shape-small);
+  position: relative;
 }
 
 .m3-list li a:hover {
   opacity: 1;
-  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+  background-color: transparent;
 }
 
 .m3-list .material-icons {
   font-size: 18px;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
 .m3-list li a:hover .material-icons {
@@ -791,19 +794,22 @@ header {
 
 .m3-icon-button {
   color: var(--m3-on-primary);
-  background: rgba(255, 255, 255, 0.12);
+  background: transparent;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .m3-icon-button:hover {
-  background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
+  border-color: var(--m3-on-primary);
+  background-color: transparent;
 }
 
 .footer-bottom {
