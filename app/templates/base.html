@@ -132,20 +132,20 @@
         <div class="footer-section">
             <h3>Quick Links</h3>
             <ul class="m3-list">
-                <li><a href="#"><span class="material-icons">arrow_right</span>About Us</a></li>
-                <li><a href="#"><span class="material-icons">arrow_right</span>Admissions</a></li>
-                <li><a href="#"><span class="material-icons">arrow_right</span>Research</a></li>
-                <li><a href="#"><span class="material-icons">arrow_right</span>Campus Life</a></li>
+                <li><a href="{{ url_for('frontend.about', subpath='saket-gyaanpeeth') }}"><span class="material-icons">arrow_right</span>About Us</a></li>
+                <li><a href="{{ url_for('frontend.academics', subpath='program_courses') }}"><span class="material-icons">arrow_right</span>Academics</a></li>
+                <li><a href="{{ url_for('frontend.student', subpath='notice') }}"><span class="material-icons">arrow_right</span>Student Corner</a></li>
+                <li><a href="{{ url_for('frontend.library', subpath='about') }}"><span class="material-icons">arrow_right</span>Library</a></li>
             </ul>
         </div>
         <div class="footer-section">
             <h3>Programs</h3>
             <ul class="m3-list">
-                <li><a href="#"><span class="material-icons">arrow_right</span>Undergraduate</a></li>
-                <li><a href="#"><span class="material-icons">arrow_right</span>Postgraduate</a></li>
-                <li><a href="#"><span class="material-icons">arrow_right</span>Doctoral Studies</a></li>
-                <li><a href="#"><span class="material-icons">arrow_right</span>Online Courses</a></li>
-                <li><a href="#"><span class="material-icons">arrow_right</span>Executive Education</a></li>
+                <li><a href="{{ url_for('frontend.academics', subpath='program_courses') }}"><span class="material-icons">arrow_right</span>Program & Courses</a></li>
+                <li><a href="{{ url_for('frontend.academics', subpath='course_outcomes') }}"><span class="material-icons">arrow_right</span>Course Outcomes</a></li>
+                <li><a href="{{ url_for('frontend.extension', subpath='nss') }}"><span class="material-icons">arrow_right</span>NSS</a></li>
+                <li><a href="{{ url_for('frontend.extension', subpath='dlle') }}"><span class="material-icons">arrow_right</span>DLLE</a></li>
+                <li><a href="{{ url_for('frontend.extension', subpath='best-practices') }}"><span class="material-icons">arrow_right</span>Best Practices</a></li>
             </ul>
         </div>
         <div class="footer-section">
