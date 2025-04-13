@@ -1,7 +1,6 @@
 
-# footer of best practices page
-# feedback forms (linking nav btns with microsoft form links, and add action taken report) - check
-----------LAST-CHANGES------------------------------------------------------------------
+------------------LAST-CHANGES---------------------------------------------
+
 exam timetable----------------------------}
 exam results------------------------------}-----(add backend facility but after payment)
 notice and circulars (under examination)--}
@@ -13,4 +12,5 @@ Admin panel -
     - backend for table contents that change periodically  
     - proper role based admin panel logging.
     - minify and optimize the codes (code clean up)
----------DONE---------------------------------------------------------------------------
+
+----------------------DONE--------------------------------------------------
