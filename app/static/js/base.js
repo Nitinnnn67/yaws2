@@ -2,7 +2,47 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hamburger menu functionality
     const hamburger = document.querySelector('.hamburger');
     const navList = document.querySelector('.nav-list');
+    const nav = document.querySelector('.nav');
 
+    // Apply page transition effect to main content
+    const mainContent = document.querySelector('main');
+    if (mainContent) {
+        mainContent.classList.add('page-transition');
+    }
+
+    // Add spacing to content to prevent crowding
+    const content = document.querySelector('#content');
+    if (content) {
+        content.style.padding = '20px';
+        content.style.margin = '0 auto';
+        content.style.maxWidth = '1200px';
+    }
+
+    // Simple dropdown approach without complex animations
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        // Remove any existing listeners
+        const link = dropdown.querySelector('a');
+        if (link) {
+            const newLink = link.cloneNode(true);
+            link.parentNode.replaceChild(newLink, link);
+            
+            if (window.innerWidth <= 768) {
+                newLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                    
+                    dropdowns.forEach(other => {
+                        if (other !== dropdown && other.classList.contains('active')) {
+                            other.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        }
+    });
+
+    // Simple mobile nav toggle
     if (hamburger) {
         hamburger.addEventListener('click', function() {
             this.classList.toggle('active');
@@ -14,45 +54,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.innerWidth <= 768) {
             if (!e.target.closest('.nav')) {
                 navList.classList.remove('open');
-                hamburger.classList.remove('active');
+                if (hamburger) hamburger.classList.remove('active');
                 document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
             }
         }
     });
 
-    const dropdowns = document.querySelectorAll('.dropdown');
-    dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector('a');
-        if (link) {
-            link.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                    
-                    dropdowns.forEach(other => {
-                        if (other !== dropdown && other.classList.contains('active')) {
-                            other.classList.remove('active');
-                        }
-                    });
-                }
-            });
-        }
-    });
-
-    const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
-    nestedDropdowns.forEach(nested => {
-        const nestedLink = nested.querySelector('a');
-        if (nestedLink) {
-            nestedLink.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    nested.classList.toggle('active');
-                }
-            });
-        }
-    });
-
+    // Rest of your existing code for form inputs, contact form, etc.
     const formInputs = document.querySelectorAll('.m3-text-field input');
     formInputs.forEach(input => {
         const validateInput = () => {
