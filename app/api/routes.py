@@ -6,69 +6,90 @@ import os
 from werkzeug.utils import secure_filename
 from datetime import datetime
 
-api_bp = Blueprint('api', __name__)
+api_bp = Blueprint('api', __name__, url_prefix='/api')
 
+# General route for all notices (maintaining compatibility)
 @api_bp.route('/notices', methods=['GET'])
 def get_notices():
-    """
-    Get paginated notices with optional date and month filters
-    ---
-    parameters:
-      - name: page
-        in: query
-        type: integer
-        default: 1
-        description: Page number
-      - name: per_page
-        in: query
-        type: integer
-        default: 5
-        description: Items per page
-      - name: date
-        in: query
-        type: string
-        description: Filter by specific date (YYYY-MM-DD)
-      - name: month
-        in: query
-        type: integer
-        description: Filter by month (1-12)
-    responses:
-      200:
-        description: A list of notices
-    """
     page = request.args.get('page', 1, type=int)
-    per_page = request.args.get('per_page', 5, type=int)
-    date_filter = request.args.get('date')
-    month_filter = request.args.get('month', type=int)
+    per_page = request.args.get('per_page', 10, type=int)
     
-    query = Notice.query
-
-    if date_filter:
-        try:
-            filter_date = datetime.strptime(date_filter, '%Y-%m-%d')
-            query = query.filter(
-                db.func.date(Notice.date_uploaded) == filter_date.date()
-            )
-        except ValueError:
-            return jsonify({'error': 'Invalid date format. Use YYYY-MM-DD'}), 400
-
-    if month_filter and 1 <= month_filter <= 12:
-        query = query.filter(db.func.extract('month', Notice.date_uploaded) == month_filter)
-    
-    query = query.order_by(Notice.date_uploaded.desc())
-    
-    pagination = query.paginate(
-        page=page, per_page=per_page, error_out=False
-    )
+    pagination = Notice.query.order_by(Notice.date_uploaded.desc()).paginate(page=page, per_page=per_page)
     notices = pagination.items
     
+    notice_list = []
+    for notice in notices:
+        notice_data = {
+            'id': notice.id,
+            'title': notice.title,
+            'url': notice.url,
+            'date_uploaded': notice.date_uploaded.isoformat() if notice.date_uploaded else None
+        }
+        notice_list.append(notice_data)
+    
     return jsonify({
-        'notices': [notice.to_dict() for notice in notices],
-        'has_next': pagination.has_next,
-        'has_prev': pagination.has_prev,
-        'page': page,
+        'notices': notice_list,
+        'total': pagination.total,
         'pages': pagination.pages,
-        'total': pagination.total
+        'current_page': page,
+        'has_next': pagination.has_next,
+        'has_prev': pagination.has_prev
+    })
+
+# New route for general notices
+@api_bp.route('/notices/general', methods=['GET'])
+def get_general_notices():
+    page = request.args.get('page', 1, type=int)
+    per_page = request.args.get('per_page', 10, type=int)
+    
+    pagination = Notice.query.filter_by(notice_type='general').order_by(Notice.date_uploaded.desc()).paginate(page=page, per_page=per_page)
+    notices = pagination.items
+    
+    notice_list = []
+    for notice in notices:
+        notice_data = {
+            'id': notice.id,
+            'title': notice.title,
+            'url': notice.url,
+            'date_uploaded': notice.date_uploaded.isoformat() if notice.date_uploaded else None
+        }
+        notice_list.append(notice_data)
+    
+    return jsonify({
+        'notices': notice_list,
+        'total': pagination.total,
+        'pages': pagination.pages,
+        'current_page': page,
+        'has_next': pagination.has_next,
+        'has_prev': pagination.has_prev
+    })
+
+# New route for examination notices
+@api_bp.route('/notices/exam', methods=['GET'])
+def get_exam_notices():
+    page = request.args.get('page', 1, type=int)
+    per_page = request.args.get('per_page', 10, type=int)
+    
+    pagination = Notice.query.filter_by(notice_type='exam').order_by(Notice.date_uploaded.desc()).paginate(page=page, per_page=per_page)
+    notices = pagination.items
+    
+    notice_list = []
+    for notice in notices:
+        notice_data = {
+            'id': notice.id,
+            'title': notice.title,
+            'url': notice.url,
+            'date_uploaded': notice.date_uploaded.isoformat() if notice.date_uploaded else None
+        }
+        notice_list.append(notice_data)
+    
+    return jsonify({
+        'notices': notice_list,
+        'total': pagination.total,
+        'pages': pagination.pages,
+        'current_page': page,
+        'has_next': pagination.has_next,
+        'has_prev': pagination.has_prev
     })
 
 @api_bp.route('/notices', methods=['POST'])
@@ -85,6 +106,10 @@ def add_notice():
         in: formData
         type: string
         description: Notice title
+      - name: notice_type
+        in: formData
+        type: string
+        description: Notice type (general or exam)
       - name: url
         in: formData
         type: string
@@ -109,6 +134,11 @@ def add_notice():
         # Check if URL is provided in form data
         url_in_form = 'url' in request.form and request.form['url'].strip()
         
+        # Get notice type (default to general if not provided)
+        notice_type = request.form.get('notice_type', 'general')
+        if notice_type not in ['general', 'exam']:
+            notice_type = 'general'  # Default to general if invalid type
+        
         # If neither file nor URL is provided
         if not has_file and not url_in_form and request.content_type != 'application/json':
             return jsonify({'error': 'Missing data', 'message': 'Either file upload or URL is required'}), 400
@@ -125,7 +155,7 @@ def add_notice():
                 file.save(filepath)
                 title = request.form.get('title', filename)
                 # Store only filename in URL, not full path
-                new_notice = Notice(title=title, url=f'/uploads/{filename}', filename=filename)
+                new_notice = Notice(title=title, url=f'/uploads/{filename}', filename=filename, notice_type=notice_type)
                 db.session.add(new_notice)
                 db.session.commit()
                 return jsonify({'success': True, 'message': 'Notice added successfully', 'notice': new_notice.to_dict()}), 201
@@ -140,7 +170,7 @@ def add_notice():
             if not url.startswith(('http://', 'https://', '/uploads/')):
                 return jsonify({'error': 'Invalid URL', 'message': 'Invalid URL format'}), 400
                 
-            new_notice = Notice(title=title, url=url)
+            new_notice = Notice(title=title, url=url, notice_type=notice_type)
             db.session.add(new_notice)
             db.session.commit()
             return jsonify({'success': True, 'message': 'Notice added successfully', 'notice': new_notice.to_dict()}), 201
@@ -157,7 +187,12 @@ def add_notice():
         if not data['url'].startswith(('http://', 'https://', '/uploads/')):
             return jsonify({'error': 'Invalid URL', 'message': 'Invalid URL format'}), 400
             
-        new_notice = Notice(title=data['title'], url=data['url'])
+        # Get notice type from JSON data
+        notice_type = data.get('notice_type', 'general')
+        if notice_type not in ['general', 'exam']:
+            notice_type = 'general'  # Default to general if invalid type
+            
+        new_notice = Notice(title=data['title'], url=data['url'], notice_type=notice_type)
         db.session.add(new_notice)
         db.session.commit()
         return jsonify({'success': True, 'message': 'Notice added successfully', 'notice': new_notice.to_dict()}), 201

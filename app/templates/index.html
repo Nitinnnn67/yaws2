@@ -67,11 +67,27 @@
     <div class="notice-board">
       <div class="notice-title">Notices</div>
       <div class="date-time" id="dateTime"></div>
-      <div class="notices-wrapper" onmouseover="pauseScroll()" onmouseout="resumeScroll()">
-        <div class="notices-content" id="noticeContainer">
-          <div class="loading" id="noticeLoading" style="display: none;">Loading...</div>
+      
+      <!-- Tab navigation for notice types -->
+      <div class="notice-tabs">
+        <button id="generalNoticeTab" class="notice-tab active" onclick="switchNoticeTab('general')">General Notices</button>
+        <button id="examNoticeTab" class="notice-tab" onclick="switchNoticeTab('exam')">Examination Notices</button>
+      </div>
+      
+      <!-- General notices container -->
+      <div id="generalNoticesContainer" class="notices-wrapper active-tab" onmouseover="pauseScroll('general')" onmouseout="resumeScroll('general')">
+        <div class="notices-content" id="generalNoticeContent">
+          <div class="loading" id="generalNoticeLoading" style="display: none;">Loading...</div>
         </div>
-        <button id="loadMoreButton" class="load-more-btn" style="display:none;">Load More</button>
+        <button id="loadMoreGeneralButton" class="load-more-btn" style="display:none;">Load More</button>
+      </div>
+      
+      <!-- Examination notices container -->
+      <div id="examNoticesContainer" class="notices-wrapper" onmouseover="pauseScroll('exam')" onmouseout="resumeScroll('exam')" style="display:none;">
+        <div class="notices-content" id="examNoticeContent">
+          <div class="loading" id="examNoticeLoading" style="display: none;">Loading...</div>
+        </div>
+        <button id="loadMoreExamButton" class="load-more-btn" style="display:none;">Load More</button>
       </div>
     </div>
   </div>
@@ -80,10 +96,11 @@
     // Notice board functionality
     (function () {
       'use strict';
-      let currentPage = 1;
+      let currentPage = { general: 1, exam: 1 };
       const perPage = 5;
-      let loading = false;
-      let scrollTimer = null;
+      let loading = { general: false, exam: false };
+      let scrollTimer = { general: null, exam: null };
+      
       // Format dates in IST timezone
       function formatDate(dateString) {
         const options = {
@@ -96,14 +113,14 @@
       }
 
       // Fetch notices from the API
-      async function fetchNotices(page) {
+      async function fetchNotices(type, page) {
         try {
-          loading = true;
-          document.getElementById('noticeLoading').style.display = 'block';
+          loading[type] = true;
+          document.getElementById(type + 'NoticeLoading').style.display = 'block';
 
-          const response = await fetch(`/api/notices?page=${page}&per_page=${perPage}`);
+          const response = await fetch(`/api/notices/${type}?page=${page}&per_page=${perPage}`);
           const data = await response.json();
-          const noticeContainer = document.getElementById('noticeContainer');
+          const noticeContainer = document.getElementById(type + 'NoticeContent');
 
           data.notices.forEach(notice => {
             const noticeElement = document.createElement('div');
@@ -119,28 +136,35 @@
           });
 
           // Update load more button visibility
-          document.getElementById('loadMoreButton').style.display = data.has_next ? 'block' : 'none';
+          document.getElementById('loadMore' + (type === 'general' ? 'General' : 'Exam') + 'Button').style.display = data.has_next ? 'block' : 'none';
         } catch (error) {
-          console.error('Error fetching notices:', error);
+          console.error(`Error fetching ${type} notices:`, error);
         } finally {
-          loading = false;
-          document.getElementById('noticeLoading').style.display = 'none';
+          loading[type] = false;
+          document.getElementById(type + 'NoticeLoading').style.display = 'none';
         }
       }
 
       // Initialize the notice board
       function initNoticeBoard() {
-        fetchNotices(currentPage);
-        // Load more button functionality
-        const loadMoreBtn = document.getElementById('loadMoreButton');
-        if (loadMoreBtn) {
-          loadMoreBtn.addEventListener('click', () => {
-            if (!loading) {
-              currentPage++;
-              fetchNotices(currentPage);
-            }
-          });
-        }
+        // Fetch both types of notices initially
+        fetchNotices('general', currentPage.general);
+        fetchNotices('exam', currentPage.exam);
+        
+        // Set up load more buttons
+        document.getElementById('loadMoreGeneralButton').addEventListener('click', () => {
+          if (!loading.general) {
+            currentPage.general++;
+            fetchNotices('general', currentPage.general);
+          }
+        });
+        
+        document.getElementById('loadMoreExamButton').addEventListener('click', () => {
+          if (!loading.exam) {
+            currentPage.exam++;
+            fetchNotices('exam', currentPage.exam);
+          }
+        });
 
         // Update date-time display with IST timezone
         const updateDateTime = () => {
@@ -167,22 +191,34 @@
       }
 
       // Auto-scroll functionality for notices
-      window.pauseScroll = function () {
-        const noticesContent = document.querySelector('.notices-content');
+      window.pauseScroll = function (type) {
+        const noticesContent = document.querySelector(`#${type}NoticeContent`);
         if (noticesContent) {
           noticesContent.style.animationPlayState = 'paused';
-          if (scrollTimer) clearTimeout(scrollTimer);
+          if (scrollTimer[type]) clearTimeout(scrollTimer[type]);
         }
       };
 
-      window.resumeScroll = function () {
-        const noticesContent = document.querySelector('.notices-content');
+      window.resumeScroll = function (type) {
+        const noticesContent = document.querySelector(`#${type}NoticeContent`);
         if (noticesContent) {
-          scrollTimer = setTimeout(() => {
+          scrollTimer[type] = setTimeout(() => {
             noticesContent.style.animationPlayState = 'running';
           }, 500);
         }
       };
+      
+      // Switch between notice tabs
+      window.switchNoticeTab = function(type) {
+        // Update active tab
+        document.getElementById('generalNoticeTab').classList.toggle('active', type === 'general');
+        document.getElementById('examNoticeTab').classList.toggle('active', type === 'exam');
+        
+        // Show/hide appropriate content
+        document.getElementById('generalNoticesContainer').style.display = type === 'general' ? 'block' : 'none';
+        document.getElementById('examNoticesContainer').style.display = type === 'exam' ? 'block' : 'none';
+      };
+      
       // Initialize when DOM is fully loaded
       document.addEventListener('DOMContentLoaded', initNoticeBoard);
     })();

@@ -184,7 +184,8 @@
           ...filters
         });
 
-        const response = await fetch(`http://localhost:5000/api/notices?${queryParams}`);
+        // Changed to fetch only general notices using the specific API endpoint
+        const response = await fetch(`/api/notices/general?${queryParams}`);
         if (!response.ok) throw new Error('Failed to fetch notices');
         
         const data = await response.json();

@@ -44,8 +44,25 @@ def extension(subpath):
 @frontend_bp.route('/examination/<string:subpath>', methods=['GET'])
 def examination(subpath):
     try:
-        return render_template(f'examination/{subpath}.html')
-    except:
+        if subpath == 'notices':
+            # Import needed for notices
+            import requests
+            from flask import current_app
+            
+            # Fetch examination notices from our API
+            api_url = f"{request.url_root}api/notices/exam"
+            response = requests.get(api_url)
+            notices = []
+            
+            if response.status_code == 200:
+                data = response.json()
+                notices = data.get('notices', [])
+            
+            return render_template(f'examination/{subpath}.html', notices=notices)
+        else:
+            return render_template(f'examination/{subpath}.html')
+    except Exception as e:
+        current_app.logger.error(f"Error in examination route: {str(e)}")
         return render_template('404.html')
 
 @frontend_bp.route('/feedback/<string:subpath>', methods=['GET'])

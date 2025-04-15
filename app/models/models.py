@@ -12,9 +12,10 @@ class Notice(db.Model):
     url = db.Column(db.String(255), nullable=False)
     date_uploaded = db.Column(db.DateTime, default=datetime.utcnow)
     filename = db.Column(db.String(255))  # Store the filename separately
+    notice_type = db.Column(db.String(50), default='general')  # 'general' or 'exam'
     
     # Add data validation
-    def __init__(self, title, url, filename=None):
+    def __init__(self, title, url, filename=None, notice_type='general'):
         if not title or len(title.strip()) == 0:
             raise ValueError("Title cannot be empty")
         if not url or len(url.strip()) == 0:
@@ -23,6 +24,7 @@ class Notice(db.Model):
         self.title = re.sub(r'[<>]', '', title.strip())
         self.url = url.strip()
         self.filename = filename
+        self.notice_type = notice_type.strip() if notice_type else 'general'
         
     def to_dict(self):
         return {
@@ -30,7 +32,8 @@ class Notice(db.Model):
             'title': self.title,
             'url': self.url,
             'date_uploaded': self.date_uploaded.isoformat(),
-            'filename': self.filename
+            'filename': self.filename,
+            'notice_type': self.notice_type
         }
 
 class Image(db.Model):

@@ -237,6 +237,7 @@
     flex: 1;
     overflow-y: auto;
     padding-right: 6px; /* Reduced from 8px */
+    transition: all 0.3s ease;
   }
   
   .notices-content {
@@ -1198,4 +1199,34 @@
   .parallax-section {
     background-attachment: scroll;
   }
+}
+
+/* Notice Board Tab Styling */
+.notice-tabs {
+  display: flex;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.notice-tab {
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.notice-tab.active {
+  color: #4a89dc;
+  border-bottom: 2px solid #4a89dc;
+}
+
+.notice-tab:hover {
+  background-color: rgba(74, 137, 220, 0.1);
+}
+
+.notices-wrapper {
+  transition: all 0.3s ease;
 }

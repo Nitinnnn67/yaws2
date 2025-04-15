@@ -236,6 +236,31 @@
             cursor: pointer;
             font-size: 12px;
         }
+
+        .notice-type-badge {
+            display: inline-block;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-left: 10px;
+            color: white;
+        }
+        
+        .notice-type-badge.general-notice {
+            background-color: #28a745;  /* Green for general notices */
+        }
+        
+        .notice-type-badge.exam-notice {
+            background-color: #dc3545;  /* Red for examination notices */
+        }
+        
+        .notice-item.exam-notice {
+            border-left: 4px solid #dc3545;
+        }
+        
+        .notice-item.general-notice {
+            border-left: 4px solid #28a745;
+        }
     </style>
 {% endblock %}
 {% block content%}
@@ -255,6 +280,14 @@
                 <div class="form-group">
                     <label for="title">Notice Title:</label>
                     <input type="text" id="title" name="title" required placeholder="Enter notice title">
+                </div>
+                
+                <div class="form-group">
+                    <label for="notice_type">Notice Type:</label>
+                    <select id="notice_type" name="notice_type" required>
+                        <option value="general" selected>General Notice</option>
+                        <option value="exam">Examination Notice</option>
+                    </select>
                 </div>
                 
                 <div class="form-group">
@@ -524,11 +557,16 @@
                 let noticesHtml = '';
                 
                 notices.forEach(notice => {
+                    const noticeType = notice.notice_type ? notice.notice_type : 'general';
+                    const typeLabel = noticeType === 'exam' ? 'Exam Notice' : 'General Notice';
+                    const typeClass = noticeType === 'exam' ? 'exam-notice' : 'general-notice';
+
                     noticesHtml += `
-                        <div class="notice-item" id="notice-${notice.id}">
+                        <div class="notice-item ${typeClass}" id="notice-${notice.id}">
                             <div class="notice-info">
                                 <span class="notice-title">${notice.title}</span>
                                 <a href="${notice.url}" target="_blank" class="notice-url">${notice.url}</a>
+                                <span class="notice-type-badge ${typeClass}">${typeLabel}</span>
                             </div>
                             <div class="notice-actions">
                                 <span class="notice-date">${formatDate(notice.date_uploaded)}</span>
