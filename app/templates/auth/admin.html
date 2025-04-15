@@ -105,21 +105,34 @@
             margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             transition: all 0.2s;
+            flex-wrap: wrap;
         }
         .notice-item:hover, .image-item:hover {
             background: #e9ecef;
         }
+        .notice-info {
+            flex: 1;
+            min-width: 0; /* Important for text truncation to work */
+            margin-right: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
         .notice-title, .image-title {
             font-weight: bold;
             color: #495057;
+            margin-right: 10px;
         }
         .notice-url {
             color: #007bff;
             text-decoration: none;
             margin-left: 10px;
-            flex-grow: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 300px;
         }
         .notice-url:hover {
             text-decoration: underline;
@@ -132,6 +145,7 @@
         .notice-actions, .image-actions {
             display: flex;
             align-items: center;
+            white-space: nowrap;
         }
         .delete-btn {
             background: #dc3545;
