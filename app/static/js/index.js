@@ -167,41 +167,79 @@ function initCarousel() {
  * Notice board auto-scrolling functionality
  */
 function initNoticeBoard() {
-  function startScrolling() {
-    if (!isScrollPaused) {
-      // Clear existing interval if any
-      if (scrollInterval) {
-        clearInterval(scrollInterval);
-      }
-      
-      scrollInterval = setInterval(() => {
-        const wrapper = document.querySelector('.notices-wrapper');
-        if (!wrapper) return;
-        
-        if (wrapper.scrollTop + wrapper.clientHeight >= wrapper.scrollHeight) {
-          wrapper.scrollTop = 0;
-        } else {
-          wrapper.scrollTop += 1;
-        }
-      }, 50);
-    }
+  // Get notice content elements
+  const generalNoticeContent = document.getElementById('generalNoticeContent');
+  const examNoticeContent = document.getElementById('examNoticeContent');
+  const generalNoticesContainer = document.getElementById('generalNoticesContainer');
+  const examNoticesContainer = document.getElementById('examNoticesContainer');
+  
+  // Check if elements exist
+  if (!generalNoticeContent || !examNoticeContent) return;
+
+  // Set up hover event listeners to pause/resume animation
+  if (generalNoticeContent) {
+    generalNoticeContent.addEventListener('mouseenter', function() {
+      this.style.animationPlayState = 'paused';
+    });
+    
+    generalNoticeContent.addEventListener('mouseleave', function() {
+      this.style.animationPlayState = 'running';
+    });
   }
   
-  // Export these functions to global scope for use in HTML
-  window.pauseScroll = function() {
-    isScrollPaused = true;
-    if (scrollInterval) {
-      clearInterval(scrollInterval);
-    }
-  };
+  if (examNoticeContent) {
+    examNoticeContent.addEventListener('mouseenter', function() {
+      this.style.animationPlayState = 'paused';
+    });
+    
+    examNoticeContent.addEventListener('mouseleave', function() {
+      this.style.animationPlayState = 'running';
+    });
+  }
   
-  window.resumeScroll = function() {
-    isScrollPaused = false;
-    startScrolling();
-  };
+  // Allow manual scrolling on the container
+  if (generalNoticesContainer) {
+    generalNoticesContainer.addEventListener('wheel', function(e) {
+      // Prevent default behavior only if inside container
+      e.stopPropagation();
+      
+      // Manual scrolling
+      if (e.deltaY > 0) {
+        // Scrolling down
+        this.scrollTop += 30;
+      } else {
+        // Scrolling up
+        this.scrollTop -= 30;
+      }
+    });
+  }
   
-  // Start scrolling initially
-  startScrolling();
+  if (examNoticesContainer) {
+    examNoticesContainer.addEventListener('wheel', function(e) {
+      // Prevent default behavior only if inside container
+      e.stopPropagation();
+      
+      // Manual scrolling
+      if (e.deltaY > 0) {
+        // Scrolling down
+        this.scrollTop += 30;
+      } else {
+        // Scrolling up
+        this.scrollTop -= 30;
+      }
+    });
+  }
+  
+  // Export these functions for use in HTML
+  window.switchNoticeTab = function(type) {
+    // Update tab active state
+    document.getElementById('generalNoticeTab').classList.toggle('active', type === 'general');
+    document.getElementById('examNoticeTab').classList.toggle('active', type === 'exam');
+    
+    // Show/hide appropriate container
+    document.getElementById('generalNoticesContainer').style.display = type === 'general' ? 'block' : 'none';
+    document.getElementById('examNoticesContainer').style.display = type === 'exam' ? 'block' : 'none';
+  };
 }
 
 /**

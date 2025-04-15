@@ -238,12 +238,21 @@
     overflow-y: auto;
     padding-right: 6px; /* Reduced from 8px */
     transition: all 0.3s ease;
+    max-height: 300px; /* Fixed height for scrolling */
   }
-  
+
+  /* Auto-scroll animation for notices */
   .notices-content {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Reduced from 12px */
+    gap: 8px;
+    animation: scrollNotices 20s linear infinite;
+    animation-play-state: running;
+  }
+
+  /* Animation will be paused on hover */
+  .notices-content:hover {
+    animation-play-state: paused;
   }
   
   .notice {
@@ -258,6 +267,16 @@
     transform: translateX(8px);
     background: var(--m3-surface-container-highest);
     border-color: var(--m3-primary);
+  }
+
+  /* Keyframe for scrolling notices */
+  @keyframes scrollNotices {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-100% + 300px)); /* Adjust based on .notices-wrapper height */
+    }
   }
   
   .notice-date {
