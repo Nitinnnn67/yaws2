@@ -26,31 +26,37 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Populate IQAC Composition Table
-    const compositionTable = document.getElementById('iqac-composition-table').getElementsByTagName('tbody')[0];
-    compositionData.forEach(item => {
-        const row = compositionTable.insertRow();
-        row.insertCell(0).textContent = item.year;
-        row.insertCell(1).innerHTML = `<a href="${item.link}" class="view-btn" target="_blank"><button>View</button></a>`;
-    });
+    const compositionTable = document.getElementById('iqac-composition-table')?.getElementsByTagName('tbody')[0];
+    if (compositionTable) {
+        compositionData.forEach(item => {
+            const row = compositionTable.insertRow();
+            row.insertCell(0).textContent = item.year;
+            row.insertCell(1).innerHTML = `<a href="${item.link}" class="view-btn" target="_blank"><button>View</button></a>`;
+        });
+    }
 
     // Populate IQAC Minutes Table
-    const minutesTable = document.getElementById('iqac-minutes-table').getElementsByTagName('tbody')[0];
-    minutesData.forEach(item => {
-        const row = minutesTable.insertRow();
-        row.insertCell(0).textContent = item.date;
-        row.insertCell(1).innerHTML = `<a href="${item.minutes}" class="view-btn" target="_blank"><button>View</button></a>`;
-        row.insertCell(2).innerHTML = item.atr ? 
-            `<a href="${item.atr}" class="view-btn" target="_blank"><button>View</button></a>` : 
-            'N/A';
-    });
+    const minutesTable = document.getElementById('iqac-minutes-table')?.getElementsByTagName('tbody')[0];
+    if (minutesTable) {
+        minutesData.forEach(item => {
+            const row = minutesTable.insertRow();
+            row.insertCell(0).textContent = item.date;
+            row.insertCell(1).innerHTML = `<a href="${item.minutes}" class="view-btn" target="_blank"><button>View</button></a>`;
+            row.insertCell(2).innerHTML = item.atr ? 
+                `<a href="${item.atr}" class="view-btn" target="_blank"><button>View</button></a>` : 
+                'N/A';
+        });
+    }
 
     // Populate Feedback Table
-    const feedbackTable = document.getElementById('feedback-table').getElementsByTagName('tbody')[0];
-    feedbackData.forEach(item => {
-        const row = feedbackTable.insertRow();
-        row.insertCell(0).textContent = item.year;
-        row.insertCell(1).innerHTML = `<a href="${item.link}" class="view-btn" target="_blank"><button>View</button></a>`;
-    });
+    const feedbackTable = document.getElementById('feedback-table')?.getElementsByTagName('tbody')[0];
+    if (feedbackTable) {
+        feedbackData.forEach(item => {
+            const row = feedbackTable.insertRow();
+            row.insertCell(0).textContent = item.year;
+            row.insertCell(1).innerHTML = `<a href="${item.link}" class="view-btn" target="_blank"><button>View</button></a>`;
+        });
+    }
 
     // Tab Functionality
     document.querySelectorAll('.tab-btn').forEach(button => {
@@ -60,20 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             button.classList.add('active');
             document.getElementById(tabId).classList.add('active');
-        });
-    });
-
-    // Smooth scrolling for navigation
-    document.querySelectorAll('.naac-nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
         });
     });
 });

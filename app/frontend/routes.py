@@ -85,3 +85,44 @@ def facu(subpath):
         return render_template(f'facu/{subpath}.html')
     except:
         return render_template('404.html')
+
+# NAAC Page Routes - Each section gets its own URL
+@frontend_bp.route('/naac', methods=['GET'])
+def naac():
+    return render_template('facu/naac.html', active_section="naac-dvv")
+
+@frontend_bp.route('/naac/dvv', methods=['GET'])
+def naac_dvv():
+    return render_template('facu/naac.html', active_section="naac-dvv")
+
+@frontend_bp.route('/naac/appeal', methods=['GET'])
+def naac_appeal():
+    return render_template('facu/naac.html', active_section="naac-appeal")
+
+@frontend_bp.route('/naac/iqac', methods=['GET'])
+def naac_iqac():
+    return render_template('facu/naac.html', active_section="iqac")
+
+@frontend_bp.route('/naac/strategic-plan', methods=['GET'])
+def naac_strategic_plan():
+    return render_template('facu/naac.html', active_section="strategic-plan")
+
+@frontend_bp.route('/naac/aqar', methods=['GET'])
+def naac_aqar():
+    return render_template('facu/naac.html', active_section="aqar")
+
+@frontend_bp.route('/naac/iiqa', methods=['GET'])
+def naac_iiqa():
+    return render_template('facu/naac.html', active_section="iiqa")
+
+@frontend_bp.route('/naac/ssr', methods=['GET'])
+def naac_ssr():
+    return render_template('facu/naac.html', active_section="ssr")
+
+@frontend_bp.route('/naac/criteria-docs', methods=['GET'])
+def naac_criteria_docs():
+    return render_template('facu/naac.html', active_section="criteria-docs")
+
+@frontend_bp.route('/naac/institutional', methods=['GET'])
+def naac_institutional():
+    return render_template('facu/naac.html', active_section="institutional")

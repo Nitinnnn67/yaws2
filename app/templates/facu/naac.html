@@ -12,23 +12,22 @@
     <!-- NAAC Navigation -->
     <nav class="naac-nav">
       <ul class="m3-list">
-        <li><a href="#naac-dvv" class="view-btn">NAAC – DVV</a></li>
-        <li><a href="#naac-appeal" class="view-btn">NAAC – Appeal</a></li>
-        <li><a href="#iqac" class="view-btn">IQAC</a></li>
-        <li><a href="#strategic-plan" class="view-btn">Strategic Plan</a></li>
-        <li><a href="#aqar" class="view-btn">AQAR</a></li>
-        <li><a href="#iiqa" class="view-btn">IIQA</a></li>
-        <li><a href="#ssr" class="view-btn">SSR</a></li>
-        <li><a href="#criteria-docs" class="view-btn">Criteria-wise Docs</a></li>
-        <li><a href="#documentation" class="view-btn">Documentation</a></li>
-        <li><a href="#institutional" class="view-btn">Institutional Distinctiveness</a></li>
+        <li><a href="{{ url_for('frontend.naac_dvv') }}" class="view-btn {% if active_section == 'naac-dvv' %}active{% endif %}">NAAC – DVV</a></li>
+        <li><a href="{{ url_for('frontend.naac_appeal') }}" class="view-btn {% if active_section == 'naac-appeal' %}active{% endif %}">NAAC – Appeal</a></li>
+        <li><a href="{{ url_for('frontend.naac_iqac') }}" class="view-btn {% if active_section == 'iqac' %}active{% endif %}">IQAC</a></li>
+        <li><a href="{{ url_for('frontend.naac_strategic_plan') }}" class="view-btn {% if active_section == 'strategic-plan' %}active{% endif %}">Strategic Plan</a></li>
+        <li><a href="{{ url_for('frontend.naac_aqar') }}" class="view-btn {% if active_section == 'aqar' %}active{% endif %}">AQAR</a></li>
+        <li><a href="{{ url_for('frontend.naac_iiqa') }}" class="view-btn {% if active_section == 'iiqa' %}active{% endif %}">IIQA</a></li>
+        <li><a href="{{ url_for('frontend.naac_ssr') }}" class="view-btn {% if active_section == 'ssr' %}active{% endif %}">SSR</a></li>
+        <li><a href="{{ url_for('frontend.naac_criteria_docs') }}" class="view-btn {% if active_section == 'criteria-docs' %}active{% endif %}">Criteria-wise Documentation</a></li>
+        <li><a href="{{ url_for('frontend.naac_institutional') }}" class="view-btn {% if active_section == 'institutional' %}active{% endif %}">Institutional Distinctiveness</a></li>
       </ul>
     </nav>
 
     <!-- Dynamic Content Sections -->
     <div class="content-sections">
       <!-- NAAC DVV Section -->
-      <section id="naac-dvv" class="naac-section">
+      <section id="naac-dvv" class="naac-section {% if active_section == 'naac-dvv' %}active{% endif %}" {% if active_section != 'naac-dvv' %}style="display:none"{% endif %}>
         <h2>NAAC DVV</h2>
         <div class="dvv-grid">
           <table class="data-table">
@@ -131,7 +130,7 @@
       </section>
 
       <!-- NAAC Appeal Section -->
-      <section id="naac-appeal" class="naac-section">
+      <section id="naac-appeal" class="naac-section {% if active_section == 'naac-appeal' %}active{% endif %}" {% if active_section != 'naac-appeal' %}style="display:none"{% endif %}>
         <h2>NAAC Appeal</h2>
         <div class="appeal-grid">
           <table class="data-table">
@@ -168,7 +167,7 @@
       </section>
 
       <!-- IQAC Section -->
-      <section id="iqac" class="naac-section">
+      <section id="iqac" class="naac-section {% if active_section == 'iqac' %}active{% endif %}" {% if active_section != 'iqac' %}style="display:none"{% endif %}>
         <h2>IQAC Details</h2>
         <div class="tab-container">
           <div class="tab-buttons">
@@ -217,7 +216,7 @@
       </section>
 
       <!-- Strategic Plan Section -->
-      <section id="strategic-plan" class="naac-section">
+      <section id="strategic-plan" class="naac-section {% if active_section == 'strategic-plan' %}active{% endif %}" {% if active_section != 'strategic-plan' %}style="display:none"{% endif %}>
         <h2>Strategic Plan</h2>
         <div class="strategic-plan-content">
           <p>View our institution's strategic plan document:</p>
@@ -226,7 +225,7 @@
       </section>
 
       <!-- AQAR Section -->
-      <section id="aqar" class="naac-section">
+      <section id="aqar" class="naac-section {% if active_section == 'aqar' %}active{% endif %}" {% if active_section != 'aqar' %}style="display:none"{% endif %}>
         <h2>AQAR Reports</h2>
         <div class="aqar-reports">
           <table class="data-table">
@@ -267,7 +266,7 @@
       </section>
 
       <!-- IIQA Section -->
-      <section id="iiqa" class="naac-section">
+      <section id="iiqa" class="naac-section {% if active_section == 'iiqa' %}active{% endif %}" {% if active_section != 'iiqa' %}style="display:none"{% endif %}>
         <h2>IIQA</h2>
         <div class="iiqa-content">
           <!-- Content will be added later - currently blank as requested -->
@@ -275,7 +274,7 @@
       </section>
 
       <!-- SSR Section -->
-      <section id="ssr" class="naac-section">
+      <section id="ssr" class="naac-section {% if active_section == 'ssr' %}active{% endif %}" {% if active_section != 'ssr' %}style="display:none"{% endif %}>
         <h2>SSR Documents</h2>
         <div class="ssr-documents">
           <table class="data-table">
@@ -300,7 +299,7 @@
       </section>
 
       <!-- Criteria-wise Documentation Section -->
-      <section id="criteria-docs" class="naac-section">
+      <section id="criteria-docs" class="naac-section {% if active_section == 'criteria-docs' %}active{% endif %}" {% if active_section != 'criteria-docs' %}style="display:none"{% endif %}>
         <h2>Criteria-wise Documentation</h2>
         <div class="criteria-docs">
           <table class="data-table">
@@ -341,7 +340,7 @@
       </section>
 
       <!-- Institutional Distinctiveness -->
-      <section id="institutional" class="naac-section">
+      <section id="institutional" class="naac-section {% if active_section == 'institutional' %}active{% endif %}" {% if active_section != 'institutional' %}style="display:none"{% endif %}>
         <h2>Institutional Distinctiveness</h2>
         <div class="vision-mission">
           <div class="vision">
