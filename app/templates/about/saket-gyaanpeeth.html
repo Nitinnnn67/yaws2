@@ -185,19 +185,82 @@
     
     .timeline-content {
         width: calc(100% - 40px);
-        float: right;
+        float: right !important;
         margin-left: 40px;
+        margin-bottom: 3rem;
     }
     
     .timeline-year {
-        left: 10px;
+        left: 1px;
         transform: none;
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
+        font-size: 0.9rem;
     }
     
     .values-container {
         flex-direction: column;
+    }
+    
+    .about-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    .about-header h1 {
+        font-size: 2rem;
+    }
+    
+    .about-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .about-content {
+        font-size: 1rem;
+    }
+    
+    .value-item {
+        min-width: 200px;
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .about-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .timeline-content {
+        padding: 1rem;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.1rem;
+       
+    }
+    h3{
+        right: 18%;
+        transform: translateX(18%);
+    }
+    
+    .timeline-content p {
+        font-size: 0.95rem;
+    }
+    
+    .value-item i {
+        font-size: 2rem;
+    }
+    
+    .value-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .value-item p {
+        font-size: 0.95rem;
     }
 }
 {% endblock %}
