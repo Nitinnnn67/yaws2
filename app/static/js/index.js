@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNoticeBoard();
   initCaptions();
   initDateTime();
+  initLeadershipSlideshow();
   
   // Only initialize parallax on larger screens
   if (window.innerWidth > 768) {
@@ -340,4 +341,99 @@ function initParallax() {
   
   // Initial update
   updateParallax();
+}
+
+/**
+ * Leadership photos slideshow functionality
+ */
+function initLeadershipSlideshow() {
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.message-slide');
+  const indicators = document.querySelectorAll('.message-indicator');
+  
+  if (!slides.length || !indicators.length) return;
+  
+  const totalSlides = slides.length;
+  
+  function showSlide(index) {
+    // Hide all slides
+    slides.forEach(slide => {
+      slide.classList.remove('active');
+    });
+    
+    // Update indicators
+    indicators.forEach(indicator => {
+      indicator.classList.remove('active');
+    });
+    
+    // Show current slide
+    slides[index].classList.add('active');
+    indicators[index].classList.add('active');
+    
+    // Update counter if it exists
+    const counter = document.querySelector('.message-count');
+    if (counter) {
+      counter.textContent = `${index + 1}/${totalSlides}`;
+    }
+    
+    currentSlide = index;
+  }
+  
+  function nextSlide() {
+    let next = currentSlide + 1;
+    if (next >= totalSlides) next = 0;
+    showSlide(next);
+  }
+  
+  function prevSlide() {
+    let prev = currentSlide - 1;
+    if (prev < 0) prev = totalSlides - 1;
+    showSlide(prev);
+  }
+  
+  // Set up indicator clicks
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      showSlide(index);
+    });
+  });
+  
+  // Set up navigation buttons
+  const prevBtn = document.querySelector('.message-prev');
+  const nextBtn = document.querySelector('.message-next');
+  
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      prevSlide();
+    });
+  }
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      nextSlide();
+    });
+  }
+  
+  // Auto-advance slides every 5 seconds
+  setInterval(nextSlide, 5000);
+}
+
+/**
+ * Toggle expandable content for vision and mission sections
+ */
+window.toggleContent = function(id) {
+  const content = document.querySelector(`#${id} .expanded-content`);
+  const button = document.querySelector(`#${id} .expand-btn`);
+  
+  if (!content || !button) return;
+  
+  if (content.classList.contains('show')) {
+    content.classList.remove('show');
+    button.textContent = 'Read More';
+  } else {
+    content.classList.add('show');
+    button.textContent = 'Read Less';
+  }
 }
