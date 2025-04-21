@@ -914,6 +914,341 @@
   }
   
   /* ============================================
+     Publications & Magazines Section - Material 3
+============================================ */
+.publications-magazines {
+  padding: 60px 0;
+  background-color: var(--m3-surface);
+}
+
+.publications-magazines .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.publications-magazines .section-title {
+  text-align: center;
+  font-size: 2.25rem;
+  color: var(--m3-primary);
+  margin-bottom: 40px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.publications-magazines .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--m3-tertiary);
+  transition: width 0.3s ease;
+}
+
+.publications-magazines .section-title:hover::after {
+  width: 140px;
+}
+
+/* UGC Sponsored Centers - Enhanced Flexbox Layout */
+.ugc-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.col-sm-4 {
+  flex: 1 1 300px;
+  max-width: 380px;
+  min-width: 280px;
+}
+
+.ugcsponsoredbox {
+  background-color: white;
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-2);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ugcsponsoredbox:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--m3-shadow-4);
+}
+
+.ugcsponsoredboximg {
+  height: 200px;
+  overflow: hidden;
+}
+
+.ugcsponsoredboximg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.ugcsponsoredbox:hover .ugcsponsoredboximg img {
+  transform: scale(1.05);
+}
+
+.ugcmorebtnarea {
+  position: absolute;
+  right: 20px;
+  bottom: 60px;
+  z-index: 2;
+}
+
+.ugcmorebtn {
+  width: 40px;
+  height: 40px;
+  background-color: var(--m3-primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--m3-shadow-2);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ugcmorebtn:hover {
+  background-color: var(--m3-tertiary);
+  transform: rotate(90deg);
+}
+
+.ugcsponsoredboxcont {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ugcsponsoredboxcont h5 {
+  font-size: 1.2rem;
+  color: var(--m3-primary);
+  margin-bottom: 10px;
+}
+
+.textgray13light {
+  color: var(--m3-on-surface-variant);
+  font-style: italic;
+}
+
+/* College Magazine Section - Enhanced Flexbox Layout */
+.magazine-section {
+  margin-top: 30px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 30px;
+}
+
+.magazine-cover {
+  position: relative;
+  border-radius: var(--m3-shape-medium);
+  overflow: hidden;
+  box-shadow: var(--m3-shadow-3);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.magazine-cover:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--m3-shadow-5);
+}
+
+.magazineimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+  min-height: 350px;
+  max-height: 450px;
+}
+
+.magazine-cover:hover .magazineimg {
+  transform: scale(1.05);
+}
+
+.magazine-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 20px;
+  color: white;
+  transform: translateY(70px);
+  transition: transform 0.4s;
+}
+
+.magazine-cover:hover .magazine-overlay {
+  transform: translateY(0);
+}
+
+.magazine-overlay h3 {
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.magazine-overlay p {
+  margin: 0 0 10px 0;
+  opacity: 0.9;
+}
+
+.view-text {
+  display: inline-block;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(10px);
+}
+
+.magazine-cover:hover .view-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.col-sm-8 {
+  flex: 2 1 450px;
+}
+
+.magazine-info {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.magazine-info h3 {
+  font-size: 1.75rem;
+  color: var(--m3-primary);
+  margin-bottom: 15px;
+}
+
+.magazine-info p {
+  margin-bottom: 25px;
+  line-height: 1.6;
+  color: var(--m3-on-surface);
+}
+
+.magazine-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.magazine-btn {
+  padding: 10px 20px;
+  border-radius: var(--m3-shape-small);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-btn {
+  background-color: var(--m3-primary);
+  color: white;
+  box-shadow: var(--m3-shadow-1);
+}
+
+.primary-btn:hover {
+  background-color: var(--m3-tertiary);
+  box-shadow: var(--m3-shadow-2);
+  transform: translateY(-3px);
+}
+
+.secondary-btn {
+  background-color: var(--m3-secondary-container);
+  color: var(--m3-on-secondary-container);
+}
+
+.secondary-btn:hover {
+  background-color: var(--m3-tertiary-container);
+  color: var(--m3-on-tertiary-container);
+  transform: translateY(-3px);
+}
+
+/* Responsive styles for publications and magazines */
+@media (max-width: 992px) {
+  .col-sm-4 {
+    flex: 1 1 280px;
+  }
+  
+  .col-sm-8 {
+    flex: 1 1 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .publications-magazines {
+    padding: 40px 0;
+  }
+  
+  .publications-magazines .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 30px;
+  }
+  
+  .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .col-sm-4, .col-sm-8 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  
+  .magazineimg {
+    min-height: 250px;
+    max-height: 300px;
+  }
+  
+  .ugcmorebtnarea {
+    bottom: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ugc-row {
+    gap: 20px;
+  }
+  
+  .magazine-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .magazine-btn {
+    width: 100%;
+  }
+}
+
+/* ============================================
      Keyframes
   ============================================ */
   @keyframes fadeInUp {
