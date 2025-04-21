@@ -60,7 +60,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Rest of your existing code for form inputs, contact form, etc.
+    // Back to top button functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    // Show/hide the button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+    
+    // Smooth scroll to top when clicked
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Rest of your existing code
     const formInputs = document.querySelectorAll('.m3-text-field input');
     formInputs.forEach(input => {
         const validateInput = () => {
@@ -175,3 +195,4 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.reset();
     });
 });
+
