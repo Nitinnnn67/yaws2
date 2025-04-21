@@ -165,9 +165,16 @@ function initCarousel() {
 }
 
 /**
- * Notice board auto-scrolling functionality
+ * Notice board functionality including auto-scrolling and API-based notice fetching
  */
 function initNoticeBoard() {
+  // Notice fetch variables
+  let currentGeneralPage = 1;
+  let currentExamPage = 1;
+  const perPage = 5;
+  let loading = false;
+  let scrollTimer = null;
+  
   // Get notice content elements
   const generalNoticeContent = document.getElementById('generalNoticeContent');
   const examNoticeContent = document.getElementById('examNoticeContent');
@@ -176,6 +183,95 @@ function initNoticeBoard() {
   
   // Check if elements exist
   if (!generalNoticeContent || !examNoticeContent) return;
+
+  // Format dates in IST timezone
+  function formatDate(dateString) {
+    const options = {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+      timeZone: 'Asia/Kolkata' // IST timezone
+    };
+    return new Date(dateString).toLocaleDateString('en-IN', options);
+  }
+
+  // Fetch notices from the API
+  async function fetchNotices(page, type = 'general') {
+    try {
+      loading = true;
+      const loadingElement = document.getElementById('noticeLoading');
+      if (loadingElement) loadingElement.style.display = 'block';
+
+      const response = await fetch(`/api/notices?page=${page}&per_page=${perPage}&type=${type}`);
+      const data = await response.json();
+      
+      // Select the appropriate container based on notice type
+      const noticeContainer = type === 'general' 
+        ? document.getElementById('generalNoticeContent') 
+        : document.getElementById('examNoticeContent');
+      
+      if (!noticeContainer) return;
+      
+      // Filter notices to only show those from the past 2 days
+      const twoDaysAgo = new Date();
+      twoDaysAgo.setDate(twoDaysAgo.getDate() - 2);
+      
+      const recentNotices = data.notices.filter(notice => {
+        const noticeDate = new Date(notice.date_uploaded);
+        return noticeDate >= twoDaysAgo;
+      });
+      
+      recentNotices.forEach(notice => {
+        const noticeElement = document.createElement('div');
+        noticeElement.className = 'notice';
+        noticeElement.innerHTML = `
+          <span class="notice-date">${formatDate(notice.date_uploaded)}</span>
+          <a href="${notice.url}" target="_blank" class="notice-link">
+            ${notice.title}
+            <span class="material-icons notice-icon">arrow_forward</span>
+          </a>
+        `;
+        noticeContainer.appendChild(noticeElement);
+      });
+
+      // Update load more button visibility if it exists
+      const loadMoreButton = document.getElementById(`loadMore${type.charAt(0).toUpperCase() + type.slice(1)}Button`);
+      if (loadMoreButton) {
+        loadMoreButton.style.display = data.has_next ? 'block' : 'none';
+      }
+    } catch (error) {
+      console.error(`Error fetching ${type} notices:`, error);
+    } finally {
+      loading = false;
+      const loadingElement = document.getElementById('noticeLoading');
+      if (loadingElement) loadingElement.style.display = 'none';
+    }
+  }
+
+  // Initial fetch of notices
+  fetchNotices(currentGeneralPage, 'general');
+  fetchNotices(currentExamPage, 'exam');
+
+  // Set up load more button functionality
+  const loadMoreGeneralBtn = document.getElementById('loadMoreGeneralButton');
+  if (loadMoreGeneralBtn) {
+    loadMoreGeneralBtn.addEventListener('click', () => {
+      if (!loading) {
+        currentGeneralPage++;
+        fetchNotices(currentGeneralPage, 'general');
+      }
+    });
+  }
+
+  const loadMoreExamBtn = document.getElementById('loadMoreExamButton');
+  if (loadMoreExamBtn) {
+    loadMoreExamBtn.addEventListener('click', () => {
+      if (!loading) {
+        currentExamPage++;
+        fetchNotices(currentExamPage, 'exam');
+      }
+    });
+  }
 
   // Set up hover event listeners to pause/resume animation
   if (generalNoticeContent) {
@@ -230,6 +326,27 @@ function initNoticeBoard() {
       }
     });
   }
+  
+  // Export pause/resume scroll functions for use in HTML
+  window.pauseScroll = function() {
+    const generalContent = document.querySelector('#generalNoticeContent');
+    const examContent = document.querySelector('#examNoticeContent');
+    
+    if (generalContent) generalContent.style.animationPlayState = 'paused';
+    if (examContent) examContent.style.animationPlayState = 'paused';
+    
+    if (scrollTimer) clearTimeout(scrollTimer);
+  };
+  
+  window.resumeScroll = function() {
+    const generalContent = document.querySelector('#generalNoticeContent');
+    const examContent = document.querySelector('#examNoticeContent');
+    
+    scrollTimer = setTimeout(() => {
+      if (generalContent) generalContent.style.animationPlayState = 'running';
+      if (examContent) examContent.style.animationPlayState = 'running';
+    }, 500);
+  };
   
   // Export these functions for use in HTML
   window.switchNoticeTab = function(type) {

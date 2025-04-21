@@ -8,13 +8,22 @@ from datetime import datetime
 
 api_bp = Blueprint('api', __name__, url_prefix='/api')
 
-# General route for all notices (maintaining compatibility)
+# Combined route for all notices with optional type filtering
 @api_bp.route('/notices', methods=['GET'])
 def get_notices():
     page = request.args.get('page', 1, type=int)
     per_page = request.args.get('per_page', 10, type=int)
+    notice_type = request.args.get('type')
     
-    pagination = Notice.query.order_by(Notice.date_uploaded.desc()).paginate(page=page, per_page=per_page)
+    # Build query based on parameters
+    query = Notice.query
+    
+    # Filter by type if specified
+    if notice_type:
+        query = query.filter_by(notice_type=notice_type)
+    
+    # Apply sorting and pagination
+    pagination = query.order_by(Notice.date_uploaded.desc()).paginate(page=page, per_page=per_page)
     notices = pagination.items
     
     notice_list = []
@@ -23,7 +32,8 @@ def get_notices():
             'id': notice.id,
             'title': notice.title,
             'url': notice.url,
-            'date_uploaded': notice.date_uploaded.isoformat() if notice.date_uploaded else None
+            'date_uploaded': notice.date_uploaded.isoformat() if notice.date_uploaded else None,
+            'notice_type': notice.notice_type
         }
         notice_list.append(notice_data)
     
@@ -36,61 +46,15 @@ def get_notices():
         'has_prev': pagination.has_prev
     })
 
-# New route for general notices
+# For backward compatibility - redirect to main notices route
 @api_bp.route('/notices/general', methods=['GET'])
 def get_general_notices():
-    page = request.args.get('page', 1, type=int)
-    per_page = request.args.get('per_page', 10, type=int)
-    
-    pagination = Notice.query.filter_by(notice_type='general').order_by(Notice.date_uploaded.desc()).paginate(page=page, per_page=per_page)
-    notices = pagination.items
-    
-    notice_list = []
-    for notice in notices:
-        notice_data = {
-            'id': notice.id,
-            'title': notice.title,
-            'url': notice.url,
-            'date_uploaded': notice.date_uploaded.isoformat() if notice.date_uploaded else None
-        }
-        notice_list.append(notice_data)
-    
-    return jsonify({
-        'notices': notice_list,
-        'total': pagination.total,
-        'pages': pagination.pages,
-        'current_page': page,
-        'has_next': pagination.has_next,
-        'has_prev': pagination.has_prev
-    })
+    return get_notices()
 
-# New route for examination notices
+# For backward compatibility - redirect to main notices route
 @api_bp.route('/notices/exam', methods=['GET'])
 def get_exam_notices():
-    page = request.args.get('page', 1, type=int)
-    per_page = request.args.get('per_page', 10, type=int)
-    
-    pagination = Notice.query.filter_by(notice_type='exam').order_by(Notice.date_uploaded.desc()).paginate(page=page, per_page=per_page)
-    notices = pagination.items
-    
-    notice_list = []
-    for notice in notices:
-        notice_data = {
-            'id': notice.id,
-            'title': notice.title,
-            'url': notice.url,
-            'date_uploaded': notice.date_uploaded.isoformat() if notice.date_uploaded else None
-        }
-        notice_list.append(notice_data)
-    
-    return jsonify({
-        'notices': notice_list,
-        'total': pagination.total,
-        'pages': pagination.pages,
-        'current_page': page,
-        'has_next': pagination.has_next,
-        'has_prev': pagination.has_prev
-    })
+    return get_notices()
 
 @api_bp.route('/notices', methods=['POST'])
 def add_notice():

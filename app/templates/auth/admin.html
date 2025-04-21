@@ -409,9 +409,17 @@
                 elements.noticeForm.addEventListener('submit', handleNoticeFormSubmit);
                 elements.imageForm.addEventListener('submit', handleImageFormSubmit);
                 
+                // Add event listener for category change
+                const categorySelect = document.getElementById('image-category');
+                if (categorySelect) {
+                    categorySelect.addEventListener('change', function() {
+                        fetchImages(this.value);
+                    });
+                }
+                
                 // Fetch initial data
                 fetchNotices();
-                fetchImages();
+                fetchImages(document.getElementById('image-category').value);
             }
             
             // Tab switching function
@@ -539,18 +547,19 @@
                     });
             }
             
+            
             // Function to fetch images
-            function fetchImages() {
+            function fetchImages(category = 'cultural') {
                 elements.imagesLoadingElem.style.display = 'block';
                 elements.adminImageGrid.innerHTML = '';
                 
-                fetch(API_ENDPOINTS.IMAGES + '?category=cultural')
+                fetch(`${API_ENDPOINTS.IMAGES}?category=${category}`)
                     .then(response => response.json())
                     .then(data => {
                         elements.imagesLoadingElem.style.display = 'none';
                         
                         if (!data.images || data.images.length === 0) {
-                            elements.adminImageGrid.innerHTML = '<div class="no-images">No cultural event images available</div>';
+                            elements.adminImageGrid.innerHTML = `<div class="no-images">No ${category} images available</div>`;
                             return;
                         }
                         
