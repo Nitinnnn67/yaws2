@@ -389,14 +389,14 @@
     opacity: 1;
     transform: translateY(20px);
     transition: all 0.4s ease;
-    padding: 0 32px;
+    padding: 0 32px 0 0;
     margin-bottom: 24px;
   }
   
   .content h2 {
     color: var(--m3-primary);
     font-size: 1.6rem;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -421,7 +421,7 @@
   }
   
   .content li::before {
-    content: '→';
+    content: '°';
     position: absolute;
     left: 0;
     color: var(--m3-tertiary);
@@ -1000,7 +1000,7 @@
 .vision-mission-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  /* gap: 15px; */
   margin-top: 15px;
 }
 
@@ -1015,7 +1015,7 @@
   border-radius: 8px;
   padding: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  gap: 20px;
+  /* gap: 20px; */
   min-height: 110px;
 }
 
@@ -1055,7 +1055,7 @@
 }
 
 .expand-btn {
-  background: #8B4513;
+  background: var(--m3-primary);
   color: white;
   border: none;
   padding: 2px 5px;
@@ -1069,7 +1069,7 @@
 }
 
 .expand-btn:hover {
-  background: #a05a2c;
+  background: var(--m3-on-surface);
 }
 
 /* Leadership Photos Carousel */
