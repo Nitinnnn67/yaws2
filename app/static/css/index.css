@@ -874,7 +874,8 @@
   /* ============================================
      Publications & Magazines Section - Material 3
 ============================================ */
-.publications-magazines {
+.publications-magazines { 
+
   padding: 60px 0;
   background-color: var(--m3-surface);
 }
@@ -1110,7 +1111,7 @@
   color: var(--m3-on-surface);
 }
 
-.magazine-actions {
+/* .magazine-actions {
   display: flex;
   gap: 15px;
   margin-top: auto;
@@ -1148,7 +1149,7 @@
   background-color: var(--m3-tertiary-container);
   color: var(--m3-on-tertiary-container);
   transform: translateY(-3px);
-}
+} */
 
 /* Responsive styles for publications and magazines */
 @media (max-width: 992px) {
@@ -1191,7 +1192,7 @@
   }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .ugc-row {
     gap: 20px;
   }
@@ -1202,9 +1203,9 @@
   }
   
   .magazine-btn {
-    width: 100%;
+    width: 50%;
   }
-}
+} */
 
 /* ============================================
      Keyframes
@@ -1695,9 +1696,9 @@
   }
   
   /* Ensure proper Material 3 spacing */
-  section {
+  /* section {
     margin-bottom: 40px;
-  }
+  } */
   
   /* Material 3 style scrollbar */
   ::-webkit-scrollbar {
