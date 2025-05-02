@@ -344,34 +344,50 @@ header {
 
 .logo-container {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  align-items: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo-college-wrapper {
+  padding: 0 10px;
+}
+
+.logo-college-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo {
+ 
 }
 
 .logo img {
-  height: 130px;
+  height: 50px;
+  width: 80%;
   max-width: 100%;
+  object-fit: contain;
   border-radius: var(--m3-shape-small);
 }
 
 .college-name {
   text-align: left;
-  flex: 1;
-  min-width: 250px;
+  margin-left: 37px;
 }
 
 .college-name h1 {
-  font-size: 2rem;
-  margin: 0;
+  font-size: 1.5rem;
+  margin: 0px;
   line-height: 1.2;
   font-weight: 500;
   color: var(--m3-primary);
 }
 
 .college-name p {
-  font-size: 0.9rem;
-  margin: 5px 0 0;
+  font-size: 0.8rem;
+  margin: 2px 0;
   color: var(--m3-on-surface-variant);
 }
 

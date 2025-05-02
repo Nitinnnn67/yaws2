@@ -14,14 +14,18 @@
 <body>
   <header>
     <div class="logo-container">
-      <div class="logo">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="College Logo" />
-      </div>
-      <div class="college-name">
-        <p>Saket Gyanpeeth's</p>
-        <h1>Saket College of Arts Science And Commerce</h1>
-        <p>Permanently Affiliated To University Of Mumbai</p>
-        <p><b>NAAC Accredited 'B' Grade</b></p>
+      <div class="logo-college-wrapper">
+        <div class="logo-college-container">
+          <div class="logo">
+            <img src="{{ url_for('static', filename='logo2.png') }}" alt="College Logo" />
+          </div>
+          <div class="college-name">
+            
+            <h1>Saket College of Arts Science And Commerce</h1>
+            <p>Permanently Affiliated To University Of Mumbai</p>
+            <p><b>NAAC Accredited 'B' Grade</b></p>
+          </div>
+        </div>
       </div>
       <div class="facu">
         <a href="{{ url_for('frontend.facu', subpath='naac') }}">NAAC/IQAC</a>
