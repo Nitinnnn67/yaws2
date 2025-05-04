@@ -875,7 +875,7 @@
      Publications & Magazines Section - Material 3
 ============================================ */
 .publications-magazines { 
-
+  display: flex;
   padding: 60px 0;
   background-color: var(--m3-surface);
 }
@@ -884,6 +884,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  width: 100%;
 }
 
 .publications-magazines .section-title {
@@ -912,12 +913,25 @@
   width: 140px;
 }
 
+/* Main content container to hold both UGC and Magazine sections */
+.publications-content {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-start;
+}
+
 /* UGC Sponsored Centers - Enhanced Flexbox Layout */
+.ugc-section {
+  flex: 1;
+  min-width: 300px;
+}
+
 .ugc-row {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   flex-wrap: wrap;
 }
 
@@ -927,229 +941,11 @@
   min-width: 280px;
 }
 
-.ugcsponsoredbox {
-  background-color: white;
-  border-radius: var(--m3-shape-medium);
-  box-shadow: var(--m3-shadow-2);
-  overflow: hidden;
-  position: relative;
-  transition: all 0.3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.ugcsponsoredbox:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--m3-shadow-4);
-}
-
-.ugcsponsoredboximg {
-  height: 200px;
-  overflow: hidden;
-}
-
-.ugcsponsoredboximg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s;
-}
-
-.ugcsponsoredbox:hover .ugcsponsoredboximg img {
-  transform: scale(1.05);
-}
-
-.ugcmorebtnarea {
-  position: absolute;
-  right: 20px;
-  bottom: 60px;
-  z-index: 2;
-}
-
-.ugcmorebtn {
-  width: 40px;
-  height: 40px;
-  background-color: var(--m3-primary);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 24px;
-  line-height: 1;
-  cursor: pointer;
-  box-shadow: var(--m3-shadow-2);
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ugcmorebtn:hover {
-  background-color: var(--m3-tertiary);
-  transform: rotate(90deg);
-}
-
-.ugcsponsoredboxcont {
-  padding: 20px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.ugcsponsoredboxcont h5 {
-  font-size: 1.2rem;
-  color: var(--m3-primary);
-  margin-bottom: 10px;
-}
-
-.textgray13light {
-  color: var(--m3-on-surface-variant);
-  font-style: italic;
-}
-
-/* College Magazine Section - Enhanced Flexbox Layout */
+/* Magazine Section - Now placed side by side with UGC */
 .magazine-section {
-  margin-top: 30px;
+  flex: 1;
+  min-width: 300px;
 }
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  gap: 30px;
-}
-
-.magazine-cover {
-  position: relative;
-  border-radius: var(--m3-shape-medium);
-  overflow: hidden;
-  box-shadow: var(--m3-shadow-3);
-  transition: all 0.3s ease;
-  height: 100%;
-}
-
-.magazine-cover:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--m3-shadow-5);
-}
-
-.magazineimg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s;
-  min-height: 350px;
-  max-height: 450px;
-}
-
-.magazine-cover:hover .magazineimg {
-  transform: scale(1.05);
-}
-
-.magazine-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-  padding: 20px;
-  color: white;
-  transform: translateY(70px);
-  transition: transform 0.4s;
-}
-
-.magazine-cover:hover .magazine-overlay {
-  transform: translateY(0);
-}
-
-.magazine-overlay h3 {
-  font-size: 1.25rem;
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-
-.magazine-overlay p {
-  margin: 0 0 10px 0;
-  opacity: 0.9;
-}
-
-.view-text {
-  display: inline-block;
-  font-weight: 500;
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
-  transform: translateY(10px);
-}
-
-.magazine-cover:hover .view-text {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.col-sm-8 {
-  flex: 2 1 450px;
-}
-
-.magazine-info {
-  padding: 20px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.magazine-info h3 {
-  font-size: 1.75rem;
-  color: var(--m3-primary);
-  margin-bottom: 15px;
-}
-
-.magazine-info p {
-  margin-bottom: 25px;
-  line-height: 1.6;
-  color: var(--m3-on-surface);
-}
-
-/* .magazine-actions {
-  display: flex;
-  gap: 15px;
-  margin-top: auto;
-}
-
-.magazine-btn {
-  padding: 10px 20px;
-  border-radius: var(--m3-shape-small);
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.primary-btn {
-  background-color: var(--m3-primary);
-  color: white;
-  box-shadow: var(--m3-shadow-1);
-}
-
-.primary-btn:hover {
-  background-color: var(--m3-tertiary);
-  box-shadow: var(--m3-shadow-2);
-  transform: translateY(-3px);
-}
-
-.secondary-btn {
-  background-color: var(--m3-secondary-container);
-  color: var(--m3-on-secondary-container);
-}
-
-.secondary-btn:hover {
-  background-color: var(--m3-tertiary-container);
-  color: var(--m3-on-tertiary-container);
-  transform: translateY(-3px);
-} */
 
 /* Responsive styles for publications and magazines */
 @media (max-width: 992px) {
@@ -1172,6 +968,11 @@
     margin-bottom: 30px;
   }
   
+  /* Stack vertically on smaller screens */
+  .publications-content {
+    flex-direction: column;
+  }
+  
   .row {
     flex-direction: column;
     gap: 20px;
@@ -1192,20 +993,174 @@
   }
 }
 
-/* @media (max-width: 480px) {
-  .ugc-row {
-    gap: 20px;
+/* --- UGC Sponsored Centers & Magazine Section Custom Styles --- */
+.ugcsponsoredbox {
+  background: var(--m3-surface-container-high, #f8f8f8);
+  border-radius: 8px;
+  box-shadow: var(--m3-shadow-1, 0 1px 3px rgba(0,0,0,0.1));
+  padding: 12px;
+  margin-bottom: 16px;
+  position: relative;
+  transition: all 0.2s ease;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ugcsponsoredbox:hover {
+  box-shadow: var(--m3-shadow-2, 0 3px 6px rgba(0,0,0,0.15));
+  transform: translateY(-2px);
+}
+
+.ugcsponsoredboximg {
+  width: 100%;
+  max-width: 100px;
+  margin: 0 auto 8px auto;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ugcsponsoredboximg img {
+  width: 100%;
+  height: 75px;
+  object-fit: cover;
+}
+
+.ugcsponsoredboxcont {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.ugcsponsoredboxcont h5 {
+  font-size: 1rem;
+  color: var(--m3-primary, #1a365d);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.ugcsponsoredboxcont .textgray13light {
+  color: var(--m3-on-surface-variant, #555);
+  font-size: 0.85rem;
+}
+
+.ugcmorebtnarea {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.ugcmorebtn {
+  background: var(--m3-primary, #1a365d);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ugcmorebtn:hover {
+  background: var(--m3-primary-container, #2c4c7c);
+}
+
+.magazine-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.magazine-cover {
+  position: relative;
+  width: 180px;
+  height: 240px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--m3-shadow-1, 0 1px 3px rgba(0,0,0,0.1));
+  margin: 0 auto 8px auto;
+  background: var(--m3-surface, #fff);
+  transition: all 0.2s ease;
+}
+
+.magazine-cover:hover {
+  box-shadow: var(--m3-shadow-2, 0 3px 6px rgba(0,0,0,0.15));
+  transform: translateY(-2px);
+}
+
+.magazineimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.magazine-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  color: white;
+  padding: 12px 8px 8px 8px;
+  text-align: center;
+}
+
+.magazine-overlay h3 {
+  font-size: 0.95rem;
+  margin: 0 0 2px 0;
+  font-weight: 500;
+}
+
+.magazine-overlay p {
+  font-size: 0.8rem;
+  margin: 0 0 4px 0;
+  opacity: 0.9;
+}
+
+.magazine-overlay .view-text {
+  font-size: 0.8rem;
+  background: white;
+  color: var(--m3-primary, #1a365d);
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.magazine-cover:hover .view-text {
+  background: var(--m3-primary, #1a365d);
+  color: white;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .ugcsponsoredbox {
+    min-height: 220px;
+    padding: 10px;
   }
   
-  .magazine-actions {
-    flex-direction: column;
-    gap: 10px;
+  .magazine-cover {
+    width: 160px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ugcsponsoredbox {
+    min-height: 180px;
   }
   
-  .magazine-btn {
-    width: 50%;
+  .magazine-cover {
+    width: 140px;
+    height: 200px;
   }
-} */
+}
+/* --- End UGC & Magazine Section Styles --- */
 
 /* ============================================
      Keyframes
