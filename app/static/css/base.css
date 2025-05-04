@@ -350,24 +350,28 @@ header {
   gap: 20px;
 }
 
-.logo-college-wrapper {
+/* .logo-college-wrapper {
   padding: 0 10px;
-}
+} */
 
 .logo-college-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 0 0 10px 0;
 }
-
-.logo {
- 
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-right: 20px; */
+  padding: 0;   
 }
 
 .logo img {
   height: 50px;
   width: 80%;
-  max-width: 100%;
+  
   object-fit: contain;
   border-radius: var(--m3-shape-small);
 }
@@ -400,7 +404,7 @@ header {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 10px;
-  margin-left: auto;
+  margin: 15px 25px 0 0;
   padding: 0;
 }
 
