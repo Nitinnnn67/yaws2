@@ -111,9 +111,10 @@ function initCarousel() {
   let currentSlide = 0;
   const slides = document.querySelectorAll('.carousel-item');
   const indicatorsContainer = document.querySelector('.carousel-indicators');
+  let autoAdvanceTimer = null;
   
   if (slides.length === 0 || !indicatorsContainer) {
-    console.error("Carousel elements not found");
+    console.warn("Carousel elements not found");
     return;
   }
   
@@ -137,6 +138,14 @@ function initCarousel() {
     
     slides[currentSlide].classList.add('active');
     indicators[currentSlide].classList.add('active');
+    
+    // Clear any existing auto-advance timer
+    if (autoAdvanceTimer) {
+      clearTimeout(autoAdvanceTimer);
+    }
+    
+    // Set up the next slide transition
+    scheduleNextSlide();
   }
   
   function moveSlide(direction) {
@@ -154,8 +163,37 @@ function initCarousel() {
     updateSlides();
   }
   
-  // Auto advance slides
-  setInterval(() => moveSlide(1), 10000);
+  function scheduleNextSlide() {
+    // If we're on a slide with video
+    const currentVideoElement = slides[currentSlide].querySelector('video');
+    
+    if (currentVideoElement) {
+      console.log("Video found in current slide");
+      
+      // Check if video is already playing
+      if (currentVideoElement.paused || currentVideoElement.ended) {
+        console.log("Video is paused or ended, scheduling next slide");
+        autoAdvanceTimer = setTimeout(() => moveSlide(1), 2000);
+      } else {
+        console.log("Video is playing, waiting for it to end");
+        // Make sure we remove any existing event listeners first
+        currentVideoElement.removeEventListener('ended', handleVideoEnd);
+        
+        // Add the event listener for when video ends
+        currentVideoElement.addEventListener('ended', handleVideoEnd);
+      }
+    } else {
+      // No video in this slide, use standard delay
+      console.log("No video in this slide, using standard delay");
+      autoAdvanceTimer = setTimeout(() => moveSlide(1), 2000);
+    }
+  }
+  
+  // Function to handle video end event
+  function handleVideoEnd() {
+    console.log("Video ended, moving to next slide");
+    moveSlide(1);
+  }
   
   // Initialize first slide
   updateSlides();
@@ -468,24 +506,53 @@ function initLeadershipSlideshow() {
   const slides = document.querySelectorAll('.message-slide');
   const indicators = document.querySelectorAll('.message-indicator');
   
-  if (!slides.length || !indicators.length) return;
+  // Verify that we have slides on the page
+  if (!slides || slides.length === 0) {
+    console.log("Leadership slideshow slides not found on this page");
+    return;
+  }
+
+  // Verify that we have indicators on the page
+  if (!indicators || indicators.length === 0) {
+    console.log("Leadership slideshow indicators not found on this page");
+    return;
+  }
+  
+  // Make sure we have the right number of indicators for slides
+  console.log(`Found ${slides.length} slides and ${indicators.length} indicators`);
   
   const totalSlides = slides.length;
   
   function showSlide(index) {
+    // Make sure index is valid
+    if (index < 0 || index >= slides.length) {
+      console.error("Invalid slide index:", index);
+      return;
+    }
+    
     // Hide all slides
-    slides.forEach(slide => {
-      slide.classList.remove('active');
-    });
+    for (let i = 0; i < slides.length; i++) {
+      if (slides[i] && slides[i].classList) {
+        slides[i].classList.remove('active');
+      }
+    }
     
-    // Update indicators
-    indicators.forEach(indicator => {
-      indicator.classList.remove('active');
-    });
+    // Hide all indicators
+    for (let i = 0; i < indicators.length; i++) {
+      if (indicators[i] && indicators[i].classList) {
+        indicators[i].classList.remove('active');
+      }
+    }
     
-    // Show current slide
-    slides[index].classList.add('active');
-    indicators[index].classList.add('active');
+    // Show the current slide
+    if (slides[index] && slides[index].classList) {
+      slides[index].classList.add('active');
+    }
+    
+    // Highlight the current indicator (if it exists)
+    if (index < indicators.length && indicators[index] && indicators[index].classList) {
+      indicators[index].classList.add('active');
+    }
     
     // Update counter if it exists
     const counter = document.querySelector('.message-count');
@@ -509,32 +576,45 @@ function initLeadershipSlideshow() {
   }
   
   // Set up indicator clicks
-  indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => {
-      showSlide(index);
-    });
-  });
+  for (let i = 0; i < indicators.length; i++) {
+    if (indicators[i]) {
+      indicators[i].addEventListener('click', function() {
+        showSlide(i);
+      });
+    }
+  }
   
   // Set up navigation buttons
   const prevBtn = document.querySelector('.message-prev');
   const nextBtn = document.querySelector('.message-next');
   
   if (prevBtn) {
-    prevBtn.addEventListener('click', (e) => {
+    prevBtn.addEventListener('click', function(e) {
       e.preventDefault();
       prevSlide();
     });
   }
   
   if (nextBtn) {
-    nextBtn.addEventListener('click', (e) => {
+    nextBtn.addEventListener('click', function(e) {
       e.preventDefault();
       nextSlide();
     });
   }
   
+  // Initialize first slide
+  showSlide(0);
+  
   // Auto-advance slides every 5 seconds
-  setInterval(nextSlide, 5000);
+  if (slides.length > 1) {
+    try {
+      setInterval(function() {
+        nextSlide();
+      }, 5000);
+    } catch (error) {
+      console.error("Error in leadership slideshow auto-advance:", error);
+    }
+  }
 }
 
 /**
