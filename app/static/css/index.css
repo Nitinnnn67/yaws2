@@ -202,6 +202,164 @@
     font-size: 14px;
   }
 }
+
+/* Enhanced Responsive Design Fixes */
+@media (max-width: 768px) {
+  /* Hero section fixes */
+  .hero {
+    height: 400px;
+    min-height: 400px;
+  }
+  
+  .hero-content {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  /* Message carousel fixes */
+  .message-carousel {
+    height: auto;
+    overflow: visible;
+  }
+  
+  .message-slides {
+    position: relative;
+    height: auto;
+  }
+  
+  .message-slide {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    height: auto;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .message-slide.active {
+    display: flex;
+  }
+  
+  .message-image {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .message-content {
+    width: 100%;
+    padding: 15px;
+  }
+  
+  /* Vision mission section fixes */
+  .noticesvisionmission {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .notices {
+    max-width: 100%;
+    width: 100%;
+    padding-top: 20px;
+  }
+  
+  .vision {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further mobile optimizations */
+  .hero {
+    height: 350px;
+    min-height: 350px;
+  }
+  
+  .hero-content {
+    padding: 15px;
+  }
+  
+  .hero h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .hero p {
+    font-size: 14px;
+    padding-bottom: 15px;
+  }
+  
+  .message-image {
+    height: 180px;
+  }
+  
+  .message-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .message-content h4 {
+    font-size: 0.9rem;
+  }
+  
+  .message-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  /* Adjust controls for better mobile interaction */
+  .message-nav-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  
+  .message-controls {
+    bottom: 8px;
+  }
+  
+  .message-indicator {
+    width: 8px;
+    height: 8px;
+  }
+  
+  /* Stats section adjustments */
+  .stats .stat-card {
+    margin: 5px;
+  }
+  
+  .stats .stat-number {
+    font-size: 2.2rem;
+  }
+}
+
+/* Fix for iPhone SE and other small devices */
+@media (max-width: 375px) {
+  .hero {
+    height: 320px;
+    min-height: 320px;
+  }
+  
+  .message-image {
+    height: 160px;
+  }
+  
+  .message-content {
+    padding: 12px 10px;
+  }
+  
+  .message-content h3 {
+    font-size: 1rem;
+  }
+  
+  .message-content h4 {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+  }
+  
+  .message-text {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+}
   
   /* ============================================
      Caption Card - Material 3
@@ -493,7 +651,7 @@
   @media (max-width: 768px) {
     .noticesvisionmission {
       flex-direction: column;
-      padding: 16px;
+      padding: 15px;
     }
   
     .vision h1 {
@@ -506,11 +664,84 @@
   
     .notices {
       max-width: 100%;
+      width: 100%;
+      padding-top: 20px;
     }
     
     .notice-board {
       min-height: 320px;
       max-height: 400px;
+    }
+
+    .vision {
+      width: 100%;
+    }
+
+    .vision-mission-container {
+      margin-top: 10px;
+    }
+
+    .vm-box {
+      flex-direction: column;
+    }
+
+    /* Fix for message carousel */
+    .message-carousel {
+      height: auto;
+      max-width: 100%;
+      overflow: hidden;
+      display: block;
+    }
+    
+    .message-slide {
+      flex-direction: column;
+      height: auto;
+      min-height: 480px;
+      position: relative;
+    }
+    
+    .message-image,
+    .message-content {
+      width: 100%;
+    }
+    
+    .message-image {
+      height: 180px;
+    }
+    
+    .message-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .message-content {
+      padding: 15px;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .message-slide {
+      min-height: 450px;
+    }
+    
+    .message-image {
+      height: 150px;
+    }
+    
+    .message-controls {
+      bottom: 10px;
+    }
+    
+    .message-nav-btn {
+      width: 30px;
+      height: 30px;
+      font-size: 1rem;
+    }
+  
+    .containervision {
+      padding: 0;
     }
   }
   
@@ -665,12 +896,38 @@
         url('https://gyaanarth.com/wp-content/uploads/2022/01/AF1QipN_I2MYJ3dkXm73FohlCKAffEW3ZsTgYptFjMmas1024.jpg');
       color: white;
       background-size: cover;
-      background-position: center;
+      background-position: center 0px;
+}
+
+/* Add proper parallax section styling */
+.parallax-section {
+  background-attachment: fixed;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay for parallax sections to ensure text is readable */
+.parallax-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Ensure content in parallax sections is positioned correctly */
+.stats .stats-container,
+.achievements .achievement-grid {
+  position: relative;
+  z-index: 2;
 }
 
 .stats .stats-container {
-    position: relative;
-    z-index: 2;
     width: 100%;
     max-width: 1200px;
 }
@@ -781,22 +1038,19 @@
   ============================================ */
   .achievements {
     padding: 64px 24px;
-    background: linear-gradient(135deg, var(--m3-primary), var(--m3-tertiary));
+    margin-top: 24px;
+    position: relative;
     color: var(--m3-on-primary);
-    /* border-radius: var(--m3-shape-large); */
-   margin-top: 24px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+      url('https://gyaanarth.com/wp-content/uploads/2022/01/AF1QipN_I2MYJ3dkXm73FohlCKAffEW3ZsTgYptFjMmas1024.jpg');
+    background-size: cover;
+    background-position: center 0;
   }
 
-  .achievements {
-  position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-    url('https://gyaanarth.com/wp-content/uploads/2022/01/AF1QipN_I2MYJ3dkXm73FohlCKAffEW3ZsTgYptFjMmas1024.jpg');
-}
-
-.achievements .achievement-grid {
-  position: relative;
-  z-index: 2;
-}
+  .achievements .achievement-grid {
+    position: relative;
+    z-index: 2;
+  }
 
   .achievement-grid {
     display: grid;
@@ -839,6 +1093,17 @@
   .achievement-card p {
     opacity: 0.9;
     margin: 0;
+  }
+
+  /* Fix for mobile devices */
+  @media (max-width: 768px) {
+    .achievements {
+      background-attachment: scroll !important;
+    }
+    
+    .parallax-section {
+      background-attachment: scroll !important;
+    }
   }
   
   /* ============================================
@@ -929,41 +1194,15 @@
 ============================================ */
 .publications-magazines { 
   display: flex;
-  padding: 60px 0;
+  padding: 40px 0;  /* Reduced padding from 60px to 40px */
   background-color: var(--m3-surface);
 }
 
 .publications-magazines .container {
-  max-width: 1200px;
+  max-width: 1000px;  /* Reduced from 1200px */
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;  /* Reduced from 24px */
   width: 100%;
-}
-
-.publications-magazines .section-title {
-  text-align: center;
-  font-size: 2.25rem;
-  color: var(--m3-primary);
-  margin-bottom: 40px;
-  font-weight: 500;
-  position: relative;
-  padding-bottom: 16px;
-}
-
-.publications-magazines .section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: var(--m3-tertiary);
-  transition: width 0.3s ease;
-}
-
-.publications-magazines .section-title:hover::after {
-  width: 140px;
 }
 
 /* Main content container to hold both UGC and Magazine sections */
@@ -977,73 +1216,21 @@
 /* UGC Sponsored Centers - Enhanced Flexbox Layout */
 .ugc-section {
   flex: 1;
-  min-width: 300px;
+  min-width: 250px;  /* Reduced from 300px */
 }
 
 .ugc-row {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin-bottom: 30px;
+  gap: 20px;  /* Reduced from 30px */
+  margin-bottom: 20px;  /* Reduced from 30px */
   flex-wrap: wrap;
 }
 
 .col-sm-4 {
-  flex: 1 1 300px;
-  max-width: 380px;
-  min-width: 280px;
-}
-
-/* Magazine Section - Now placed side by side with UGC */
-.magazine-section {
-  flex: 1;
-  min-width: 300px;
-}
-
-/* Responsive styles for publications and magazines */
-@media (max-width: 992px) {
-  .col-sm-4 {
-    flex: 1 1 280px;
-  }
-  
-  .col-sm-8 {
-    flex: 1 1 450px;
-  }
-}
-
-@media (max-width: 768px) {
-  .publications-magazines {
-    padding: 40px 0;
-  }
-  
-  .publications-magazines .section-title {
-    font-size: 1.75rem;
-    margin-bottom: 30px;
-  }
-  
-  /* Stack vertically on smaller screens */
-  .publications-content {
-    flex-direction: column;
-  }
-  
-  .row {
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .col-sm-4, .col-sm-8 {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-  
-  .magazineimg {
-    min-height: 250px;
-    max-height: 300px;
-  }
-  
-  .ugcmorebtnarea {
-    bottom: 50px;
-  }
+  flex: 1 1 250px;  /* Reduced from 300px */
+  max-width: 320px;  /* Reduced from 380px */
+  min-width: 220px;  /* Reduced from 280px */
 }
 
 /* --- UGC Sponsored Centers & Magazine Section Custom Styles --- */
@@ -1051,11 +1238,11 @@
   background: var(--m3-surface-container-high, #f8f8f8);
   border-radius: 8px;
   box-shadow: var(--m3-shadow-1, 0 1px 3px rgba(0,0,0,0.1));
-  padding: 12px;
-  margin-bottom: 16px;
+  padding: 10px;  /* Reduced from 12px */
+  margin-bottom: 12px;  /* Reduced from 16px */
   position: relative;
   transition: all 0.2s ease;
-  min-height: 240px;
+  min-height: 200px;  /* Reduced from 240px */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1068,15 +1255,15 @@
 
 .ugcsponsoredboximg {
   width: 100%;
-  max-width: 100px;
-  margin: 0 auto 8px auto;
+  max-width: 80px;  /* Reduced from 100px */
+  margin: 0 auto 6px auto;  /* Reduced from 8px */
   border-radius: 4px;
   overflow: hidden;
 }
 
 .ugcsponsoredboximg img {
   width: 100%;
-  height: 75px;
+  height: 60px;  /* Reduced from 75px */
   object-fit: cover;
 }
 
@@ -1193,8 +1380,16 @@
 /* Responsive tweaks */
 @media (max-width: 768px) {
   .ugcsponsoredbox {
-    min-height: 220px;
-    padding: 10px;
+    min-height: 180px;  /* Reduced from 220px */
+    padding: 8px;  /* Reduced from 10px */
+  }
+  
+  .ugcsponsoredboximg {
+    max-width: 70px;
+  }
+  
+  .ugcsponsoredboximg img {
+    height: 50px;
   }
   
   .magazine-cover {
@@ -1205,7 +1400,15 @@
 
 @media (max-width: 576px) {
   .ugcsponsoredbox {
-    min-height: 180px;
+    min-height: 150px;  /* Reduced from 180px */
+  }
+  
+  .ugcsponsoredboximg {
+    max-width: 60px;
+  }
+  
+  .ugcsponsoredboximg img {
+    height: 45px;
   }
   
   .magazine-cover {
@@ -1213,7 +1416,90 @@
     height: 200px;
   }
 }
-/* --- End UGC & Magazine Section Styles --- */
+
+/* Add or update these styles to make testimonial images fill the whole slide */
+.testimonial-carousel-container {
+  flex: 1;
+  min-width: 150px;
+  height: 650px;
+  margin: 10px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.testimonial-carousel {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.testimonial-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.testimonial-slide.active {
+  opacity: 1;
+}
+
+.testimonial-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Positioning to crop Saket College name at top but keep message at bottom */
+  object-position: center 65%; /* Adjusted to focus more on the middle-bottom */
+  transform: scale(1.); /* Larger scale to crop more from top and sides */
+}
+/* .testimonial-dot {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+} */
+.testimonial-dot span {
+  width: 10px;
+  height: 10px;
+  background: var(--m3-outline-variant);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.testimonial-dot span.active {
+  background: var(--m3-primary);
+}
+
+/* Responsive adjustments for testimonial carousel */
+@media (max-width: 768px) {
+  .testimonial-carousel-container {
+    height: 450px;
+  }
+  
+  .testimonial-slide img {
+    object-position: center 25%;
+    transform: scale(1.3); /* Slightly larger scale for tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-carousel-container {
+    height: 350px;
+  }
+  
+  .testimonial-slide img {
+    object-position: center 22%;
+    transform: scale(1.35); /* Even larger scale for mobile to ensure cropping */
+  }
+}
 
 /* ============================================
      Keyframes
@@ -1374,18 +1660,21 @@
   background: var(--m3-on-surface);
 }
 
-/* Leadership Photos Carousel */
+/* Leadership Photos Carousel - Improved Design */
 .message-carousel {
   position: relative;
   overflow: hidden;
-  height: 300px; /* Increased from 250px */
-  margin-top: 10px;
-  border-radius: 8px;
+  height: 280px;
+  margin-top: 20px;
+  border-radius: 18px;
+  box-shadow: var(--m3-shadow-3);
+  background-color: #fff;
+  max-width: 100%;
 }
 
 .message-slides {
   position: relative;
-  height: 280px; /* Increased from 230px */
+  height: 100%;
 }
 
 .message-slide {
@@ -1393,10 +1682,10 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  border-radius: 8px;
+  transition: opacity 0.8s ease-in-out;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
 }
 
 .message-slide.active {
@@ -1405,382 +1694,228 @@
 }
 
 .message-image {
-  height: 100%;
+  width: 30%;
+  height: 90%;
   overflow: hidden;
-  background: white;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .message-image img {
   width: 100%;
-  height: 100%;
+  height: 80%;
   object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--m3-primary-container);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  max-width: 180px;
+  max-height: 180px;
+  transition: transform 0.5s ease;
 }
 
+.message-content {
+  width: 60%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  position: relative;
+}
+.message-text {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--m3-on-surface);
+}
+.message-content h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  color: var(--m3-primary);
+}
+.message-content pre {
+  margin: 0;
+  padding: 0;
+  color: var(--m3-on-surface-variant);
+}
+/* Controls for message carousel */
 .message-controls {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  z-index: 5;
 }
 
 .message-indicator {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: #460606;
+  background: rgba(139, 69, 19, 0.3);
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s;
 }
 
 .message-indicator.active {
-  background: #8B4513;
+  background: var(--m3-primary);
+  transform: scale(1.2);
 }
 
-/* Overlay navigation controls */
-.message-nav-controls {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 5;
-  pointer-events: none;
+/* Auto-rotate carousel */
+@keyframes carousel-rotate {
+  0%, 45% { opacity: 1; }
+  50%, 95% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-.message-nav-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.6);
-  color: #8B4513;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 1.5rem;
-  font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-  pointer-events: auto;
-  margin: 0 10px;
+.message-slide:nth-child(1) {
+  animation: carousel-rotate 10s infinite;
 }
 
-.message-nav-btn:hover {
-  background: rgba(255, 255, 255, 0.8);
-  transform: scale(1.1);
+.message-slide:nth-child(2) {
+  animation: carousel-rotate 10s infinite 5s;
 }
 
-.message-count {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(139, 69, 19, 0.7);
-  color: white;
-  padding: 3px 8px;
-  border-radius: 10px;
-  font-size: 0.7rem;
-  pointer-events: none;
-}
-
+/* Responsive styles for message carousel - Fixed for all devices */
 @media (max-width: 768px) {
-  .vm-box {
+  .message-carousel {
+    height: auto !important;
+    min-height: 480px !important;
+    max-height: 520px !important;
+    width: 100% !important;
+    margin: 20px auto !important;
+  }
+  
+  .message-slide {
+    flex-direction: column !important;
+    position: relative !important;
+    display: none !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: 450px !important;
+  }
+  
+  .message-slide.active {
+    display: flex !important;
+  }
+  
+  .message-image, 
+  .message-content {
+    width: 100% !important;
+  }
+  
+  .message-image {
+    height: 220px !important;
+    padding: 20px 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .message-image img {
+    width: 180px !important;
+    height: 180px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    margin: 0 auto !important;
+  }
+  
+  .message-content {
+    padding: 20px !important;
+    height: auto !important;
+    overflow-y: visible !important;
+  }
+  
+  .message-content h3 {
+    font-size: 1.2rem !important;
+    text-align: center !important;
+  }
+  
+  .message-content h4 {
+    font-size: 0.9rem !important;
+    text-align: center !important;
+  }
+  
+  .message-text {
+    font-size: 0.5rem !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+
+  /* Disable animations on mobile for better performance */
+  .message-slide {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .message-carousel {
+    min-height: 450px !important;
+    max-height: 500px !important;
+  }
+  
+  .message-image {
+    height: 200px !important;
+  }
+  
+  .message-image img {
+    width: 160px !important;
+    height: 160px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .message-carousel {
+    min-height: 420px !important;
+    max-height: 480px !important;
+  }
+  
+  .message-image {
+    height: 180px !important;
+  }
+  
+  .message-image img {
+    width: 140px !important;
+    height: 140px !important;
+  }
+}
+
+/* Fix for general website overflow issues on mobile */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Fix for publications section on mobile */
+@media (max-width: 768px) {
+  .publications-magazines .container {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  
+  .ugc-centers-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .ugcsponsoredbox {
+    width: 100%;
+    margin: 10px 0;
+    box-sizing: border-box;
     flex-direction: column;
   }
   
-  .message-nav-btn {
-    width: 30px;
-    height: 30px;
-    font-size: 1.2rem;
-  }
-}
-
-/* ============================================
-     Responsive Media Queries - Material 3
-  ============================================ */
-  @media (max-width: 900px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .noticesvisionmission {
-      flex-direction: column;
-    }
-    
-    .hero-content {
-      padding: 24px;
-      width: 95%;
-    }
-    
-    .hero h1 {
-      font-size: 28px;
-    }
-    
-    .hero p {
-      font-size: 16px;
-      padding-bottom: 20px;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .stats .stat-number {
-      font-size: 2.5rem;
-    }
-    
-    .campus-card {
-      height: 320px;
-    }
-    
-    .campus-overlay {
-      padding: 20px;
-      transform: translateY(60px);
-    }
-    
-    .achievement-card {
-      padding: 24px 16px;
-    }
-    
-    .feature-card {
-      padding: 20px;
-    }
-    
-    .about-section, .stats, .achievements {
-      margin: 12px;
-      padding: 40px 16px;
-    }
-    
-    .about-text h2, .campus-life h2 {
-      font-size: 1.75rem;
-    }
-  }
-  
-  /* Material 3 Animation Effects */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeInSlideUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes scrollNotices {
-    0% {
-      transform: translateY(100%);
-    }
-    100% {
-      transform: translateY(-100%);
-    }
-  }
-  
-  /* Material 3 Ripple Effect */
-  .ripple {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
-    transform: scale(0);
-    animation: ripple 0.6s linear;
-    pointer-events: none;
-  }
-  
-  @keyframes ripple {
-    to {
-      transform: scale(4);
-      opacity: 0;
-    }
-  }
-  
-  /* Material 3 Card States */
-  .content.in-view,
-  .achievement-card.in-view,
-  .stat-card.in-view,
-  .campus-card.in-view {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  /* Material 3 Form Validation */
-  .m3-text-field.valid input {
-    border-color: #4caf50;
-  }
-  
-  .m3-text-field.invalid input {
-    border-color: var(--m3-error);
-  }
-  
-  .m3-success-message {
-    background-color: rgba(76, 175, 80, 0.1);
-    color: #4caf50;
-    padding: 8px 16px;
-    border-radius: var(--m3-shape-small);
-    margin-top: 12px;
-    font-weight: 500;
-    text-align: center;
-    animation: fadeIn 0.3s;
-  }
-  
-  /* Material 3 Elevation Hover States */
-  .m3-button:active {
-    box-shadow: var(--m3-shadow-1);
-    transform: translateY(1px);
-  }
-  
-  /* Material 3 State Layer */
-  .nav-list a::before,
-  .facu a::before,
-  .m3-list a::before,
-  .m3-icon-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+  .ugcsponsoredboximg {
     width: 100%;
-    height: 100%;
-    background-color: currentColor;
-    opacity: 0;
-    border-radius: inherit;
-    pointer-events: none;
-    transition: opacity 0.2s;
+    margin: 0 auto;
   }
-  
-  .nav-list a:hover::before,
-  .facu a:hover::before,
-  .m3-list a:hover::before,
-  .m3-icon-button:hover::before {
-    opacity: 0.08;
-  }
-  
-  .nav-list a:active::before,
-  .facu a:active::before,
-  .m3-list a:active::before,
-  .m3-icon-button:active::before {
-    opacity: 0.12;
-  }
-  
-  /* Additional Material 3 Responsive Enhancements */
-  @media (max-width: 600px) {
-    :root {
-      --m3-shape-large: 16px;
-      --m3-shape-medium: 12px;
-    }
-    
-    .hero-content {
-      padding: 24px;
-    }
-    
-    .content {
-      padding: 16px;
-    }
-    
-    .notice-board {
-      padding: 16px;
-    }
-  }
-  
-  /* Ensure proper Material 3 spacing */
-  /* section {
-    margin-bottom: 40px;
-  } */
-  
-  /* Material 3 style scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: var(--m3-surface-container);
-    border-radius: 4px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: var(--m3-outline);
-    border-radius: 4px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--m3-primary);
-  }
-
-/* Parallax Effects */
-.parallax-section {
-  position: relative;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-
-.parallax-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1;
-}
-
-@media (max-width: 768px) {
-  .parallax-section {
-    background-attachment: scroll;
-  }
-}
-
-/* Notice Board Tab Styling */
-.notice-tabs {
-  display: flex;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.notice-tab {
-  padding: 8px 16px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  color: #555;
-  transition: all 0.3s ease;
-}
-
-.notice-tab.active {
-  color: #4a89dc;
-  border-bottom: 2px solid #4a89dc;
-}
-
-.notice-tab:hover {
-  background-color: rgba(74, 137, 220, 0.1);
-}
-
-.notices-wrapper {
-  transition: all 0.3s ease;
 }
