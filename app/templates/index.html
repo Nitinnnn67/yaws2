@@ -4,6 +4,141 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<style>
+  .toprightarea {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+  }
+  
+  .topsmallmenu {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+  
+  .topsmallmenu a {
+    color: var(--m3-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .topsmallmenu a:hover {
+    text-decoration: underline;
+    color: var(--m3-tertiary);
+  }
+  
+  .loginarea {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 6px;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nopaddingarea1 {
+    display: flex;
+    align-items: stretch;
+  }
+  
+  .nopadding1 {
+    position: relative;
+  }
+  
+  .loginbtn {
+    background-color: var(--m3-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    height: 100%;
+  }
+  
+  .loginbtn:hover {
+    background-color: var(--m3-primary-dark);
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 1000;
+    padding: 8px 0;
+  }
+  
+  .dropdown-menu li {
+    list-style: none;
+  }
+  
+  .dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 8px 16px;
+    transition: background-color 0.2s;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .nopadding1:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .searchfield {
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    padding: 6px 10px;
+    width: 180px;
+    font-size: 0.9rem;
+  }
+  
+  .searchbtn {
+    background-color: var(--m3-secondary);
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    padding: 7px 10px;
+    cursor: pointer;
+  }
+  
+  .searchbtn:hover {
+    background-color: var(--m3-secondary-dark);
+  }
+  
+  .input-group {
+    display: flex;
+  }
+  
+  @media (max-width: 768px) {
+    .toprightarea {
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 100%;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+    
+    .topsmallmenu {
+      margin-bottom: 8px;
+    }
+    
+    .searchfield {
+      width: 150px;
+    }
+  }
+</style>
 {% endblock %}
 {% block content %}
 <section class="hero">
@@ -117,17 +252,37 @@
         <div class="message-slides">
           <div class="message-slide active">
             <div class="message-image">
-              <img src="https://saketcollege.edu.in/wp-content/uploads/2023/12/chairman.jpg" alt="Photo">
+              <img src="{{ url_for('static', filename='babuji.jpeg') }}" alt="Prof. Dr. Ram Ujagar Tiwari">
+            </div>
+            <div class="message-content">
+              <h3>Prof. Dr. Ram Ujagar Tiwari</h3>
+              <h4>Founder Chairman</h4>
+              <div class="message-text">
+                <p>My Dear Friends,</p>
+
+              <p>    I have great pleasure and sincere gratitude towards GOD, who made me instrumental to establish this great Institution. I feel that SERVICE THROUGH EDUCATION IS SERVICE TO HUMANITY AND THIS SERVICE TO MANKIND IS SERVICE TO GOD. 
+                Our passion is to excel in 'QUALITY EDUCATION'. Quality never comes by accident. It is always the result of High Intention, Sincere effort towards right direction and skillful Execution.</p>
+                  <p>  Our Programme is “Move To Grow” – focus on students’ 'Personality Development', who are responsible leaders of tomorrow.</p>
+              </div>
             </div>
           </div>
           <div class="message-slide">
             <div class="message-image">
-              <img src="https://saketcollege.edu.in/wp-content/uploads/2023/12/principal.jpg" alt="Photo">
+              <img src="{{ url_for('static', filename='Pramod.R.t.jpeg') }}" alt="Dr. Pramod R. Tiwari">
+            </div>
+            <div class="message-content">
+              <h3>Dr. Pramod R. Tiwari</h3>
+              <h4>Chairman</h4>
+              <div class="message-text">
+                <p>"Let us be the wings of others' dreams"
+                  Welcome to Saket Gyanpeeth established in 1994 with our motto "Gyanam Anantam". A "vibrant innovative temple of service".
+                   The main purpose of this trust is to render untiring selfless service to the society through value based education.</p>
+                   <p>चाहे थक जाये पर राह नहीं थकती,
+                    चाहे थक जाये पर चाह नहीं थकती।
+                    हुये आज इनके कितने साल पर सेवा से इनकी चाह नहीं थकती।।</p>
+              </div>
             </div>
           </div>
-         
-          
-          
         </div>
         <div class="message-nav-controls">
           <div class="message-nav-btn message-prev">&lsaquo;</div>
@@ -137,7 +292,6 @@
         <div class="message-controls">
           <span class="message-indicator active"></span>
           <span class="message-indicator"></span>
-          
         </div>
       </div>
     </div>
