@@ -1,11 +1,12 @@
 /* ============================================
      Hero Section - Material 3
   ============================================ */
-  .hero {
+.hero {
     position: relative;
     width: 100%;
-    height: 480px; /* Fixed height */
-    min-height: 480px; /* Added minimum height to ensure it doesn't shrink */
+    height: 80vh; /* Reduced from 100vh to 70vh */
+    min-height: 370px; /* Reduced from 400px */
+    max-height: 700px; /* Reduced from 800px */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,15 +14,15 @@
     color: rgba(2, 3, 27, 0.9);
     overflow: hidden;
     margin: 0 0 20px 0;
-  }
-  
-  .hero-carousel {
+}
+
+.hero-carousel {
     position: relative;
     width: 100%;
     height: 100%;
-  }
-  
-  .carousel-item {
+}
+
+.carousel-item {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -30,40 +31,38 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .carousel-item.active {
+}
+
+.carousel-item.active {
     opacity: 1;
-  }
-  
-  .hero-video {
+}
+
+.hero-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* This ensures the video/image covers the entire area without distortion */
-    z-index: 0; /* Changed from -1 to 0 to ensure video is visible */
-  }
-  
-  .hero-content {
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-content {
     position: relative;
     z-index: 1;
-    /* background-color: rgba(255, 255, 255, 0.3); */
+/* background-color: rgba(255, 255, 255, 0.3); */
     padding: 32px 48px;
     border-radius: var(--m3-shape-large);
-    /* backdrop-filter: blur(10px); */
-    /* box-shadow: var(--m3-shadow-3); */
-    max-width: 600px;
+    max-width: min(600px, 90%); /* Responsive max-width */
     width: 90%;
-  }
+    }
   
   .carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
-    color: rgba(255, 255, 255, 0.7);
+color: rgba(255, 255, 255, 0.7);
     border: none;
     padding: 16px;
     cursor: pointer;
@@ -116,15 +115,16 @@
     margin-bottom: 10px;
     animation: fadeInUp 1s ease-out;
     color: var(--m3-primary);
-  }
-  
-  .hero p {
-    font-size: 18px;
-    padding: 10px;
-    padding-bottom: 30px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: clamp(14px, 3vw, 18px); /* Responsive font size */
+    padding: clamp(8px, 2vw, 10px);
+    padding-bottom: clamp(20px, 4vw, 30px);
     animation: fadeInUp 1s ease-out 0.3s backwards;
     color: var(--m3-on-surface);
-  }
+    }
   
   .hero button {
     height: 50px;
@@ -141,14 +141,50 @@
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-  }
-  
-  .hero button:hover {
-    background-color: var(--m3-primary-container);
-    color: var(--m3-on-primary-container);
-    box-shadow: var(--m3-shadow-2);
-    transform: translateY(-3px);
-  }
+    }
+}
+
+/* Responsive Breakpoints */
+@media (max-aspect-ratio: 16/9) {
+    .hero {
+        height: 53vw; /* Reduced from 56.25vw */
+    }
+}
+
+@media (max-aspect-ratio: 4/3) {
+    .hero {
+        height: 60vw; /* Reduced from 75vw */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh; /* Reduced from 80vh */
+        min-height: 300px; /* Reduced from 350px */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 55vh; /* Reduced from 70vh */
+        min-height: 280px; /* Reduced from 300px */
+    }
+}
+
+/* For ultra-wide screens */
+@media (min-aspect-ratio: 21/9) {
+    .hero {
+        height: 35vw; /* Reduced from 42.86vw */
+    }
+}
+
+/* For landscape mobile devices */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        height: 90vh; /* Reduced from 100vh */
+        min-height: 280px; /* Reduced from 300px */
+    }
+}
 
 /* Add media queries to maintain consistent size across all devices */
 @media (max-width: 1200px) {
