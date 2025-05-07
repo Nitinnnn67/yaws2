@@ -33,14 +33,16 @@
       </div>
     </div>
     <div class="carousel-item active">
-      <video autoplay muted loop class="hero-video">
-        <source src="static/mixkit-students-walking-in-a-university-4519-hd-ready.mp4" type="video/mp4">
+      <video autoplay muted loop class="hero-video" playsinline>
+        <source src="{{ url_for('static', filename='0506.webm') }}" type="video/webm" media="(min-width: 1200px)">
+        <source src="{{ url_for('static', filename='720.mp4') }}" type="video/mp4" media="(max-width: 1199px)">
+        Your browser does not support the video tag.
       </video>
-      <div class="hero-content">
+      <!-- <div class="hero-content">
         <h1 id="caption-title" style="color: rgb(167, 130, 27);">Welcome to Saket College</h1>
         <p id="caption-text" style="color: rgb(65, 40, 0);">Empowering minds and shaping futures through excellence in education since 1975</p>
         <a href="https://saketcollege.edu.in/contact/"><button>Apply Now</button></a>
-      </div>
+      </div> -->
     </div>
 
     <div class="carousel-indicators">
