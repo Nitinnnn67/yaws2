@@ -161,11 +161,31 @@ function initCarousel() {
       return;
     }
     
-    slides.forEach(slide => slide.classList.remove('active'));
+    // Stop any currently playing videos
+    slides.forEach(slide => {
+      const video = slide.querySelector('video');
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+      }
+      slide.classList.remove('active');
+    });
+    
     indicators.forEach(indicator => indicator.classList.remove('active'));
     
+    // Activate current slide and handle video if present
     slides[currentSlide].classList.add('active');
     indicators[currentSlide].classList.add('active');
+    
+    // If current slide has video, play it
+    const currentVideo = slides[currentSlide].querySelector('video');
+    if (currentVideo) {
+      currentVideo.currentTime = 0; // Reset video to start
+      const playPromise = currentVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => console.log("Auto-play prevented:", error));
+      }
+    }
     
     // Clear any existing auto-advance timer
     if (autoAdvanceTimer) {
@@ -196,30 +216,19 @@ function initCarousel() {
     const currentVideoElement = slides[currentSlide].querySelector('video');
     
     if (currentVideoElement) {
-      console.log("Video found in current slide");
+      // Remove any existing event listeners first
+      currentVideoElement.removeEventListener('ended', handleVideoEnd);
       
-      // Check if video is already playing
-      if (currentVideoElement.paused || currentVideoElement.ended) {
-        console.log("Video is paused or ended, scheduling next slide");
-        autoAdvanceTimer = setTimeout(() => moveSlide(1), 2000);
-      } else {
-        console.log("Video is playing, waiting for it to end");
-        // Make sure we remove any existing event listeners first
-        currentVideoElement.removeEventListener('ended', handleVideoEnd);
-        
-        // Add the event listener for when video ends
-        currentVideoElement.addEventListener('ended', handleVideoEnd);
-      }
+      // Add the event listener for when video ends
+      currentVideoElement.addEventListener('ended', handleVideoEnd);
     } else {
       // No video in this slide, use standard delay
-      console.log("No video in this slide, using standard delay");
-      autoAdvanceTimer = setTimeout(() => moveSlide(1), 2000);
+      autoAdvanceTimer = setTimeout(() => moveSlide(1), 5000);
     }
   }
   
   // Function to handle video end event
   function handleVideoEnd() {
-    console.log("Video ended, moving to next slide");
     moveSlide(1);
   }
   
