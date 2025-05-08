@@ -16,6 +16,34 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth > 768) {
     initParallax();
   }
+
+  // Testimonial Carousel
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('.testimonial-dot span');
+  let currentSlide = 0;
+  const slideInterval = 3000; // Change slide every 3 seconds
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  // Add click handlers to dots
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      showSlide(index);
+    });
+  });
+
+  // Start the slideshow
+  setInterval(nextSlide, slideInterval);
 });
 
 // Global variables

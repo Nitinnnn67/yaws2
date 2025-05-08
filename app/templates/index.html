@@ -399,20 +399,42 @@
   <div class="container">
     <h2 class="section-title">UGC Sponsored Centers</h2>
     <div class="ugc-centers-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
-      <div class="ugcsponsoredbox" style="flex: 1; min-width: 300px; display: flex; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin: 10px;">
-        <div class="ugcsponsoredboximg" style="width: 120px; height: 120px; overflow: hidden;">
-          <img src="{{ url_for('static', filename='images/ugcsponsored_img01.jpg') }}" alt="Gandhian Studies Centre" style="width: 100%; height: 100%; object-fit: cover;">
-        </div> 
-        <div class="ugcsponsoredboxcont" style="padding: 15px; flex: 1;">
-          <h5 style="margin-top: 0; margin-bottom: 5px;">Purvanchal</h5> 
-          <div class="textgray13light">xxxxxxxxxxxxxxxxxxxxxxxx.</div>
-          <a href="/gandhi_study_center" style="display: inline-block; margin-top: 10px; padding: 5px 15px; background-color: #4a89dc; color: white; text-decoration: none; border-radius: 4px;">Learn More</a>
-        </div>    
+      <!-- UGC Sponsored Section -->
+      <div class="ugc-section" style="flex: 1;">
+        <div class="ugcsponsoredbox" style="flex: 1; min-width: 300px; display: flex; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin: 10px;">
+          <div class="ugcsponsoredboximg" style="width: 120px; height: 120px; overflow: hidden;">
+            <img src="{{ url_for('static', filename='images/ugcsponsored_img01.jpg') }}" alt="Gandhian Studies Centre" style="width: 100%; height: 100%; object-fit: cover;">
+          </div> 
+          <div class="ugcsponsoredboxcont" style="padding: 15px; flex: 1;">
+            <h5 style="margin-top: 0; margin-bottom: 5px;">Purvanchal</h5> 
+            <div class="textgray13light">xxxxxxxxxxxxxxxxxxxxxxxx.</div>
+            <a href="/gandhi_study_center" style="display: inline-block; margin-top: 10px; padding: 5px 15px; background-color: #4a89dc; color: white; text-decoration: none; border-radius: 4px;">Learn More</a>
+          </div>    
+        </div>
       </div>
       
-      
-     
-          
+      <!-- Testimonial Section -->
+      <div class="testimonial-carousel-container" style="flex: 1;">
+        <div class="testimonial-carousel">
+          <div class="testimonial-slide active">
+            <img src="{{ url_for('static', filename='testimonal(1).jpg') }}" alt="Testimonial 1">
+          </div>
+          <div class="testimonial-slide">
+            <img src="{{ url_for('static', filename='testimonal(2).jpg') }}" alt="Testimonial 2">
+          </div>
+          <div class="testimonial-slide">
+            <img src="{{ url_for('static', filename='testimonal(3).jpg') }}" alt="Testimonial 3">
+          </div>
+          <div class="testimonial-slide">
+            <img src="{{ url_for('static', filename='testimonal(4).jpg') }}" alt="Testimonial 4">
+          </div>
+        </div>
+        <div class="testimonial-dot">
+          <span class="active"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
   </div>
