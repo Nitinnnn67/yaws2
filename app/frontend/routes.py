@@ -133,4 +133,4 @@ def gandhi_center():
 
 @frontend_bp.route('/purvanchal-trust', methods=['GET'])
 def purvanchal_trust():
-    return render_template('about/purvanchal-trust.html')
+    return render_template('/purvanchal-trust.html')
