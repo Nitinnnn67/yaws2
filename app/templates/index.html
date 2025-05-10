@@ -4,141 +4,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-<style>
-  .toprightarea {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 10;
-  }
-  
-  .topsmallmenu {
-    font-size: 0.85rem;
-    margin-bottom: 10px;
-  }
-  
-  .topsmallmenu a {
-    color: var(--m3-primary);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  
-  .topsmallmenu a:hover {
-    text-decoration: underline;
-    color: var(--m3-tertiary);
-  }
-  
-  .loginarea {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 6px;
-    padding: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .nopaddingarea1 {
-    display: flex;
-    align-items: stretch;
-  }
-  
-  .nopadding1 {
-    position: relative;
-  }
-  
-  .loginbtn {
-    background-color: var(--m3-primary);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 6px 12px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    height: 100%;
-  }
-  
-  .loginbtn:hover {
-    background-color: var(--m3-primary-dark);
-  }
-  
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    z-index: 1000;
-    padding: 8px 0;
-  }
-  
-  .dropdown-menu li {
-    list-style: none;
-  }
-  
-  .dropdown-menu li a {
-    color: #333;
-    text-decoration: none;
-    display: block;
-    padding: 8px 16px;
-    transition: background-color 0.2s;
-  }
-  
-  .dropdown-menu li a:hover {
-    background-color: #f5f5f5;
-  }
-  
-  .nopadding1:hover .dropdown-menu {
-    display: block;
-  }
-  
-  .searchfield {
-    border: 1px solid #ddd;
-    border-radius: 4px 0 0 4px;
-    padding: 6px 10px;
-    width: 180px;
-    font-size: 0.9rem;
-  }
-  
-  .searchbtn {
-    background-color: var(--m3-secondary);
-    color: white;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    padding: 7px 10px;
-    cursor: pointer;
-  }
-  
-  .searchbtn:hover {
-    background-color: var(--m3-secondary-dark);
-  }
-  
-  .input-group {
-    display: flex;
-  }
-  
-  @media (max-width: 768px) {
-    .toprightarea {
-      position: relative;
-      top: 0;
-      right: 0;
-      width: 100%;
-      margin-bottom: 10px;
-      align-items: center;
-    }
-    
-    .topsmallmenu {
-      margin-bottom: 8px;
-    }
-    
-    .searchfield {
-      width: 150px;
-    }
-  }
-</style>
+
 {% endblock %}
 {% block content %}
 <section class="hero">
@@ -160,12 +26,12 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://vjti.ac.in/wp-content/uploads/2024/05/pgstudents.png" alt="Library" class="hero-video">
-      <div class="hero-content">
+      <img src="static/thirdslide3.jpeg" alt="Library" class="hero-video" >
+      <!-- <div class="hero-content">
         <h1 style="color: rgb(167, 130, 27);">World-Class Education</h1>
         <p style="color: rgb(125, 107, 78,0.5);">Experience excellence in every classroom</p>
-        <button>Discover</button>
-      </div>
+        <button>Discover</button> -->
+      <!-- </div> -->
     </div>
     <div class="carousel-item active">
       <video autoplay muted loop class="hero-video" playsinline>
