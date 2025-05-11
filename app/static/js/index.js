@@ -510,12 +510,20 @@ function initParallax() {
   function updateParallax() {
     parallaxSections.forEach(section => {
       const scrolled = window.pageYOffset;
-      const rate = scrolled * -0.3;
-      const rect = section.getBoundingClientRect();
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
       
-      // Only apply effect when section is in view
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        section.style.backgroundPosition = `50% ${rate}px`;
+      // Calculate how far the section is from the viewport top
+      const distanceFromTop = sectionTop - scrolled;
+      
+      // Calculate if section is in the viewport
+      const isInView = distanceFromTop < window.innerHeight && distanceFromTop + sectionHeight > 0;
+      
+      if (isInView) {
+        // Calculate a more moderate parallax effect
+        // This moves the background more slowly than the section
+        const yPos = Math.round((distanceFromTop * 0.4));
+        section.style.backgroundPosition = `center ${yPos}px`;
       }
     });
     ticking = false;
