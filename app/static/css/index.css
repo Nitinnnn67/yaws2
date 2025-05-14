@@ -818,9 +818,16 @@ color: rgba(255, 255, 255, 0.7);
     overflow: hidden;
     margin: 10px;
   }
+  .features h2 {
+    text-align: center;
+    font-size: 2.25rem;
+    color: var(--m3-primary);
+    margin-bottom: 48px;
+    font-weight: 500;
+  } 
   
   .features-grid {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 26px;
     max-width: 1300px;
@@ -836,7 +843,8 @@ color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
     opacity: 4px;
     position: relative;
-    height: 100%;
+    height: 90%;
+    width: 100%;
   }
   
   .feature-card.left {
@@ -932,7 +940,8 @@ color: rgba(255, 255, 255, 0.7);
   }
   
   .about-image img {
-    width: 100%;
+    height: 80%;
+    width: 80%;
     border-radius: var(--m3-shape-large);
     box-shadow: var(--m3-shadow-3);
     transition: transform 0.5s;
@@ -1110,7 +1119,7 @@ color: rgba(255, 255, 255, 0.7);
   /* ============================================
      Achievements Section - Material 3
   ============================================ */
-  .achievements {
+  /* .achievements {
     padding: 64px 24px;
     margin-top: 24px;
     position: relative;
@@ -1141,7 +1150,7 @@ color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     transition: all 0.3s;
     text-align: center;
-    /* box-shadow: var(--m3-shadow-1); */
+  
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
   
@@ -1169,7 +1178,7 @@ color: rgba(255, 255, 255, 0.7);
     margin: 0;
   }
 
-  /* Fix for mobile devices */
+
   @media (max-width: 768px) {
     .achievements {
       background-attachment: scroll !important;
@@ -1179,7 +1188,7 @@ color: rgba(255, 255, 255, 0.7);
       background-attachment: scroll !important;
     }
   }
-  
+   */
   /* ============================================
      Campus Life Section - Material 3
   ============================================ */
@@ -1268,18 +1277,24 @@ color: rgba(255, 255, 255, 0.7);
 ============================================ */
 .publications-magazines { 
   display: flex;
-  padding: 40px 0;  /* Reduced padding from 60px to 40px */
+  padding: 40px 0;  
   background-color: var(--m3-surface);
+}
+.publications-magazines h2 {
+  font-size: 2.25rem;  
+  color: var(--m3-primary);
+  margin-bottom: 24px;  
+  text-align: center;
 }
 
 .publications-magazines .container {
-  max-width: 1000px;  /* Reduced from 1200px */
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0 20px;  /* Reduced from 24px */
+  padding: 0 20px; 
   width: 100%;
 }
 
-/* Main content container to hold both UGC and Magazine sections */
+
 .publications-content {
   display: flex;
   flex-direction: row;
@@ -1287,24 +1302,24 @@ color: rgba(255, 255, 255, 0.7);
   align-items: flex-start;
 }
 
-/* UGC Sponsored Centers - Enhanced Flexbox Layout */
+
 .ugc-section {
   flex: 1;
-  min-width: 250px;  /* Reduced from 300px */
+  min-width: 250px;  
 }
 
 .ugc-row {
   display: flex;
   justify-content: center;
-  gap: 20px;  /* Reduced from 30px */
-  margin-bottom: 20px;  /* Reduced from 30px */
+  gap: 20px; 
+  margin-bottom: 20px; 
   flex-wrap: wrap;
 }
 
 .col-sm-4 {
-  flex: 1 1 250px;  /* Reduced from 300px */
-  max-width: 320px;  /* Reduced from 380px */
-  min-width: 220px;  /* Reduced from 280px */
+  flex: 1 1 250px;  
+  max-width: 320px;  
+  min-width: 220px;  
 }
 
 /* --- UGC Sponsored Centers & Magazine Section Custom Styles --- */
