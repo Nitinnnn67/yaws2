@@ -13,14 +13,21 @@ class Config:
     
     @staticmethod
     def init_app(app):
+        # Create upload folder if it doesn't exist
         if not os.path.exists(app.config['UPLOAD_FOLDER']):
             os.makedirs(app.config['UPLOAD_FOLDER'])
+        
+        # Ensure instance directory exists for SQLite database
+        instance_path = os.path.join(os.path.dirname(os.path.dirname(basedir)), 'instance')
+        if not os.path.exists(instance_path):
+            os.makedirs(instance_path)
+            os.makedirs(instance_path)
 
 class DevelopmentConfig(Config):
     DEBUG = True
     TEMPLATES_AUTO_RELOAD = True
-    # You can still use SQLite for development if you prefer
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, '../../instance/test_db.sqlite3')
+    # Using SQLite for development with a more reliable path
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or 'sqlite:///' + os.path.join(os.path.dirname(os.path.dirname(basedir)), 'instance', 'test_db.sqlite3')
     # Or use MySQL for development too
     # SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or 'mysql+pymysql://yaws_user:your_secure_password@localhost/yaws_db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
