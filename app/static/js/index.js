@@ -9,15 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousel();
   initNoticeBoard();
   initCaptions();
-  initDateTime();
-  initLeadershipSlideshow();
+  initDateTime();  initLeadershipSlideshow();
+  initTestimonialCarousels();
   
   // Only initialize parallax on larger screens
   if (window.innerWidth > 768) {
     initParallax();
   }
 
-  // Testimonial Carousel
+  // Testimonial Carousel for student testimonials (keeping for backward compatibility)
   const slides = document.querySelectorAll('.testimonial-slide');
   const dots = document.querySelectorAll('.testimonial-dot span');
   let currentSlide = 0;
@@ -83,9 +83,98 @@ function initAnimations() {
       }, 100);
     }
   });
-  
-  // Run once on initial load
+    // Run once on initial load
   animateOnScroll();
+}
+
+/**
+ * Initializes all testimonial carousels on the page
+ * This handles both student testimonials and recruiter slideshows
+ */
+function initTestimonialCarousels() {
+  // Find all testimonial carousel containers
+  const carouselContainers = document.querySelectorAll('.testimonial-carousel-container');
+  
+  carouselContainers.forEach(container => {
+    const slides = container.querySelectorAll('.testimonial-slide');
+    const dots = container.querySelectorAll('.testimonial-dot span');
+    let currentIndex = 0;
+    let intervalId = null;
+    
+    // Skip if this container doesn't have slides or dots
+    if (slides.length === 0 || dots.length === 0) return;
+    
+    // Function to display a specific slide
+    function showSlide(index) {
+      // Hide all slides and remove active class from dots
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      // Calculate the correct index in case we have more dots than slides or vice versa
+      const slideIndex = index % slides.length;
+      const dotIndex = index % dots.length;
+      
+      // Show the selected slide and highlight the dot
+      slides[slideIndex].classList.add('active');
+      dots[dotIndex].classList.add('active');
+      
+      // Update current index
+      currentIndex = index;
+    }
+    
+    // Auto-advance slides every 4 seconds
+    function startAutoSlide() {
+      intervalId = setInterval(() => {
+        showSlide(currentIndex + 1);
+      }, 4000);
+    }
+    
+    // Reset auto-slide timer when manually navigating
+    function resetAutoSlide() {
+      if (intervalId) clearInterval(intervalId);
+      startAutoSlide();
+    }
+    
+    // Set up click handlers for each dot
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showSlide(index);
+        resetAutoSlide();
+      });
+    });
+    
+    // Add swipe functionality for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    container.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    container.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, false);
+    
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      
+      if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe left (next slide)
+        showSlide(currentIndex + 1);
+        resetAutoSlide();
+      }
+      
+      if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe right (previous slide)
+        showSlide(currentIndex - 1 + slides.length);
+        resetAutoSlide();
+      }
+    }
+    
+    // Start the auto-slide
+    startAutoSlide();
+  });
 }
 
 /**

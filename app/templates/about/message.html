@@ -1,11 +1,26 @@
 {% extends "base.html" %}
-{% block title %}Messages - Saket College{% endblock %};
+{% block title %}about-PRUTSIM{% endblock %};
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/message.css') }}">
 {% endblock %}
 {% block content %}
-<div class="container">
-    <h1 class="page-title">Messages from Leadership</h1>
+<section class="about-section">
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>About PRUTSIM</h2>
+      <p>Saket Gyanpeeth ventured into the field of management education by establishing “Pramod Ram Ujagar Tiwari Saket Institute of Management-(PRUTSIM)” in the year 2009.
+         The institute offers two years fulltime M.B.A./M.M.S (Master of Management Studies) course affiliated to University of Mumbai and approved by All India Council of Technical Education (AICTE) and Directorate of technical education(D.T.E. –MB. 3158)/ Government of Maharashtra. 
+         The institute has an intake capacity of 120 students. 
+        The institute has a Hindi linguistic minority status from Government of Maharashtra.</p>
+    </div>
+    <div class="about-image">
+      <img src="https://saketcollege.edu.in/wp-content/uploads/2023/12/WhatsApp-Image-2022-01-20-at-1.07.43-PM.jpeg"
+        alt="Campus Life" style="width: 100%; border-radius: 10px;">
+    </div>
+  </div>
+</section>
+ <h1 class="page-title">Messages from Leadership</h1>
+<div class="container message-grid">
     <div class="message-item">
         <div class="message-header">
             <img src="{{ url_for('static', filename='images/chairman.png') }}" alt="Chairman" class="profile-image" onerror="this.src='{{ url_for('static', filename='images/default-profile.png') }}'">
@@ -79,8 +94,8 @@
         <div class="message-header">
             <img src="{{ url_for('static', filename='images/principal.png') }}" alt="Principal" class="profile-image" onerror="this.src='{{ url_for('static', filename='images/default-profile.png') }}'">
             <div class="person-info">
-                <h2> Prof.(Dr.) Vasant D. Barhate</h2>
-                <p class="title">Hon'ble Principal</p>
+                <h2> -------------</h2>
+                <p class="title">Director</p>
             </div>
         </div>
         <div class="message-content">
@@ -99,6 +114,74 @@
         </div>
     </div>
 </div>
+<!-- -------------hhhhhhh------------- -->
+<div class="vision">
+    <h1>Our Vision & Mission</h1>
+    <div class="vision-mission-container">
+      <div class="vision-mission-content">
+        <div class="vm-box">
+          <div class="content" id="vision">
+            <h2>Our Vision</h2>
+            <div class="expandable-content">
+              <p>“To became a pioneer in Management Education by creating global leaders with strong ethical and social commitment”</p>
+              <div class="expanded-content">
+                <!-- <p>We envision Saket College as a center of excellence that transforms students into leaders.</p> -->
+              </div>
+              <button class="expand-btn" onclick="toggleContent('vision')">Read More</button>
+            </div>
+          </div>
+          <div class="content" id="mission">
+            <h2>Our Mission</h2>
+            <div class="expandable-content">
+              <ul class="mission-list">
+                <li>To equip students with advanced knowledge and skills.</li>
+              </ul>
+              <div class="expanded-content">
+                <ul class="mission-list">
+                  <li>To provide quality value-based education.</li>
+                  <li>To metamorphose budding talent into managers par excellence.</li>
+                  <li>To instill a sense of social responsibility so as to create ethical leaders.</li>
+                  <li>To provide students with competitive edge in dynamic / global business environment scenario.</li>
+                  <li>To enrich students with pragmatic knowledge.
+                      To facilitate personality development of the students.</li>
+                  <li>To offer a platform for student community to develop professionally.</li>
+                </ul>
+              </div>
+              <button class="expand-btn" onclick="toggleContent('mission')">Read More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div></div>
+<section class="achievements parallax-section">
+  
+  <div class="parallax-overlay"></div>
+  <h2 style="text-align: center; font-size:60px;">Why Choose Us?</h2>
+  <div class="achievement-grid">
+    <div class="achievement-card">
+      <div class="achievement-icon">💼</div>
+      <h3>Upskilling</h3>
+      <p>Getting an attractive paycheck needs UpToDate skillset too. At PRUTSIM we provide beyond syllabus add on course and extra focus on soft skill development.</p>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-icon">🎓</div>
+      <h3>Dream Job Profiles</h3>
+      <p>Our association with country wide recruiters in each field gives arena for students to choose their favorite field for beginning their career.</p>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-icon">🌟</div>
+      <h3>Industry-Academia Interaction</h3>
+      <p>We have tradition of bringing guest speakers from industry where platform is provided to students to interact with them, get their doubts resolved, get a realistic picture of current
+corporate world.</p>
+    </div>
+    <div class="achievement-card">
+      <div class="achievement-icon">🤝</div>
+      <h3>Extra Activities</h3>
+      <p>Our annual socio-cultural event Rohak is well known and most awaited event in the city. We believe in maintaining a balance of fun and learning..</p>
+    </div>
+  </div>
+</section>
+
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/message.js') }}"></script>
 {% endblock %}
