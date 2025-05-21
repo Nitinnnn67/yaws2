@@ -126,11 +126,3 @@ def naac_criteria_docs():
 @frontend_bp.route('/naac/institutional', methods=['GET'])
 def naac_institutional():
     return render_template('facu/naac.html', active_section="institutional")
-
-@frontend_bp.route('/gandhi-center', methods=['GET'])
-def gandhi_center():
-    return render_template('about/gandhi-center.html')
-
-@frontend_bp.route('/purvanchal-trust', methods=['GET'])
-def purvanchal_trust():
-    return render_template('/purvanchal-trust.html')

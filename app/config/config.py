@@ -13,35 +13,34 @@ class Config:
     
     @staticmethod
     def init_app(app):
-        # Create upload folder if it doesn't exist
-        if not os.path.exists(app.config['UPLOAD_FOLDER']):
-            os.makedirs(app.config['UPLOAD_FOLDER'])
-        
-        # Ensure instance directory exists for SQLite database
-        instance_path = os.path.join(os.path.dirname(os.path.dirname(basedir)), 'instance')
-        if not os.path.exists(instance_path):
-            os.makedirs(instance_path)
-            os.makedirs(instance_path)
+        # Create directories if they don't exist
+        for directory in [app.config['UPLOAD_FOLDER'], 'instance']:
+            try:
+                if not os.path.exists(directory):
+                    os.makedirs(directory)
+            except Exception as e:
+                app.logger.warning(f"Could not create directory {directory}: {str(e)}")
 
 class DevelopmentConfig(Config):
     DEBUG = True
     TEMPLATES_AUTO_RELOAD = True
-    # Using SQLite for development with a more reliable path
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or 'sqlite:///' + os.path.join(os.path.dirname(os.path.dirname(basedir)), 'instance', 'test_db.sqlite3')
-    # Or use MySQL for development too
-    # SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or 'mysql+pymysql://yaws_user:your_secure_password@localhost/yaws_db'
+    # Use SQLite for development by default
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
+        'sqlite:///' + os.path.join(os.path.dirname(os.path.dirname(basedir)), 'instance', 'dev.sqlite3')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class ProductionConfig(Config):
     DEBUG = False
-    # MySQL configuration
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'mysql+pymysql://yaws_user:your_secure_password@localhost/yaws_db'
+    # Use DATABASE_URL environment variable in production
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ENGINE_OPTIONS = {
-    'pool_size': 10,
-    'pool_recycle': 3600,
-    'pool_pre_ping': True
-}
+        'pool_size': 5,
+        'pool_recycle': 1800,  # recycle connections after 30 minutes
+        'pool_pre_ping': True,  # verify connections before using
+        'pool_timeout': 30,
+        'max_overflow': 2
+    }
 
 config = {
     'development': DevelopmentConfig,

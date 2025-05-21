@@ -1469,8 +1469,8 @@ color: rgba(255, 255, 255, 0.7);
 /* Responsive tweaks */
 @media (max-width: 768px) {
   .ugcsponsoredbox {
-    min-height: 180px;  /* Reduced from 220px */
-    padding: 8px;  /* Reduced from 10px */
+    min-height: 180px;  
+    padding: 8px; 
   }
   
   .ugcsponsoredboximg {
@@ -1494,6 +1494,7 @@ color: rgba(255, 255, 255, 0.7);
   
   .ugcsponsoredboximg {
     max-width: 60px;
+    object-fit: fill;
   }
   
   .ugcsponsoredboximg img {
@@ -1625,12 +1626,14 @@ color: rgba(255, 255, 255, 0.7);
 /* Responsive styles for testimonial carousel */
 @media (max-width: 768px) {
   .testimonial-carousel-container {
+    object-fit: fill;
     height: 300px;
   }
 }
 
 @media (max-width: 480px) {
   .testimonial-carousel-container {
+    object-fit: fill;
     height: 250px;
   }
 }
@@ -1639,13 +1642,13 @@ color: rgba(255, 255, 255, 0.7);
   .testimonial-slide img {
     transform: scale(1.3);
     object-position: center 15%;
+    object-fit: fill;
   }
 }
 
 @media (max-width: 480px) {
   .testimonial-slide img {
-    transform: scale(1.4);
-    object-position: center 12%;
+    object-fit:fill;
   }
 }
 
@@ -2055,6 +2058,7 @@ html, body {
     width: 100%;
     padding: 0 15px;
     box-sizing: border-box;
+   
   }
   
   .ugc-centers-container {
@@ -2073,6 +2077,7 @@ html, body {
   .ugcsponsoredboximg {
     width: 100%;
     margin: 0 auto;
+     object-fit: fill;
   }
 }
 .toprightarea {

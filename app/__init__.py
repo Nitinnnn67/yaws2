@@ -15,10 +15,6 @@ def create_app(config_name='default'):
     CORS(app)
     Migrate(app, db)
     
-    # Create database tables
-    with app.app_context():
-        db.create_all()
-    
     # Register blueprints
     from app.api import api_bp
     from app.auth import auth_bp
@@ -28,9 +24,20 @@ def create_app(config_name='default'):
     app.register_blueprint(auth_bp)
     app.register_blueprint(frontend_bp)
     
-    # Setup static file serving for uploads
-    @app.route('/uploads/<path:filename>')
-    def custom_static(filename):
-        return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+    # Create database tables with error handling
+    with app.app_context():
+        try:
+            if not app.config.get('SQLALCHEMY_DATABASE_URI'):
+                raise ValueError("Database URI not configured. Please set DATABASE_URL environment variable.")
+                
+            # Attempt to create tables
+            db.create_all()
+            app.logger.info("Database tables created successfully")
+        except Exception as e:
+            app.logger.error(f"Database initialization error: {str(e)}")
+            # In production, don't raise the error - let the app start anyway
+            # The tables may already exist or will be created by migrations
+            if app.config['ENV'] != 'production':
+                raise
     
     return app
