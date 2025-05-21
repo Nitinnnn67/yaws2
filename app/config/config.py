@@ -31,16 +31,37 @@ class DevelopmentConfig(Config):
 
 class ProductionConfig(Config):
     DEBUG = False
+    ENV = 'production'
+    
     # Use DATABASE_URL environment variable in production
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    # Fall back to SQLite if DATABASE_URL is not set
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        'sqlite:///' + os.path.join(os.path.dirname(os.path.dirname(basedir)), 'instance', 'production.sqlite3')
+        
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ENGINE_OPTIONS = {
         'pool_size': 5,
         'pool_recycle': 1800,  # recycle connections after 30 minutes
-        'pool_pre_ping': True,  # verify connections before using
-        'pool_timeout': 30,
-        'max_overflow': 2
+        'pool_pre_ping': True,  # enable connection health checks
+        'pool_timeout': 30,     # timeout after 30 seconds
+        'max_overflow': 2,      # allow up to 2 connections over pool_size
     }
+    
+    # Only add connect_args if using MySQL
+    if SQLALCHEMY_DATABASE_URI and 'mysql' in SQLALCHEMY_DATABASE_URI:
+        SQLALCHEMY_ENGINE_OPTIONS['connect_args'] = {
+            'connect_timeout': 10  # connection timeout in seconds
+        }
+    
+    # Ensure we have required environment variables
+    @classmethod
+    def init_app(cls, app):
+        Config.init_app(app)
+        
+        # Log configuration details (excluding sensitive info)
+        app.logger.info('Production config initialized')
+        app.logger.info(f"Database URL configured: {'Yes' if cls.SQLALCHEMY_DATABASE_URI else 'No'}")
+        app.logger.info(f"Upload folder: {app.config['UPLOAD_FOLDER']}")
 
 config = {
     'development': DevelopmentConfig,

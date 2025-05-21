@@ -24,20 +24,22 @@ def create_app(config_name='default'):
     app.register_blueprint(auth_bp)
     app.register_blueprint(frontend_bp)
     
-    # Create database tables with error handling
+    # Try to create database tables, with different error handling for production vs development
     with app.app_context():
         try:
-            if not app.config.get('SQLALCHEMY_DATABASE_URI'):
-                raise ValueError("Database URI not configured. Please set DATABASE_URL environment variable.")
-                
-            # Attempt to create tables
             db.create_all()
             app.logger.info("Database tables created successfully")
         except Exception as e:
-            app.logger.error(f"Database initialization error: {str(e)}")
-            # In production, don't raise the error - let the app start anyway
-            # The tables may already exist or will be created by migrations
-            if app.config['ENV'] != 'production':
+            app.logger.error(f"Error creating database tables: {str(e)}")
+            # Only raise the error in development mode
+            if app.config.get('ENV') != 'production' and app.config.get('DEBUG'):
                 raise
+            # In production, we'll continue without database tables
+            # They should be created via migrations
+    
+    # Setup static file serving for uploads
+    @app.route('/uploads/<path:filename>')
+    def uploaded_file(filename):
+        return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
     
     return app
