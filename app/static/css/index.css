@@ -825,26 +825,25 @@ color: rgba(255, 255, 255, 0.7);
     margin-bottom: 48px;
     font-weight: 500;
   } 
-  
-  .features-grid {
+    .features-grid {
     display: flex;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 26px;
-    max-width: 1300px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: auto;
     margin: 0 auto;
   }
-  
-  .feature-card {
+    .feature-card {
     /* background: var(--m3-surface-container); */
     padding: 20px;
     border-radius: var(--m3-shape-large);
     box-shadow: var(--m3-shadow-1);
     transition: all 0.5s ease-out;
     cursor: pointer;
-    opacity: 4px;
     position: relative;
-    height: 90%;
-    width: 100%;
+    flex: 1 1 100px;
+    max-width: auto;
+    min-height: 150px;
   }
   
   .feature-card.left {
@@ -911,45 +910,123 @@ color: rgba(255, 255, 255, 0.7);
      About Section - Material 3
   ============================================ */
   .about-section {
-    padding: 64px 5%;
-    /* background: var(--m3-surface-variant); */
+    padding: clamp(32px, 5vw, 64px);
+    background: var(--m3-surface);
     border-radius: var(--m3-shape-large);
-    margin: 24px;
-  }
-  
-  .about-grid {
+    margin: clamp(16px, 3vw, 24px);
+}
+
+.about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    gap: 200px;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .about-text h2 {
-    font-size: 2.25rem;
+    max-width: auto;
+    margin:auto;
+}
+
+.about-text h2 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
     color: var(--m3-primary);
-    margin-bottom: 24px;
+    margin-bottom: clamp(16px, 3vw, 24px);
     font-weight: 500;
-  }
-  
-  .about-text p {
-    margin-bottom: 16px;
-    line-height: 1.6;
+    line-height: 1.2;
+}
+
+.about-text p {
+    /* margin-bottom: clamp(12px, 2vw, 16px); */
+    line-height: 1.5;
     color: var(--m3-on-surface);
-  }
-  
-  .about-image img {
-    height: 80%;
-    width: 80%;
+    font-size: clamp(0.9rem, 1vw, 1.2rem);
+}
+
+.about-image {
+    position: relative;
+    border-radius: var(--m3-shape-large);
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: var(--m3-shape-large);
     box-shadow: var(--m3-shadow-3);
-    transition: transform 0.5s;
-  }
-  
-  .about-image:hover img {
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
     transform: scale(1.02);
-  }
+}
+
+@media (max-width: 992px) {
+    .about-section {
+        padding: 
+      
+    }
+    
+    .about-grid {
+        gap: clamp(20px, 3vw, 32px);
+        
+    }
+    
+    .about-text h2 {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: clamp(20px, 3vw, 32px);
+        /* margin: clamp(12px, 2vw, 16px); */
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .about-text {
+        order: 2;
+        text-align: center;
+    }
+    
+    .about-image {
+        order: 1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .about-text p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: 16px;
+        margin: 10px;
+    }
+    
+    .about-grid {
+        gap: 20px;
+    }
+    
+    .about-text h2 {
+        font-size: 1.5rem;
+    }
+    
+    .about-text p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .about-image {
+        aspect-ratio: 4/3;
+    }
+}
+
   
   /* ============================================
      Stats Section - Material 3
@@ -1542,8 +1619,8 @@ color: rgba(255, 255, 255, 0.7);
 }
 
 .testimonial-slide img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   object-fit: fill; /* Changed to contain to show full image */
   padding: 10px; /* Added padding around image */
 }
@@ -1855,8 +1932,8 @@ color: rgba(255, 255, 255, 0.7);
 }
 
 .message-image img {
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   object-fit: fill;
   /* border-radius: 50%; */
   border: 4px solid var(--m3-primary-container);
@@ -1877,19 +1954,19 @@ color: rgba(255, 255, 255, 0.7);
   position: relative;
 }
 .message-text {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   line-height: 1.5;
   color: var(--m3-on-surface);
 }
 
 .message-content h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 0;
   padding: 0;
   color: var(--m3-primary);
 }
 .message-content h4 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: 0;
   padding: 0;
   color: var(--m3-on-surface-variant);
@@ -1948,11 +2025,11 @@ color: rgba(255, 255, 255, 0.7);
     min-height: 480px !important;
     max-height: 520px !important;
     width: 100% !important;
-    margin: 20px auto !important;
+    /* margin: 20px auto !important; */
   }
   
   .message-slide {
-    flex-direction: column !important;
+    flex-direction:row !important;
     position: relative !important;
     display: none !important;
     opacity: 1 !important;
@@ -1966,12 +2043,13 @@ color: rgba(255, 255, 255, 0.7);
   
   .message-image, 
   .message-content {
+   
     width: 100% !important;
   }
   
   .message-image {
     height: 220px !important;
-    padding: 20px 0 !important;
+    padding: 130px 0 0 0 !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1980,7 +2058,7 @@ color: rgba(255, 255, 255, 0.7);
   .message-image img {
     width: 180px !important;
     height: 180px !important;
-    border-radius: 50% !important;
+   
     object-fit: cover !important;
     margin: 0 auto !important;
   }
@@ -1992,19 +2070,19 @@ color: rgba(255, 255, 255, 0.7);
   }
   
   .message-content h3 {
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
     text-align: center !important;
   }
   
   .message-content h4 {
-    font-size: 0.9rem !important;
+    font-size: 0.7rem !important;
     text-align: center !important;
   }
   
   .message-text {
-    font-size: 0.5rem !important;
+    font-size: 0.6rem !important;
     line-height: 1.5 !important;
-    text-align: center !important;
+    /* text-align: center !important; */
   }
 
   /* Disable animations on mobile for better performance */
@@ -2075,9 +2153,10 @@ html, body {
   }
   
   .ugcsponsoredboximg {
+    height: 400px;
     width: 100%;
     margin: 0 auto;
-     object-fit: fill;
+     object-fit: contain;
   }
 }
 .toprightarea {
