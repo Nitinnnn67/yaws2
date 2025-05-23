@@ -1372,6 +1372,7 @@ color: rgba(255, 255, 255, 0.7);
 }
 
 
+
 .publications-content {
   display: flex;
   flex-direction: row;
@@ -1593,7 +1594,8 @@ color: rgba(255, 255, 255, 0.7);
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  /* box-shadow: 0 4px 10px rgba(0,0,0,0.15); */
+  background-color:  var(--m3-secondary-container) ;
 }
 
 .testimonial-carousel {
@@ -1611,7 +1613,7 @@ color: rgba(255, 255, 255, 0.7);
   justify-content: center;
   opacity: 0;
   transition: opacity 0.8s ease;
-  background: #f5f5f5;
+  background:  var( --m3-surface) ;
 }
 
 .testimonial-slide.active {
