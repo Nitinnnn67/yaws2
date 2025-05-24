@@ -276,56 +276,9 @@ color: rgba(255, 255, 255, 0.7);
     padding: 20px;
   }
   
-  /* Message carousel fixes */
-  .message-carousel {
-    height: auto;
-    overflow: visible;
-  }
   
-  .message-slides {
-    position: relative;
-    height: auto;
-  }
-  
-  .message-slide {
-    position: relative;
-    display: none;
-    flex-direction: column;
-    height: auto;
-    opacity: 1;
-    transform: none;
-  }
-  
-  .message-slide.active {
-    display: flex;
-  }
-  
-  .message-image {
-    width: 100%;
-    height: 200px;
-  }
-  
-  .message-content {
-    width: 100%;
-    /* padding: 15px; */
-  }
-  
-  /* Vision mission section fixes */
-  .noticesvisionmission {
-    flex-direction: column;
-    padding: 15px;
-  }
-  
-  .notices {
-    max-width: 100%;
-    width: 100%;
-    padding-top: 20px;
-  }
-  
-  .vision {
-    width: 100%;
-  }
 }
+
 
 @media (max-width: 480px) {
   /* Further mobile optimizations */
@@ -462,6 +415,7 @@ color: rgba(255, 255, 255, 0.7);
     max-width: 100%;
     /* margin: 0 auto; */
     align-items: stretch;
+    overflow: hidden;
   }
   
   .notices {
@@ -808,6 +762,7 @@ color: rgba(255, 255, 255, 0.7);
       padding: 0;
     }
   }
+  
   
   /* ============================================
      Features Section - Material 3
@@ -1354,7 +1309,7 @@ color: rgba(255, 255, 255, 0.7);
 ============================================ */
 .publications-magazines { 
   display: flex;
-  padding: 40px 0;  
+  /* padding: 40px 0;   */
   background-color: var(--m3-surface);
 }
 .publications-magazines h2 {
