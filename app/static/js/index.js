@@ -46,6 +46,90 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(nextSlide, slideInterval);
 });
 
+// Automatic carousel sliding
+document.addEventListener('DOMContentLoaded', function() {
+    const carousels = document.querySelectorAll('.testimonial-carousel-container');
+    
+    carousels.forEach(carousel => {
+        const slides = carousel.querySelectorAll('.testimonial-slide');
+        const dots = carousel.querySelectorAll('.testimonial-dot span');
+        let currentSlide = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let autoSlideInterval;
+
+        function showSlide(index) {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.style.display = 'none';
+            });
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            slides[index].style.display = 'block';
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Touch events for mobile swipe
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            clearInterval(autoSlideInterval); // Pause auto-slide on touch
+        });
+
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].clientX;
+            handleSwipe();
+            startAutoSlide(); // Resume auto-slide after touch
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchEndX - touchStartX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    previousSlide();
+                } else {
+                    nextSlide();
+                }
+            }
+        }
+
+        // Click events for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            });
+        });
+
+        // Auto-slide functionality
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 3000);
+        }
+
+        // Start the carousel
+        showSlide(0);
+        startAutoSlide();
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+        carousel.addEventListener('mouseleave', startAutoSlide);
+    });
+});
+
 // Global variables
 let isScrollPaused = false;
 let scrollInterval = null;

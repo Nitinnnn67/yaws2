@@ -706,4 +706,127 @@
       transform: translateY(-5px) !important;
     }
   }
+   /* ============================================
+     Campus Life Section - Material 3
+  ============================================ */
+.campus-life {
+    padding: clamp(32px, 5vw, 64px) clamp(16px, 3vw, 24px);
+    background: var(--m3-surface);
+}
+  
+.campus-life h2 {
+    text-align: center;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    color: var(--m3-primary);
+    margin-bottom: clamp(24px, 5vw, 48px);
+    font-weight: 500;
+}
+  
+.campus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: clamp(16px, 3vw, 32px);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+  
+.campus-card {
+    position: relative;
+    height: clamp(300px, 50vw, 400px);
+    border-radius: var(--m3-shape-medium);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+  
+.campus-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--m3-shadow-4);
+}
+  
+.campus-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+  
+.campus-card:hover img {
+    transform: scale(1.05);
+}
+  
+.campus-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: clamp(16px, 3vw, 32px);
+    color: white;
+    transform: translateY(150px);
+    transition: transform 0.5s;
+}
+.campus-overlay a{
+    color: var(--m3-on-primary-container);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    border: #3b2600 1px solid;
+    border-radius: var(--m3-shape-medium);
+    padding: auto;
+}
+  
+.campus-card:hover .campus-overlay {
+    transform: translateY(0);
+}
+  
+.campus-overlay h3 {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+  
+.campus-overlay p {
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    line-height: 1.6;
+}
+  
+.campus-card:hover .campus-overlay p {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .campus-card {
+        height: 300px;
+    }
+    
+    .campus-overlay {
+        padding: 20px;
+        transform: translateY(100px);
+    }
+}
+
+@media (max-width: 480px) {
+    .campus-card {
+        height: 250px;
+    }
+    
+    .campus-overlay {
+        padding: 16px;
+        transform: translateY(80px);
+    }
+    
+    .campus-overlay h3 {
+        font-size: 1.2rem;
+    }
+    
+    .campus-overlay p {
+        font-size: 0.9rem;
+    }
+}
 

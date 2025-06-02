@@ -131,10 +131,8 @@
           </div>
         </div>
         <div class="message-nav-controls">
-          <div class="message-nav-btn message-prev">&lsaquo;</div>
-          <div class="message-nav-btn message-next">&rsaquo;</div>
+
         </div>
-        <div class="message-count">1/2</div>
         <div class="message-controls">
           <span class="message-indicator active"></span>
           <span class="message-indicator"></span>
@@ -150,10 +148,10 @@
   <div class="about-grid">
     <div class="about-text">
       <h2>About PRUTSIM</h2>
-      <p>Saket Gyanpeeth ventured into the field of management education by establishing “Pramod Ram Ujagar Tiwari Saket Institute of Management-(PRUTSIM)” in the year 2009.
-         The institute offers two years fulltime M.B.A./M.M.S (Master of Management Studies) course affiliated to University of Mumbai and approved by All India Council of Technical Education (AICTE) and Directorate of technical education(D.T.E. –MB. 3158)/ Government of Maharashtra. 
-         The institute has an intake capacity of 120 students. 
-        The institute has a Hindi linguistic minority status from Government of Maharashtra.</p>
+      <p>In 2009, Saket Gyanpeeth, a prominent educational trust based in Kalyan, Maharashtra, expanded its academic portfolio by establishing the Pramod Ram Ujagar Tiwari Saket Institute of Management (PRUTSIM). This initiative marked the trust's foray into the realm of management education, aiming to provide quality postgraduate programs in business administration.</p>
+<p>PRUTSIM offers a two-year full-time Master of Management Studies (M.M.S.) program, which is equivalent to an MBA. This program is affiliated with the University of Mumbai and has received approvals from the All India Council for Technical Education (AICTE) and the Directorate of Technical Education (DTE), Government of Maharashtra, under the code MB 3158.&#x20;</p>
+<p>Initially, the institute had an intake capacity of 60 students. However, in the academic year 2010-11, PRUTSIM obtained approval from AICTE to increase its intake to 120 students, accommodating the growing demand for management education. 
+Through its commitment to academic excellence and social responsibility, PRUTSIM continues to contribute significantly to the field of management education in the region.</p>
     </div>
     <div class="about-image">
       <img src="https://saketcollege.edu.in/wp-content/uploads/2023/12/WhatsApp-Image-2022-01-20-at-1.07.43-PM.jpeg"
@@ -220,9 +218,9 @@
 <section class="publications-magazines">
   <div class="container">
     <h2 class="section-title">Student Testimonials</h2>
-    <div class="ugc-centers-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
-      <!-- Testimonial Section -->
-      <div class="testimonial-carousel-container">
+    <div class="ugc-centers-container" style="display: flex; gap: 20px; justify-content: center;">
+      <!-- Left Testimonial Section -->
+      <div class="testimonial-carousel-container" style="flex: 1; max-width: 45%;">
         <div class="testimonial-carousel">
           <div class="testimonial-slide active">
             <img src="{{ url_for('static', filename='testimonal(1).png') }}" alt="Student Testimonial 1">
@@ -230,7 +228,17 @@
           <div class="testimonial-slide">
             <img src="{{ url_for('static', filename='testimonal(2).png') }}" alt="Student Testimonial 2">
           </div>
-          <div class="testimonial-slide">
+        </div>
+        <div class="testimonial-dot">
+          <span class="active"></span>
+          <span></span>
+        </div>
+      </div>
+
+      <!-- Right Testimonial Section -->
+      <div class="testimonial-carousel-container" style="flex: 1; max-width: 45%;">
+        <div class="testimonial-carousel">
+          <div class="testimonial-slide active">
             <img src="{{ url_for('static', filename='testimonal(3).png') }}" alt="Student Testimonial 3">
           </div>
           <div class="testimonial-slide">
@@ -240,25 +248,37 @@
         <div class="testimonial-dot">
           <span class="active"></span>
           <span></span>
-          <span></span>
-          <span></span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Our Recruiters Section -->
 <section class="publications-magazines">
   <div class="container">
     <h2 class="section-title">Our Recruiters</h2>
-    <div class="ugc-centers-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
-      <!-- Recruiters Section -->
-      <div class="testimonial-carousel-container">
+    <div class="ugc-centers-container" style="display: flex; gap: 20px; justify-content: center;">
+      <!-- Left Recruiters Section -->
+      <div class="testimonial-carousel-container" style="flex: 1; max-width: 45%;">
         <div class="testimonial-carousel">
           <div class="testimonial-slide active">
             <img src="{{ url_for('static', filename='recruiters1.jpg') }}" alt="Our Recruiters 1">
           </div>
           <div class="testimonial-slide">
+            <img src="{{ url_for('static', filename='recruiters2.jpg') }}" alt="Our Recruiters 2">
+          </div>
+        </div>
+        <div class="testimonial-dot">
+          <span class="active"></span>
+          <span></span>
+        </div>
+      </div>
+
+      <!-- Right Recruiters Section -->
+      <div class="testimonial-carousel-container" style="flex: 1; max-width: 45%;">
+        <div class="testimonial-carousel">
+          <div class="testimonial-slide active">
             <img src="{{ url_for('static', filename='recruiters2.jpg') }}" alt="Our Recruiters 2">
           </div>
           <div class="testimonial-slide">
@@ -267,7 +287,6 @@
         </div>
         <div class="testimonial-dot">
           <span class="active"></span>
-          <span></span>
           <span></span>
         </div>
       </div>
@@ -488,5 +507,5 @@
 </script>
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/index.js') }}"></script>
-{% endblock %}
-{% endblock %}
+{% endblock scripts %}
+{% endblock content %}
