@@ -1,212 +1,285 @@
 {% extends "base.html" %}
 
-{% block title %}alumini - Saket College{% endblock %}
+{% block title %}Alumni - Saket College{% endblock %}
 
 {% block styles %}
 .content-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
-  background-color: var(--m3-surface);
-  border-radius: var(--m3-shape-medium);
-  box-shadow: var(--m3-shadow-1);
+  background-color: transparent;
 }
 
 .page-title {
   color: var(--m3-primary);
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--m3-outline-variant);
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--m3-primary);
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.nav-container {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.95), rgba(var(--m3-primary-rgb), 0.05));
+    padding: 25px 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    text-align: center;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 0 0 30px 30px;
+    margin: 0 -20px;
+    padding: 20px;
 }
 
 .view-button {
-  background-color: var(--m3-primary);
-  color: var(--m3-on-primary);
-  padding: 8px 16px;
-  border: none;
-  border-radius: var(--m3-shape-small);
-  cursor: pointer;
-  transition: background-color 0.2s;
-  margin-right: 10px;
-  margin-bottom: 15px;
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
+    background: linear-gradient(135deg, var(--m3-primary), var(--m3-primary-dark));
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: var(--m3-shape-large);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 10px 15px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(var(--m3-primary-rgb), 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.view-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.view-button:hover:before {
+    left: 100%;
 }
 
 .view-button:hover {
-  background-color: #4a310c;
-  text-decoration: underline;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(var(--m3-primary-rgb), 0.3);
+    background: linear-gradient(135deg, var(--m3-primary-dark), var(--m3-primary));
 }
 
-.view-button a {
-  color: var(--m3-on-primary);
-  text-decoration: none;
-  display: block;
+.view-button.active-section {
+    background: linear-gradient(135deg, var(--m3-primary-dark), var(--m3-primary));
+    box-shadow: 0 6px 20px rgba(var(--m3-primary-rgb), 0.4);
+    transform: translateY(-2px);
 }
 
 .section {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: var(--m3-surface-variant);
-  border-radius: var(--m3-shape-medium);
+  margin-top: 40px;
+  padding: 30px 0;
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.section.active {
+  display: block;
 }
 
 .section-title {
   color: var(--m3-primary);
-  margin-bottom: 15px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--m3-outline-variant);
+  font-size: 2em;
+  text-align: center;
+  position: relative;
 }
 
-.alumni-grid {
+.section-title:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--m3-primary);
+  margin: 15px auto 0;
+}
+
+.event-description {
+  color: var(--m3-on-surface);
+  line-height: 1.3;
+  font-size: 1.1em;
+  <!-- margin: 0px auto; -->
+  max-width: 800px;
+  text-align: center;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.testimonial-image {
+  width: 100%;
+  max-height: 900px;
+  object-fit: contain;
+  margin: 40px auto;
+  display: block;
+}
+
+.distinctive-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1300px;
+  padding: 0 15px;
 }
 
-.alumni-card {
-  background-color: var(--m3-surface);
-  border-radius: var(--m3-shape-small);
-  padding: 15px;
-  box-shadow: var(--m3-shadow-1);
+.distinctive-image {
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.distinctive-image:hover {
+  transform: scale(1.02);
+}
+
+.event-title {
+  color: var(--m3-primary);
+  font-size: 1.8em;
+  margin: 40px 0 20px;
   text-align: center;
 }
 
-.alumni-img-container {
-  width: 100%;
-  height: 200px;
-  margin-bottom: 15px;
-  position: relative;
-  border: 1px dashed var(--m3-outline);
-  border-radius: var(--m3-shape-small);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--m3-surface-variant-light);
+.document-container {
+    text-align: center;
+    padding: 40px;
+    background: rgba(var(--m3-primary-rgb), 0.05);
+    border-radius: var(--m3-shape-large);
+    margin: 30px auto;
+    max-width: 800px;
 }
 
-.alumni-img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+.document-message {
+    color: var(--m3-on-surface-variant);
+    margin: 20px 0;
+    font-style: italic;
 }
 
-.image-placeholder {
-  color: var(--m3-outline);
-  font-size: 14px;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.alumni-name {
-  font-weight: 600;
-  color: var(--m3-on-surface);
-  margin-bottom: 5px;
-}
+@media (max-width: 768px) {
+  .distinctive-grid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
 
-.alumni-details {
-  color: var(--m3-on-surface-variant);
-  font-size: 14px;
+  .distinctive-image {
+    max-height: 500px;
+  }
+
+  .event-description {
+    padding: 0 15px;
+    font-size: 1em;
+  }
+
+  .section-title {
+    font-size: 1.6em;
+  }
+
+  .nav-container {
+    padding: 15px 10px;
+    margin: 0 -10px;
+  }
+
+  .view-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 0 5px 10px;
+  }
 }
 {% endblock %}
 
 {% block content %}
 <div class="content-container">
-  <h1 class="page-title">Alumni</h1>
-  
-  <a href="#" class="view-button">Alumni Association</a>
-  <a href="#alumni-interaction" class="view-button">Alumni Interaction</a>
-  <a href="#eminent-alumni" class="view-button">Testimonials</a>
-  
-
-  <!-- Alumni Interaction Section -->
-  <div id="alumni-interaction" class="section">
-    <h2 class="section-title">Alumni Interaction</h2>
-    <p>Here are some memorable moments from our recent alumni interactions and events:</p>
+    <h1 class="page-title">Alumni</h1>
     
-    <div class="alumni-grid">
-      <!-- Alumni Interaction Card 1 -->
-      <div class="alumni-card">
-        <div class="alumni-img-container">
-          <div class="image-placeholder">Image will be added here</div>
-          <!-- <img src="#" alt="Alumni Interaction 1" class="alumni-img"> -->
-        </div>
-        <div class="alumni-details">
-          <p>Annual Alumni Meet 2024</p>
-        </div>
-      </div>
-      
-      <!-- Alumni Interaction Card 2 -->
-      <div class="alumni-card">
-        <div class="alumni-img-container">
-          <div class="image-placeholder">Image will be added here</div>
-          <!-- <img src="#" alt="Alumni Interaction 2" class="alumni-img"> -->
-        </div>
-        <div class="alumni-details">
-          <p>Career Guidance Session</p>
-        </div>
-      </div>
-      
-      <!-- Alumni Interaction Card 3 -->
-      <div class="alumni-card">
-        <div class="alumni-img-container">
-          <div class="image-placeholder">Image will be added here</div>
-          <!-- <img src="#" alt="Alumni Interaction 3" class="alumni-img"> -->
-        </div>
-        <div class="alumni-details">
-          <p>Alumni Reunion 2023</p>
-        </div>
-      </div>
+    <div class="nav-container">
+        <a href="#committee" class="view-button" data-section="committee">Alumni Association Committee</a>
+        <a href="#alumni-interaction" class="view-button" data-section="interaction">Alumni Interaction</a>
+        <a href="#eminent-alumni" class="view-button" data-section="testimonials">Alumni Testimonials</a>
+        <a href="#distinctive" class="view-button">Distinctive Alumni</a>
     </div>
-  </div>
 
-  <!-- Our Eminent Alumni Section -->
-  <div id="eminent-alumni" class="section">
-    <h2 class="section-title">Testimonials</h2>
-    <p>We take pride in the accomplishments of our distinguished alumni:</p>
-    
-    <div class="alumni-grid">
-      
-      <div class="alumni-card">
-        <div class="alumni-img-container">
-          <div class="image-placeholder">Image will be added here</div>
-          <!-- <img src="#" alt="Eminent Alumni 1" class="alumni-img"> -->
+    <!-- Committee Section -->
+    <div id="committee" class="section">
+        <h2 class="section-title">Alumni Association Committee</h2>
+        <div class="document-container">
+            <p class="event-description">
+                View our Alumni Association Committee details in the document below:
+            </p>
+            <a href="https://prutsim.edu.in/Docs/Alumni%20Association%20Committee_removed.pdf?_t=1683822888" 
+               class="view-button" 
+               target="_blank" 
+               rel="noopener noreferrer">Download Committee Document</a>
         </div>
-        <h3 class="alumni-name">Name will be added</h3>
-        <div class="alumni-details">
-          <p>Batch: 2015</p>
-          <p>Achievement: To be added</p>
-        </div>
-      </div>
-      
-      <!-- Eminent Alumni Card 2 -->
-      <div class="alumni-card">
-        <div class="alumni-img-container">
-          <div class="image-placeholder">Image will be added here</div>
-          <!-- <img src="#" alt="Eminent Alumni 2" class="alumni-img"> -->
-        </div>
-        <h3 class="alumni-name">Name will be added</h3>
-        <div class="alumni-details">
-          <p>Batch: 2010</p>
-          <p>Achievement: To be added</p>
-        </div>
-      </div>
-      
-      <!-- Eminent Alumni Card 3 -->
-      <div class="alumni-card">
-        <div class="alumni-img-container">
-          <div class="image-placeholder">Image will be added here</div>
-          <!-- <img src="#" alt="Eminent Alumni 3" class="alumni-img"> -->
-        </div>
-        <h3 class="alumni-name">Name will be added</h3>
-        <div class="alumni-details">
-          <p>Batch: 2018</p>
-          <p>Achievement: To be added</p>
-        </div>
-      </div>
     </div>
-  </div>
+
+    <!-- Alumni Interaction Section -->
+    <div id="alumni-interaction" class="section">
+        <h2 class="section-title">Alumni Interaction</h2>
+        
+        <h3 class="event-title">Reminiscence - 2k19</h3>
+        <p class="event-description">
+            In 2019 PRUTSIM arranged Alumni meet "Reminiscence" where students from past batches visited the campus. 
+            They all got nostalgic and lost in the memories of the good old days. They shared their work experiences 
+            and updated current batch students on how to prepare for the corporate world and what the expectations 
+            are from a management student in the professional environment.
+        </p>
+
+        <h3 class="event-title">Saketians Speak Your Mind</h3>
+        <p class="event-description">
+            A unique competition was conducted for students of Saket Gyanpeeth where they chose to speak upon topics 
+            of their choice and expressed their views. The special element was that these students were judged by our 
+            own alumni, creating a joyful sharing of knowledge and thought processes. We invited alumni and felicitated 
+            them for being judges in this competition.
+        </p>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div id="eminent-alumni" class="section">
+        <h2 class="section-title">Alumni Testimonials</h2>
+        <img src="{{ url_for('static', filename='testimonal(alumni-page).png') }}" 
+             alt="Alumni Testimonials" 
+             class="testimonial-image">
+    </div>
+
+    <!-- Distinctive Alumni Section -->
+    <div id="distinctive" class="section">
+        <h2 class="section-title">Distinctive Alumni</h2>
+        <div class="distinctive-grid">
+            <img src="{{ url_for('static', filename='distinctive(1).png') }}" 
+                 alt="Distinctive Alumni 1" 
+                 class="distinctive-image">
+            <img src="{{ url_for('static', filename='distinctive(2).png') }}" 
+                 alt="Distinctive Alumni 2" 
+                 class="distinctive-image">
+        </div>
+    </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/alumni.js') }}"></script>
 {% endblock %}
