@@ -1,4 +1,90 @@
 /* ============================================
+     Animation CSS Enhancements
+  ============================================ */
+  
+/* Base animation setup - initial state for animations */
+.hero, .caption-card, .notices, .vision, .message-carousel, 
+.about-text, .about-image, .stat-card, .feature-card {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+/* Initial state for hero fade-in */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Reduced from 100vh to 70vh */
+    min-height: 370px; /* Reduced from 400px */
+    max-height: 700px; /* Reduced from 800px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgba(2, 3, 27, 0.9);
+    overflow: hidden;
+    margin: 0 0 20px 0;
+    opacity: 0; /* Start invisible for animation */
+}
+
+/* Initial state for notice board animation */
+.notices {
+    transform: translateX(-50px);
+    opacity: 0;
+}
+
+/* Initial state for vision/mission section */
+.vision {
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+/* Initial state for about section elements */
+.about-text {
+    transform: translateX(-50px);
+    opacity: 0;
+}
+
+.about-image {
+    transform: translateX(50px);
+    opacity: 0;
+}
+
+/* Initial state for stats cards */
+.stat-card {
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+/* Initial state for feature cards */
+.feature-card {
+    transform: translateY(40px);
+    opacity: 0;
+}
+
+/* Animation smoothing for all elements */
+.message-carousel, .caption-card {
+    opacity: 0;
+}
+
+/* Hover effects enhanced by GSAP */
+.feature-card:hover, .stat-card:hover {
+    transition: transform 0.3s ease-out;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+     Animation CSS Enhancements
+  ============================================ */
+  
+/* Base animation setup - initial state for animations */
+.hero, .caption-card, .notices, .vision, .message-carousel, 
+.about-text, .about-image, .stat-card, .feature-card {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+/* ============================================
      Hero Section - Material 3
   ============================================ */
 .hero {
@@ -874,7 +960,7 @@ color: rgba(255, 255, 255, 0.7);
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 200px;
+    gap: 150px;
     align-items: center;
     max-width: auto;
     margin:auto;
