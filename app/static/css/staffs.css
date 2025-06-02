@@ -264,3 +264,52 @@
     font-size: 2rem;
   }
 }
+
+/* Faculty Testimonials Section */
+.faculty-testimonials {
+  margin-top: 3rem;
+}
+
+.faculty-testimonials .section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--m3-primary);
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-3);
+}
+
+.testimonial-slide {
+  width: 100%;
+}
+
+.testimonial-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--m3-shape-medium);
+}
+
+/* Responsive styles for faculty testimonials */
+@media (max-width: 768px) {
+  .ugc-centers-container {
+    flex-direction: column;
+  }
+  
+  .testimonial-carousel-container {
+    max-width: 100% !important;
+    margin-bottom: 20px;
+  }
+}
