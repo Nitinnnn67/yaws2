@@ -8,34 +8,194 @@
 
 {% block content %}
 <main class="staff-container">
-  <div class="staff-header">
-    <h1>Faculty & Staff</h1>
-    <p>Our institution takes pride in its distinguished faculty members and dedicated staff who are committed to academic excellence and student success.</p>
+  <!-- Section Navigation -->
+  <div class="section-nav">
+    <button class="section-btn active" data-section="faculty">Faculty Members</button>
+    <button class="section-btn" data-section="non-teaching">Non-Teaching Staff</button>
   </div>
 
-  <section class="faculty-testimonials">
-    <h2 class="section-title">Our Faculty</h2>
-    <div class="ugc-centers-container" style="display: flex; gap: 20px; justify-content: center; margin-top: 30px;">
-      <!-- Left Faculty Section -->
-      <div class="testimonial-carousel-container" style="flex: 1; max-width: 45%;">
-        <div class="testimonial-carousel">
-          <div class="testimonial-slide active">
-            <img src="{{ url_for('static', filename='images/faculty{1}.png') }}" alt="Faculty Member 1">
+  <!-- Faculty Section -->
+  <section id="faculty" class="staff-section active">
+    <div class="staff-header">
+      <h1>We Have World Class Professors and Renowned Visiting Faculty Members</h1>
+    </div>
+
+    <div class="faculty-grid">
+      <!-- Director -->
+      <div class="faculty-member" data-faculty-id="kavita">
+        <div class="faculty-image">
+          <img src="{{ url_for('static', filename='images/ceo.png') }}" alt="Director">
+          <div class="faculty-overlay">
+            <h3>Dr. Kavita R Laghate</h3>
+            <span>Director / Professor</span>
           </div>
         </div>
       </div>
 
-      <!-- Right Faculty Section -->
-      <div class="testimonial-carousel-container" style="flex: 1; max-width: 45%;">
-        <div class="testimonial-carousel">
-          <div class="testimonial-slide active">
-            <img src="{{ url_for('static', filename='images/facultyu{2}.png') }}" alt="Faculty Member 2">
+      <!-- Professor 1 -->
+      <div class="faculty-member" data-faculty-id="srinivasan">
+        <div class="faculty-image">
+          <img src="{{ url_for('static', filename='images/faculty/prof1.jpg') }}" alt="Professor">
+          <div class="faculty-overlay">
+            <h3>Dr. Srinivasan R. Iyengar</h3>
+            <span>Professor</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professor 2 -->
+      <div class="faculty-member" data-faculty-id="chandrahauns">
+        <div class="faculty-image">
+          <img src="{{ url_for('static', filename='images/faculty/prof2.jpg') }}" alt="Professor">
+          <div class="faculty-overlay">
+            <h3>Dr. Chandrahauns R. Chavan</h3>
+            <span>Professor</span>
           </div>
         </div>
       </div>
     </div>
   </section>
- </main>
+
+  <!-- Non-Teaching Staff Section -->
+  <section id="non-teaching" class="staff-section">
+    <div class="staff-header">
+      <h1>Our Administrative and Support Staff</h1>
+      <p>The backbone of our institution, ensuring smooth operations and student support.</p>
+    </div>
+
+    <div class="staff-table-container">
+      <table class="staff-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Designation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mr. Ganesh Parab</td>
+            <td>Librarian</td>
+          </tr>
+          <tr>
+            <td>Mrs. Pragati Mohite</td>
+            <td>HR</td>
+          </tr>
+          <tr>
+            <td>Ms. Priyanka Poojari</td>
+            <td>PA To Director</td>
+          </tr>
+          <tr>
+            <td>Mr. Vinayak Mane</td>
+            <td>Administrative Officer</td>
+          </tr>
+          <tr>
+            <td>Mr. Sandip Shinde</td>
+            <td>IT In-Charge</td>
+          </tr>
+          <tr>
+            <td>Ms. Suvarna Shinde</td>
+            <td>Librarian Assistant</td>
+          </tr>
+          <tr>
+            <td>Mr. Ganesh Kamble</td>
+            <td>Library Attendant</td>
+          </tr>
+          <tr>
+            <td>Ms. Shruti More</td>
+            <td>Admin Assistant</td>
+          </tr>
+          <tr>
+            <td>Mr. Deepak Bhalerao</td>
+            <td>Office Assistant</td>
+          </tr>
+          <tr>
+            <td>Mr. Harshad Rawool</td>
+            <td>Peon</td>
+          </tr>
+          <tr>
+            <td>Mr. Amol Sawant</td>
+            <td>Peon</td>
+          </tr>
+          <tr>
+            <td>Ms. Vidya Ranpise</td>
+            <td>Security</td>
+          </tr>
+          <tr>
+            <td>Ms. Arthi Gaikwad</td>
+            <td>Cleaner</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Faculty Detail Modal -->
+  <div id="facultyModal" class="faculty-modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="faculty-detail-container">
+        <!-- Main Profile Section -->
+        <div class="faculty-profile">
+          <!-- Left Side - Image -->
+          <div class="faculty-image-large">
+            <img src="" alt="Faculty Member" id="modalFacultyImage">
+          </div>
+
+          <!-- Right Side - Information -->
+          <div class="faculty-info-main">
+            <!-- Basic Information -->
+            <div class="faculty-header">
+              <h2 id="modalFacultyName"></h2>
+              <p id="modalFacultyPosition"></p>
+            </div>
+
+            <!-- Contact and Expertise -->
+            <div class="faculty-basic-info">
+              <div class="contact-info">
+                <h3>Email</h3>
+                <a id="modalFacultyEmail" href=""></a>
+              </div>
+              <div class="qualifications">
+                <h3>Qualifications</h3>
+                <p id="modalFacultyQualifications"></p>
+              </div>
+              <div class="expertise">
+                <h3>Areas of Expertise</h3>
+                <p id="modalFacultyExpertise"></p>
+              </div>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="faculty-tabs">
+              <div class="tabs-header">
+                <button class="tab-btn active" data-tab="about">About</button>
+                <button class="tab-btn" data-tab="teachings">Teachings</button>
+                <button class="tab-btn" data-tab="publications">Research Publications</button>
+                <button class="tab-btn" data-tab="awards">Awards & Honors</button>
+              </div>
+
+              <!-- Tab Content -->
+              <div class="tabs-content">
+                <div id="about" class="tab-content active">
+                  <p id="modalFacultyAbout"></p>
+                </div>
+                <div id="teachings" class="tab-content">
+                  <ul id="modalFacultyTeachings"></ul>
+                </div>
+                <div id="publications" class="tab-content">
+                  <ul id="modalFacultyPublications"></ul>
+                </div>
+                <div id="awards" class="tab-content">
+                  <ul id="modalFacultyAwards"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 {% endblock %}
 
 {% block scripts %}
