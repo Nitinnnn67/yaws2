@@ -291,23 +291,23 @@
 
 .staff-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2px;
   margin-top: 2rem;
 }
 
 .staff-card {
   background-color: var(--m3-surface-container);
-  border-radius: var(--m3-shape-small);
+  /* border-radius: var(--m3-shape-small); */
   overflow: hidden;
-  box-shadow: var(--m3-shadow-2);
+  /* box-shadow: var(--m3-shadow-2); */
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .staff-card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--m3-shadow-3);
-  background-color: var(--m3-surface-container-high);
+  /* box-shadow: var(--m3-shadow-3); */
+  /* background-color: var(--m3-surface-container-high); */
 }
 
 .faculty-section {
@@ -316,8 +316,8 @@
 
 .faculty-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
+  gap: 2px;
 }
 
 .faculty-member {
@@ -599,8 +599,14 @@
     font-size: 2rem;
   }
 
-  .faculty-grid, .staff-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  .faculty-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+  }
+
+  .staff-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
   }
 
   .data-table {
@@ -608,36 +614,64 @@
     overflow-x: auto;
   }
 
-  .faculty-list {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-  
-  .faculty-content img {
-    height: 250px;
-  }
-  
-  .faculty-profile {
-    grid-template-columns: 1fr;
-  }
-
-  .faculty-image-large {
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
-  .tab-nav {
-    flex-wrap: wrap;
-  }
-
+  /* Modal Responsive Styles */
   .modal-content {
-    margin: 1rem;
+    margin: 0.5rem;
+    max-height: 95vh;
+    overflow-y: auto;
   }
 
   .faculty-detail-container {
     padding: 1rem;
   }
 
-  .tab-nav a {
+  .faculty-profile {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .faculty-image-large {
+    max-width: 100%;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .faculty-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .faculty-header p {
+    font-size: 1rem;
+  }
+
+  .tabs-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tab-btn {
     padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    flex: 1;
+    text-align: center;
+    min-width: calc(50% - 0.5rem);
+  }
+
+  .faculty-basic-info {
+    margin: 1rem 0;
+  }
+
+  .faculty-basic-info h3 {
+    font-size: 1rem;
+  }
+
+  .tab-content {
+    font-size: 0.95rem;
+  }
+
+  .close-modal {
+    right: 0.5rem;
+    top: 0.5rem;
+    font-size: 1.5rem;
   }
 }

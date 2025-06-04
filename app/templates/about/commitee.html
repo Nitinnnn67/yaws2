@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Committees - PRUTSIM{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-5">Important Committees</h1>
+
+    <!-- Library Advisory Committee Section -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="card-title">Library Advisory Committee</h2>
+            <p class="card-text">The Library Advisory Committee plays a crucial role in guiding the development and improvement of library services and resources.</p>
+            <a href="https://prutsim.edu.in/Docs/Committees.pdf?_t=1688228278" class="btn btn-primary" target="_blank">
+                <i class="fas fa-file-pdf me-2"></i>View Committee Details
+            </a>
+        </div>
+    </div>
+
+    <!-- Institute Development Committee Section -->
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">Institute Development Committee</h2>
+            <p class="card-text">The Institute Development Committee is responsible for planning and implementing various development initiatives for the institute.</p>
+            <div class="mb-3">
+                <a href="https://prutsim.edu.in/Docs/Committees.pdf?_t=1688228278" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-file-pdf me-2"></i>View Committee Details
+                </a>
+            </div>
+            
+            <!-- Photo Gallery Section (Placeholder) -->
+            <div class="committee-photos mt-4">
+                <h3 class="h5 mb-3">Committee Photos</h3>
+                <div class="row g-3" id="committee-photo-gallery">
+                    <!-- Photos will be added here later -->
+                    <div class="col-12">
+                        <p class="text-muted">Committee photos will be added soon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .card {
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .btn-primary {
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+    .committee-photos {
+        border-top: 1px solid #dee2e6;
+        padding-top: 20px;
+    }
+</style>
+{% endblock %}

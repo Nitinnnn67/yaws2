@@ -1,0 +1,388 @@
+{% extends "base.html" %}
+
+{% block title %}Committees - PRUTSIM{% endblock %}
+
+{% block content %}
+<div class="content-container">
+    <h1 class="page-title">Important Committees</h1>
+    
+    <div class="nav-container">
+        <a href="#library" class="view-button" data-section="library">Library Advisory Committee</a>
+        <a href="#idc" class="view-button" data-section="idc">Institute Development Committee</a>
+    </div>
+
+    <!-- Library Advisory Committee Section -->
+    <div id="library" class="section active">
+        <h2 class="section-title">Library Advisory Committee</h2>
+        <p class="committee-description">
+            The Library Advisory Committee plays a crucial role in guiding the development and improvement of library services and resources.
+        </p>
+        <div class="document-container">
+            <a href="https://prutsim.edu.in/Docs/Committees.pdf?_t=1688228278" class="view-button" target="_blank">
+                <i class="fas fa-file-pdf me-2"></i>View Committee Details
+            </a>
+        </div>
+    </div>
+
+    <!-- Institute Development Committee Section -->
+    <div id="idc" class="section">
+        <p class="committee-description">
+            The Institute Development Committee is responsible for planning and implementing various development initiatives for the institute.
+        </p>
+        <div class="document-container">
+            <img src="{{ url_for('static', filename='IDC.png') }}" alt="Institute Development Committee" class="committee-image">
+        </div>
+    </div>
+</div>
+
+<!-- Gallery Modal -->
+<div id="galleryModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2 id="modalTitle">Committee Activities</h2>
+        <div class="photo-gallery" id="modalGallery"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+    .content-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: transparent;
+    }
+
+    .page-title {
+        color: var(--m3-primary);
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid var(--m3-primary);
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+    .nav-container {
+        position: sticky;
+        top: 0;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.95), rgba(var(--m3-primary-rgb), 0.05));
+        padding: 25px 0;
+        z-index: 100;
+        backdrop-filter: blur(8px);
+        text-align: center;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        border-radius: 0 0 30px 30px;
+        margin: 0 -20px;
+        padding: 20px;
+    }
+
+    .view-button {
+        background: linear-gradient(135deg, var(--m3-primary), var(--m3-primary-dark));
+        color: white;
+        padding: 12px 28px;
+        border: none;
+        border-radius: var(--m3-shape-large);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 0 10px 15px;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        box-shadow: 0 4px 15px rgba(var(--m3-primary-rgb), 0.2);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .view-button:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+        );
+        transition: 0.5s;
+    }
+
+    .view-button:hover:before {
+        left: 100%;
+    }
+
+    .view-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(var(--m3-primary-rgb), 0.3);
+        background: linear-gradient(135deg, var(--m3-primary-dark), var(--m3-primary));
+        color: white;
+        text-decoration: none;
+    }
+
+    .section {
+        margin-top: 40px;
+        padding: 30px 0;
+        display: none;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .section.active {
+        display: block;
+    }
+
+    .section-title {
+        color: var(--m3-primary);
+        font-size: 2em;
+        text-align: center;
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .section-title:after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: var(--m3-primary);
+        margin: 15px auto 0;
+    }
+
+    .committee-description {
+        color: var(--m3-on-surface);
+        line-height: 1.6;
+        font-size: 1.1em;
+        max-width: 800px;
+        text-align: center;
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+
+    .document-container {
+        text-align: center;
+        background: rgba(var(--m3-primary-rgb), 0.05);
+        border-radius: var(--m3-shape-large);
+        margin: 30px auto;
+        max-width: 1000px;
+    }
+
+    .gallery-container {
+        margin-top: 40px;
+    }
+
+    .gallery-title {
+        color: var(--m3-secondary);
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .committee-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .gallery-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: var(--m3-shape-medium);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-image:hover {
+        transform: scale(1.02);
+        box-shadow: var(--m3-shadow-3);
+    }
+
+    .placeholder-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .image-placeholder {
+        width: 100%;
+        height: 200px;
+        background: var(--m3-surface-variant);
+        border-radius: var(--m3-shape-medium);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .image-placeholder .placeholder-text {
+        color: var(--m3-on-surface-variant);
+        font-style: italic;
+        font-size: 1.1em;
+        opacity: 0.8;
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        overflow: auto;
+    }
+
+    .modal-content {
+        background-color: var(--m3-surface);
+        margin: 5% auto;
+        padding: 20px;
+        width: 80%;
+        max-width: 1000px;
+        border-radius: var(--m3-shape-medium);
+        box-shadow: var(--m3-shadow-4);
+        position: relative;
+    }
+
+    .close-button {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        color: var(--m3-on-surface-variant);
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close-button:hover {
+        color: var(--m3-primary);
+    }
+
+    .photo-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .committee-image {
+        width: 100%;
+        max-width: 1200px;
+        height: 100%;
+        border-radius: var(--m3-shape-medium);
+        box-shadow: var(--m3-shadow-3);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+        .nav-container {
+            padding: 15px 10px;
+            margin: 0 -10px;
+        }
+
+        .view-button {
+            padding: 10px 20px;
+            font-size: 14px;
+            margin: 0 5px 10px;
+        }
+
+        .committee-gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .modal-content {
+            width: 95%;
+            margin: 10% auto;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all sections
+    const sections = document.querySelectorAll('.section');
+    const modal = document.getElementById('galleryModal');
+    const modalGallery = document.getElementById('modalGallery');
+    const closeButton = document.querySelector('.close-button');
+
+    // Add click event listeners to navigation buttons
+    document.querySelectorAll('.view-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Skip if it's an external link (has target="_blank")
+            if (this.getAttribute('target') === '_blank') {
+                return;
+            }
+            
+            e.preventDefault();
+            
+            // Hide all sections
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.view-button').forEach(btn => {
+                btn.classList.remove('active-section');
+            });
+            
+            // Add active class to clicked button
+            this.classList.add('active-section');
+            
+            // Show the corresponding section
+            const targetId = this.getAttribute('href').substring(1);
+            if (targetId) {
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+
+    // Gallery functionality
+    document.querySelectorAll('.gallery-image').forEach(image => {
+        image.addEventListener('click', function() {
+            openModal(this.src, this.alt);
+        });
+    });
+
+    function openModal(imgSrc, imgAlt) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = imgAlt;
+        img.className = 'gallery-image';
+        modalGallery.innerHTML = '';
+        modalGallery.appendChild(img);
+    }
+
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+</script>
+{% endblock %}
