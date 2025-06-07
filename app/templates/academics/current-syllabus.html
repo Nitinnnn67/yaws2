@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}Student List - PRUTSIM{% endblock %}
+{% block title %}Current Syllabus - PRUTSIM{% endblock %}
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 <style>
-  .student-list-container {
+  .syllabus-container {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 2rem;
@@ -82,16 +82,16 @@
 {% endblock %}
 
 {% block content %}
-<div class="student-list-container">
-  <h1 class="page-title">Student List</h1>
+<div class="syllabus-container">
+  <h1 class="page-title">Current Syllabus</h1>
   
   <div class="button-container">
-    <a href="https://prutsim.edu.in/Docs/List%20of%20Students.pdf?_t=1683486724" class="view-button">First Year MMS (FYMMS) Student List</a>
-    <a href="https://prutsim.edu.in/Docs/Syllabus-MMS-Sem-III-IV.pdf?_t=1700985456" class="view-button">Second Year MMS (SYMMS) Student List</a>
+    <a href="https://prutsim.edu.in/Docs/Master-of-Management-Studies-MMS-Sem-I-and-II.pdf?_t=1700985252" class="view-button">First Year MMS (FYMMS) Syllabus</a>
+    <a href="https://prutsim.edu.in/Docs/Syllabus-MMS-Sem-III-IV.pdf?_t=1700985456" class="view-button">Second Year MMS (SYMMS) Syllabus</a>
   </div>
 
   <div class="note">
-    <p>* The student lists are updated at the beginning of each academic semester.</p>
+    <p>* Download the syllabus in PDF format for your respective year.</p>
   </div>
 </div>
 {% endblock %}
