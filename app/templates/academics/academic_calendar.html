@@ -1,48 +1,45 @@
 {% extends "base.html" %}
 
-{% block title %}Academic Calendar - Saket College{% endblock %}
+{% block title %}Academic Calendar - PRUTSIM{% endblock %}
 
-{% block styles %}
+{% block head %}
+<meta http-equiv="refresh" content="0; url=https://saketgyanpeethkalyan-my.sharepoint.com/personal/iqac_prutsim_edu_in/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fiqac%5Fprutsim%5Fedu%5Fin%2FDocuments%2Fwebsite%2FAcademic%20Calander%2D23%2D2024%2Epdf&parent=%2Fpersonal%2Fiqac%5Fprutsim%5Fedu%5Fin%2FDocuments%2Fwebsite&ga=1">
+<style>
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
 
+  .loading-text {
+    font-size: 1.2rem;
+    color: var(--m3-primary);
+    margin-bottom: 1rem;
+  }
+
+  .loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--m3-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
 {% endblock %}
 
 {% block content %}
-<div class="content-container">
-  <h1 class="page-title">Academic Calendar</h1>
-  
-  <table class="calendar-table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>View</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Academic Calendar 2019-20</td>
-        <td><a href="https://saketcollege.edu.in/Docs/Academic/Academic%20Calendar/Academic%20Calendar%202019-20.pdf?_t=1697866128" target="_blank" class="view-button">View</a></td>
-      </tr>
-      <tr>
-        <td>Academic Calendar 2020-21</td>
-        <td><a href="https://saketcollege.edu.in/Docs/Academic/Academic%20Calendar/Academic%20Calendar%202020-21.pdf?_t=1697866129" target="_blank" class="view-button">View</a></td>
-      </tr>
-      <tr>
-        <td>Academic Calendar 2021-22</td>
-        <td><a href="https://saketcollege.edu.in/Docs/Academic/Academic%20Calendar/Academic%20Calendar%202021-22.pdf?_t=1697866139" target="_blank" class="view-button">View</a></td>
-      </tr>
-      <tr>
-        <td>Academic Calendar 2022-23</td>
-        <td><a href="https://saketcollege.edu.in/Docs/Academic/Academic%20Calendar/Academic%20Calendar%202022-23.pdf?_t=1697866134" target="_blank" class="view-button">View</a></td>
-      </tr>
-      <tr>
-        <td>Academic Calendar 2023-24</td>
-        <td><a href="https://saketcollege.edu.in/Docs/Academic/Academic%20Calendar/Academic%20Calender%202023-24.pdf?_t=1734230461" target="_blank" class="view-button">View</a></td>
-      </tr>
-      <tr>
-        <td>Academic Calendar 2024-25</td>
-        <td><a href="https://saketcollege.edu.in/Docs/Academic/Academic%20Calendar/Acadmeic%20Calender%202024-25.pdf?_t=1734230591" target="_blank" class="view-button">View</a></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="loading-container">
+  <div class="loading-text">Opening Academic Calendar...</div>
+  <div class="loading-spinner"></div>
+  <p>If you are not redirected automatically, <a href="https://saketgyanpeethkalyan-my.sharepoint.com/personal/iqac_prutsim_edu_in/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fiqac%5Fprutsim%5Fedu%5Fin%2FDocuments%2Fwebsite%2FAcademic%20Calander%2D23%2D2024%2Epdf&parent=%2Fpersonal%2Fiqac%5Fprutsim%5Fedu%5Fin%2FDocuments%2Fwebsite&ga=1">click here</a>.</p>
 </div>
 {% endblock %}
