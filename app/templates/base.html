@@ -59,73 +59,52 @@
           
         </ul>
       </li>
-      <!-- <li class="dropdown">
-        <a href="#admissions">Academics <i class="material-icons nav-dropdown-icon">expand_more</i></a>
+      <li class="dropdown">
+        <a href="#admissions">Programs<i class="material-icons nav-dropdown-icon">expand_more</i></a>
         <ul class="dropdown-menu">
-          <li><a href="{{ url_for('frontend.academics', subpath='program_courses')}}">Program & Courses</a></li>
+          <li><a href="{{ url_for('frontend.academics', subpath='admission-detail')}}">Admission Details</a></li>
           <li><a href="{{ url_for('frontend.academics', subpath='academic_calendar')}}">Academic Calendar</a></li>
+          <li><a href="{{ url_for('frontend.academics', subpath='exam')}}">Exam</a></li>
+          <li><a href="{{ url_for('frontend.academics', subpath='student-list')}}">Student List</a></li>
+          <li><a href="{{ url_for('frontend.academics', subpath='current-syllabus')}}">Current Syllabus</a></li>
+          <li><a href="{{ url_for('frontend.academics', subpath='time-table')}}">Time-Table</a></li> 
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#examinations">Student Corner <i class="material-icons nav-dropdown-icon">expand_more</i></a>
+        <a href="#examinations">Library<i class="material-icons nav-dropdown-icon">expand_more</i></a>
         <ul class="dropdown-menu">
-          <li><a href="{{ url_for('frontend.student', subpath='notice') }}">Notices</a></li>
-          <li><a href="{{ url_for('frontend.student', subpath='activities') }}">Activities</a></li>
-          <li><a href="{{ url_for('frontend.student', subpath='syllabus') }}">Syllabus</a></li>
-          <li><a href="{{ url_for('frontend.student', subpath='program-outcome') }}">Program Outcome</a></li>
-          <li><a href="{{ url_for('frontend.student', subpath='student-support') }}">Student Support</a></li>
-          <li><a href="{{ url_for('frontend.student', subpath='code-of-conduct') }}">Code Of Conduct</a></li>
+          <li><a href="{{ url_for('frontend.student', subpath='librarian-message') }}">Librarian's Message</a></li>
+          <li><a href="{{ url_for('frontend.student', subpath='committee') }}">Library Committee</a></li>
+          <li><a href="{{ url_for('frontend.student', subpath='facilities') }}">Library Facilities</a></li>
+          <li><a href="{{ url_for('frontend.student', subpath='Question-paper') }}">MMS University Question Paper</a></li>
+          <li><a href="{{ url_for('frontend.student', subpath='DELNET') }}">DELNET</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#student">Library <i class="material-icons nav-dropdown-icon">expand_more</i></a>
+        <a href="#student">R&D<i class="material-icons nav-dropdown-icon">expand_more</i></a>
         <ul class="dropdown-menu">
-          <li><a href="{{ url_for('frontend.library', subpath='about') }}">About Library</a></li>
-          <li><a href="{{ url_for('frontend.library', subpath='commitee') }}">Library Commitee</a></li>
-          <li><a href="{{ url_for('frontend.library', subpath='activities') }}">Activities</a></li>
-          <li><a href="{{ url_for('frontend.library', subpath='code-of-conduct') }}">Code Of Conduct</a></li>
+          <li><a href="{{ url_for('frontend.rnd', subpath='conference') }}">Conference-2024</a></li>
+          <li><a href="{{ url_for('frontend.rnd', subpath='publications') }}">Research Publications</a></li>
+          <li><a href="{{ url_for('frontend.rnd', subpath='workshops') }}">Workshop/Seminar/FDP</a></li>
         </ul>
       </li>
-      <li class="dropdown">
-        <a href="#">Extension Activities <i class="material-icons nav-dropdown-icon">expand_more</i></a>
-        <ul class="dropdown-menu">
-          <li><a href="{{ url_for('frontend.extension', subpath='nss') }}">NSS</a></li>
-          <li><a href="{{ url_for('frontend.extension', subpath='dlle') }}">DLLE</a></li>
-          <li><a href="{{ url_for('frontend.extension', subpath='best-practices') }}">Best Practices</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#">Examination <i class="material-icons nav-dropdown-icon">expand_more</i></a>
-        <ul class="dropdown-menu">
-          <li><a href="{{ url_for('frontend.examination', subpath='committee') }}">Exam committee</a></li>
-          <li><a href="{{ url_for('frontend.examination', subpath='policy') }}">Exam Policy</a></li>
-          <li><a href="{{ url_for('frontend.examination', subpath='timetable') }}">Exam Time-Table</a></li>
-          <li><a href="{{ url_for('frontend.examination', subpath='results') }}">Exam Results</a></li>
-          <li><a href="{{ url_for('frontend.examination', subpath='notices') }}">Notices & Circulars</a></li>
-        </ul>
-      </li>
+      
       <li class="dropdown">
         <a href="#">Feedback <i class="material-icons nav-dropdown-icon">expand_more</i></a>
         <ul class="dropdown-menu">
-          <li><a href="https://forms.office.com/r/3dSmYuA9CY" target="_blank">Parents feedback form</a></li>
-          <li><a href="https://forms.office.com/r/9RMNWKgD3D" target="_blank">Employer feedback</a></li>
-          <li><a href="https://forms.office.com/r/eVHEzJ9MS0" target="_blank">Alumni feedback form</a></li>
-          <li><a href="https://forms.office.com/r/TnAv0uxm81" target="_blank">Syllabus feedback form</a></li>
-          <li><a href="https://forms.office.com/r/eAiQ9GRPnG" target="_blank">Teachers feedback form</a></li>
-          <li><a href="https://forms.office.com/r/ERTKtDj6rD" target="_blank">Students feedback form</a></li>
-          <li><a href="https://forms.office.com/r/n1UpKWURXV" target="_blank">Grievance Feedback Form</a></li>
+          <li><a href="#" target="_blank">Parents feedback form</a></li>
+          <li><a href="#" target="_blank">Employer feedback</a></li>
+          <li><a href="#" target="_blank">Alumni feedback form</a></li>
+          <li><a href="#" target="_blank">Teachers feedback form</a></li>
+          <li><a href="#" target="_blank">Students feedback form</a></li>
+          <li><a href="#" target="_blank">Grievance Feedback Form</a></li>
           <li><a href="https://saketcollege.edu.in/Docs/6.5.2Action%20taken%20Report.pdf?_t=1735574726" target="_blank">Action Taken Report</a></li>
+          <li><a href="https://saketcollege.edu.in/Docs/6.5.2Action%20taken%20Report.pdf?_t=1735574726" target="_blank">Analysis</a></li>
         </ul>
       </li>
-      <li class="dropdown">
-        <a href="#">More <i class="material-icons nav-dropdown-icon">expand_more</i></a>
-        <ul class="dropdown-menu">
-          <li><a href="{{ url_for('frontend.more', subpath='press-reports') }}">Press Reports & Newsletters</a></li>
-          <li><a href="{{ url_for('frontend.more', subpath='rti') }}">RTI</a></li>
-          <li><a href="{{ url_for('frontend.more', subpath='careers') }}">Careers</a></li>
-         
-        </ul>
-      </li> -->
+      <li>
+        <a href="{{ url_for('frontend.more', subpath='contact-us') }}">Contact</a>
+      </li>
     </ul>
   </nav>
 

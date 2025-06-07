@@ -19,6 +19,12 @@ def about(subpath):
         return render_template(f'about/{subpath}.html')
     except:
         return render_template('404.html')
+@frontend_bp.route('/rnd/<string:subpath>', methods=['GET'])
+def rnd(subpath):
+    try:
+        return render_template(f'rnd/{subpath}.html')
+    except:
+        return render_template('404.html')
 
 @frontend_bp.route('/academics/<string:subpath>', methods=['GET'])
 def academics(subpath):
