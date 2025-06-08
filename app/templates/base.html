@@ -73,11 +73,10 @@
       <li class="dropdown">
         <a href="#examinations">Library<i class="material-icons nav-dropdown-icon">expand_more</i></a>
         <ul class="dropdown-menu">
-          <li><a href="{{ url_for('frontend.student', subpath='librarian-message') }}">Librarian's Message</a></li>
-          <li><a href="{{ url_for('frontend.student', subpath='committee') }}">Library Committee</a></li>
-          <li><a href="{{ url_for('frontend.student', subpath='facilities') }}">Library Facilities</a></li>
-          <li><a href="{{ url_for('frontend.student', subpath='Question-paper') }}">MMS University Question Paper</a></li>
-          <li><a href="{{ url_for('frontend.student', subpath='DELNET') }}">DELNET</a></li>
+          <li><a href="{{ url_for('frontend.library', subpath='librarians-message') }}">Librarian's Message</a></li>
+          <li><a href="{{ url_for('frontend.library', subpath='facilities') }}">Library Facilities</a></li>
+          <li><a href="{{ url_for('frontend.library', subpath='question-papers') }}">MMS University Question Paper</a></li>
+          <li><a href="{{ url_for('frontend.library', subpath='delnet') }}">DELNET</a></li>
         </ul>
       </li>
       <li class="dropdown">
