@@ -456,28 +456,6 @@
 </div>
 
 <script>
-  // Add click event listeners to all image containers
-  document.addEventListener('DOMContentLoaded', function() {
-    const imageContainers = document.querySelectorAll('.image-container');
-    imageContainers.forEach(function(container) {
-      container.addEventListener('click', function() {
-        const imageElement = this.querySelector('img');
-        if (imageElement && imageElement.src && !imageElement.src.endsWith('#')) {
-          openModal(imageElement.dataset.src || imageElement.src, imageElement.alt);
-        } else {
-          // Show a placeholder or message if image isn't loaded yet
-          showImagePlaceholder(this.dataset.image);
-        }
-      });
-    });
-    
-    // Apply placeholder styling to empty images
-    applyPlaceholderStyling();
-    
-    // Initialize lazy loading
-    loadImages();
-  });
-
   // Modal functionality
   const modal = document.getElementById('imageModal');
   const enlargedImage = document.getElementById('enlargedImage');
@@ -487,27 +465,14 @@
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden'; // Prevent scrolling while modal is open
     
-    // Add loading indicator
-    enlargedImage.style.opacity = '0';
-    const loadingIndicator = document.createElement('div');
-    loadingIndicator.className = 'loading-indicator';
-    loadingIndicator.innerHTML = '<span class="material-icons spin">refresh</span><p>Loading image...</p>';
-    modal.querySelector('.modal-content').appendChild(loadingIndicator);
-    
-    // Load image with onload handler
-    enlargedImage.onload = function() {
-      // Remove loading indicator
-      if (document.querySelector('.loading-indicator')) {
-        document.querySelector('.loading-indicator').remove();
-      }
-      enlargedImage.style.opacity = '1';
-      
-      currentZoom = 1;
-      enlargedImage.style.transform = `scale(${currentZoom})`;
-    };
-    
+    // Set image src directly first
     enlargedImage.src = imageSrc;
     enlargedImage.alt = altText || "Campus Image";
+    enlargedImage.style.opacity = '1';
+    
+    // Reset zoom
+    currentZoom = 1;
+    enlargedImage.style.transform = `scale(${currentZoom})`;
   }
 
   function closeModal() {
@@ -531,6 +496,29 @@
     currentZoom = 1;
     enlargedImage.style.transform = `scale(${currentZoom})`;
   }
+
+  // Add click event listeners to all image containers
+  document.addEventListener('DOMContentLoaded', function() {
+    const imageContainers = document.querySelectorAll('.image-container');
+    imageContainers.forEach(function(container) {
+      container.addEventListener('click', function() {
+        const imageElement = this.querySelector('img');
+        if (imageElement && imageElement.src && !imageElement.src.endsWith('#')) {
+          const imageSrc = imageElement.src;
+          openModal(imageSrc, imageElement.alt);
+        } else {
+          // Show a placeholder or message if image isn't loaded yet
+          showImagePlaceholder(this.dataset.image);
+        }
+      });
+    });
+    
+    // Apply placeholder styling to empty images
+    applyPlaceholderStyling();
+    
+    // Initialize lazy loading
+    loadImages();
+  });
 
   // Apply placeholder styling to empty images or images with # src
   function applyPlaceholderStyling() {
