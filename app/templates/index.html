@@ -295,6 +295,47 @@ Through its commitment to academic excellence and social responsibility, PRUTSIM
 
 <script src="{{ url_for('static', filename='js/campus-life.js') }}"></script>
 <script>
+  // Testimonials and Recruiters Slider Functionality
+  function initSlider(carouselContainers) {
+    carouselContainers.forEach(container => {
+      const slides = container.querySelector('.testimonial-carousel').children;
+      const dots = container.querySelector('.testimonial-dot').children;
+      let currentSlide = 0;
+      
+      function showSlide(index) {
+        // Hide all slides and remove active class from dots
+        Array.from(slides).forEach(slide => slide.classList.remove('active'));
+        Array.from(dots).forEach(dot => dot.classList.remove('active'));
+        
+        // Show current slide and activate corresponding dot
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+      }
+      
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+      
+      // Add click events to dots
+      Array.from(dots).forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentSlide = index;
+          showSlide(currentSlide);
+        });
+      });
+      
+      // Start automatic sliding
+      setInterval(nextSlide, 5000); // Change slides every 5 seconds
+    });
+  }
+
+  // Initialize all sliders when the document is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    const testimonialContainers = document.querySelectorAll('.testimonial-carousel-container');
+    initSlider(testimonialContainers);
+  });
+
   function ViewCampusImages(category, title) {
     const modal = document.createElement('div');
     modal.className = 'modal';
