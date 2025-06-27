@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             email: 'durkhan@college.edu',
             qualifications: 'Ph.D. in Management Studies',
             expertise: 'Human Resource Management, Organizational Behaviour',
-            image: '/static/images/ceo.png',
+            // image: '/static/images/ceo.png',
             about: 'Dr. Kavita R Laghate has more than 9 years of teaching experience in the field of higher education. She started her career with Sydenham Institute of Management Studies, Mumbai as Faculty in HR. She is currently working as the Director at the institute.',
             teachings: [
                 'Human Resource Management',
