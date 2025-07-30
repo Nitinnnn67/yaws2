@@ -4,7 +4,7 @@
 .hero {
     position: relative;
     width: 100%;
-    height: 80vh; /* Reduced from 100vh to 70vh */
+    height: 100vh; /* Reduced from 100vh to 70vh */
     min-height: 370px; /* Reduced from 400px */
     max-height: 700px; /* Reduced from 800px */
     display: flex;
@@ -379,14 +379,13 @@ color: rgba(255, 255, 255, 0.7);
   ============================================ */
   .caption-card {
     position: static;
-    height: 25px;
+    max-height: 50px !important;
     /* margin: 24px auto; */
     background: var(--m3-primary-container);
     color: var(--m3-on-primary-container);
-    padding: 15px 25px;
-   border-radius: var(--m3-shape-medium); 
+    padding: 15px 25px; 
     text-align: center;
-    width: calc(100% - 48px);
+    width: 100%;
     max-width: 12000px;
     box-shadow: var(--m3-shadow-2);
     /* animation: fadeInSlideUp 1.2s ease-out 0.5s backwards; */
@@ -917,8 +916,7 @@ color: rgba(255, 255, 255, 0.7);
 
 @media (max-width: 992px) {
     .about-section {
-        padding: 
-      
+        padding: clamp(20px, 3vw, 32px);
     }
     
     .about-grid {
@@ -1073,6 +1071,7 @@ color: rgba(255, 255, 255, 0.7);
     line-height: 1;
     margin-bottom: 12px;
     background: rgb(186, 151, 12);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -1548,10 +1547,6 @@ color: rgba(255, 255, 255, 0.7);
 @media (max-width: 480px) {
   .publications-magazines .testimonial-carousel {
     height: 180px;
-  }
-  
-  .publications-magazines .testimonial-slide img {
-   
   }
 }
 

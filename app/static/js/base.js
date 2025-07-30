@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu functionality
+    // Navigation elements
     const hamburger = document.querySelector('.hamburger');
     const navList = document.querySelector('.nav-list');
     const nav = document.querySelector('.nav');
@@ -18,71 +18,51 @@ document.addEventListener('DOMContentLoaded', function() {
         content.style.maxWidth = '1200px';
     }
 
-    // Simple dropdown approach without complex animations
-    const dropdowns = document.querySelectorAll('.dropdown');
-    dropdowns.forEach(dropdown => {
-        // Remove any existing listeners
-        const link = dropdown.querySelector('a');
-        if (link) {
-            const newLink = link.cloneNode(true);
-            link.parentNode.replaceChild(newLink, link);
-            
-            if (window.innerWidth <= 768) {
-                newLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                    
-                    dropdowns.forEach(other => {
-                        if (other !== dropdown && other.classList.contains('active')) {
-                            other.classList.remove('active');
-                        }
-                    });
-                });
-            }
-        }
-    });
 
-    // Simple mobile nav toggle
-    if (hamburger) {
+
+    // Mobile nav toggle
+    if (hamburger && navList) {
         hamburger.addEventListener('click', function() {
             this.classList.toggle('active');
             navList.classList.toggle('open');
         });
     }
 
+    // Close mobile nav when clicking outside (mobile only)
     document.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
-            if (!e.target.closest('.nav')) {
-                navList.classList.remove('open');
-                if (hamburger) hamburger.classList.remove('active');
-                document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
-            }
+        if (window.innerWidth <= 768 && !e.target.closest('.nav')) {
+            navList.classList.remove('open');
+            if (hamburger) hamburger.classList.remove('active');
         }
     });
+
 
     // Back to top button functionality
     const backToTopButton = document.getElementById('back-to-top');
     
-    // Show/hide the button based on scroll position
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopButton.classList.add('visible');
-        } else {
-            backToTopButton.classList.remove('visible');
-        }
-    });
-    
-    // Smooth scroll to top when clicked
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (backToTopButton) {
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
         });
-    });
+        
+        // Smooth scroll to top when clicked
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
-    // Rest of your existing code
+    // Form validation
     const formInputs = document.querySelectorAll('.m3-text-field input');
-    formInputs.forEach(input => {
+    
+    formInputs.forEach((input) => {
         const validateInput = () => {
             const field = input.closest('.m3-text-field');
             if (field) {
@@ -100,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
         input.addEventListener('input', validateInput);
     });
     
+    // Newsletter form
     const newsletterForm = document.querySelector('.m3-form');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
@@ -121,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
-    } 
+    }
 
     // Contact Form Functionality
     const contactBtn = document.createElement('div');
@@ -188,11 +169,145 @@ document.addEventListener('DOMContentLoaded', function() {
 
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        // Here you would typically send the form data to backend
-        // For now, we'll just show a success message
         alert('Thank you for your message! We will get back to you soon.');
         modal.classList.remove('active');
         contactForm.reset();
+    });
+    
+    // Bootstrap submenu dropdown functionality with hover support
+    function initBootstrapSubmenus() {
+        // Remove existing event listeners to prevent duplicates
+        const existingElements = document.querySelectorAll('.dropdown-submenu > .dropdown-toggle');
+        existingElements.forEach(el => {
+            el.replaceWith(el.cloneNode(true));
+        });
+        
+        // Handle submenu clicks on mobile
+        document.querySelectorAll('.dropdown-submenu > .dropdown-toggle').forEach(function(element) {
+            element.addEventListener('click', function(e) {
+                // Only handle clicks on mobile
+                if (window.innerWidth < 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const submenu = this.nextElementSibling;
+                    const isOpen = submenu.classList.contains('show');
+                    
+                    // Close all other submenus at the same level
+                    const parentDropdown = this.closest('.dropdown-menu');
+                    parentDropdown.querySelectorAll('.dropdown-submenu-menu.show').forEach(function(openSubmenu) {
+                        if (openSubmenu !== submenu) {
+                            openSubmenu.classList.remove('show');
+                        }
+                    });
+                    
+                    // Toggle current submenu
+                    if (isOpen) {
+                        submenu.classList.remove('show');
+                    } else {
+                        submenu.classList.add('show');
+                    }
+                }
+            });
+        });
+        
+        // Desktop hover functionality
+        if (window.innerWidth >= 992) {
+            // Main dropdown hover
+            document.querySelectorAll('.nav-item.dropdown').forEach(function(dropdown) {
+                let mainTimeout;
+                
+                dropdown.addEventListener('mouseenter', function() {
+                    clearTimeout(mainTimeout);
+                    const menu = this.querySelector('.dropdown-menu');
+                    if (menu) {
+                        menu.classList.add('show');
+                        this.classList.add('show');
+                    }
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    const menu = this.querySelector('.dropdown-menu');
+                    mainTimeout = setTimeout(() => {
+                        if (menu) menu.classList.remove('show');
+                        this.classList.remove('show');
+                        // Close all submenus
+                        this.querySelectorAll('.dropdown-submenu-menu.show').forEach(sub => {
+                            sub.classList.remove('show');
+                        });
+                    }, 100);
+                });
+            });
+            
+            // Submenu hover (all levels)
+            document.querySelectorAll('.dropdown-submenu').forEach(function(submenu) {
+                let subTimeout;
+                
+                submenu.addEventListener('mouseenter', function() {
+                    clearTimeout(subTimeout);
+                    
+                    // Close sibling submenus
+                    const parent = this.parentElement;
+                    parent.querySelectorAll(':scope > .dropdown-submenu > .dropdown-submenu-menu.show').forEach(sibling => {
+                        if (sibling !== this.querySelector('.dropdown-submenu-menu')) {
+                            sibling.classList.remove('show');
+                        }
+                    });
+                    
+                    // Open current submenu
+                    const currentSubmenu = this.querySelector('.dropdown-submenu-menu');
+                    if (currentSubmenu) {
+                        currentSubmenu.classList.add('show');
+                    }
+                });
+                
+                submenu.addEventListener('mouseleave', function() {
+                    const currentSubmenu = this.querySelector('.dropdown-submenu-menu');
+                    if (currentSubmenu) {
+                        subTimeout = setTimeout(() => {
+                            // Only close if not hovering over the submenu itself
+                            if (!currentSubmenu.matches(':hover') && !this.matches(':hover')) {
+                                currentSubmenu.classList.remove('show');
+                                // Close nested submenus too
+                                currentSubmenu.querySelectorAll('.dropdown-submenu-menu.show').forEach(nested => {
+                                    nested.classList.remove('show');
+                                });
+                            }
+                        }, 100);
+                    }
+                });
+            });
+        }
+        
+        // Close all dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-item.dropdown')) {
+                document.querySelectorAll('.nav-item.dropdown.show').forEach(function(dropdown) {
+                    dropdown.classList.remove('show');
+                    const menu = dropdown.querySelector('.dropdown-menu');
+                    if (menu) menu.classList.remove('show');
+                });
+                document.querySelectorAll('.dropdown-submenu-menu.show').forEach(function(submenu) {
+                    submenu.classList.remove('show');
+                });
+            }
+        });
+    }
+    
+    // Initialize dropdowns
+    initBootstrapSubmenus();
+    
+    // Re-initialize on window resize to handle desktop/mobile transitions
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            // Clean up existing state
+            document.querySelectorAll('.dropdown-submenu-menu.show, .nav-item.dropdown.show').forEach(el => {
+                el.classList.remove('show');
+            });
+            initBootstrapSubmenus();
+        }, 250);
     });
 });
 

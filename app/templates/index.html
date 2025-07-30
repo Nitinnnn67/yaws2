@@ -7,7 +7,7 @@
 {% endblock %}
 {% block content %}
 <section class="hero">
-
+  <div class="hero-carousel">
     <div class="carousel-item active">
       <video autoplay muted loop class="hero-video" playsinline>
         <source src="{{ url_for('static', filename='video.webm') }}" type="video/webm" media="(min-width: 1200px)">
@@ -15,7 +15,7 @@
         Your browser does not support the video tag.
       </video>
     </div>
-
+    
     <div class="carousel-indicators">
     </div>
   </div>
@@ -34,28 +34,7 @@
 </div>
 
 <div class="noticesvisionmission">
-  <div class="notices">
-    <div class="notice-board">
-      <div class="notice-title">Notices</div>
-      <div class="date-time" id="dateTime"></div>
-      <div class="notice-tabs">
-        <button id="generalNoticeTab" class="notice-tab active" onclick="switchNoticeTab('general')">General Notices</button>
-        <button id="examNoticeTab" class="notice-tab" onclick="switchNoticeTab('exam')">Examination Notices</button>
-      </div>
-      <div id="generalNoticesContainer" class="notices-wrapper active-tab">
-        <div class="notices-content" id="generalNoticeContent">
-          <div class="loading" id="generalNoticeLoading" style="display: none;">Loading...</div>
-        </div>
-        <button id="loadMoreGeneralButton" class="load-more-btn" style="display:none;">Load More</button>
-      </div>
-      <div id="examNoticesContainer" class="notices-wrapper" style="display:none;">
-        <div class="notices-content" id="examNoticeContent">
-          <div class="loading" id="examNoticeLoading" style="display: none;">Loading...</div>
-        </div>
-        <button id="loadMoreExamButton" class="load-more-btn" style="display:none;">Load More</button>
-      </div>
-    </div>
-  </div>
+ 
   <div class="vision">
     <h1>Our Vision & Mission</h1>
     <div class="vision-mission-container">
