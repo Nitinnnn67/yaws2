@@ -23,14 +23,14 @@
           <div class="college-name">
             
             <h1>Pramod Ram Ujagar Tiwari Saket Institute Of Managment</h1>
-            <p>(Approved by AICTE-NewDelhi, D.T.E(Code:MB3158),Govt of Maharashtra & Affiliated to University of Mumbai)</p>
-            <!-- <p><b>NAAC Accredited 'B' Grade</b></p> -->
+            <p>(Approved by AICTE New Delhi, D.T.E(Code:MB3158),Govt of Maharashtra & Affiliated to University of Mumbai)</p>
+            
           </div>
         </div>
      
       <div class="facu">
         <a href="{{ url_for('frontend.facu', subpath='naac') }}">NAAC/IQAC</a>
-        <a href="{{ url_for('frontend.facu', subpath='staffs') }}">Staffs</a>
+        <!-- <a href="{{ url_for('frontend.facu', subpath='staffs') }}">Staffs</a> -->
         <a href="{{ url_for('frontend.facu', subpath='alumni') }}">Alumni</a>
         <a href="{{ url_for('frontend.facu', subpath='placement') }}">Placement</a>
         <a href="{{ url_for('frontend.facu', subpath='visit') }}">Visit</a>
@@ -76,17 +76,26 @@
                 <a class="dropdown-item dropdown-toggle" href="#">
                   MMS Details <i class="material-icons nav-dropdown-icon">chevron_right</i>
                 </a>
+                <li><a class="dropdown-item" href="{{ url_for('static', filename='docs/Eligibility.pdf')}}" target="_blank">Eligibility</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('static', filename='docs/Information_Brochure_UGPG_2025_26-1.pdf')}}" target="_blank">Information Brochure</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('frontend.academics', subpath='fees-structure')}}" target="_blank">Fees Structure</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('static', filename='docs/Admission-Schedule-2025-26.pdf')}}" target="_blank">Admission Schedule AY 2025-26</a></li>
+<li><a class="dropdown-item" href="{{ url_for('frontend.academics', subpath='current-syllabus')}}" target="_blank">Syllabus</a></li>
                 <ul class="dropdown-menu dropdown-submenu-menu">
+                  
+                  
+                  <!-- <li class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="{{ url_for('frontend.academics', subpath='admission-detail')}}">Admission Details</a></li>
                   <li><a class="dropdown-item" href="{{ url_for('frontend.academics', subpath='academic_calendar')}}">Academic Calendar</a></li>
                   <li><a class="dropdown-item" href="{{ url_for('frontend.academics', subpath='exam')}}">Exam</a></li>
                   <li><a class="dropdown-item" href="{{ url_for('frontend.academics', subpath='student-list')}}">Student List</a></li>
                   <li><a class="dropdown-item" href="{{ url_for('frontend.academics', subpath='current-syllabus')}}">Current Syllabus</a></li>
-                  <li><a class="dropdown-item" href="{{ url_for('frontend.academics', subpath='time-table')}}">Time-Table</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('frontend.academics', subpath='time-table')}}">Time-Table</a></li> -->
+
                 </ul>
               </li>
-              <li><a class="dropdown-item" href="#">MMS Overview</a></li>
-              <li><a class="dropdown-item" href="#">MMS Curriculum</a></li>
+              <!-- <li><a class="dropdown-item" href="#">MMS Overview</a></li>
+              <li><a class="dropdown-item" href="#">MMS Curriculum</a></li> -->
             </ul>
           </li>
           <li><a class="dropdown-item" href="#">Ph. D.</a></li>
