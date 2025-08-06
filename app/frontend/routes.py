@@ -36,7 +36,23 @@ def academics(subpath):
 @frontend_bp.route('/library/<string:subpath>', methods=['GET'])
 def library(subpath):
     try:
-        return render_template(f'library/{subpath}.html')
+        if subpath == 'notices':
+            # Import needed for notices
+            import requests
+            from flask import current_app
+            
+            # Fetch general notices from our API
+            api_url = f"{request.url_root}api/notices?type=general"
+            response = requests.get(api_url)
+            notices = []
+            
+            if response.status_code == 200:
+                data = response.json()
+                notices = data.get('notices', [])
+            
+            return render_template(f'library/{subpath}.html', notices=notices)
+        else:
+            return render_template(f'library/{subpath}.html')
     except:
         return render_template('404.html')
 

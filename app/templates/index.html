@@ -34,7 +34,18 @@
 </div>
 
 <div class="noticesvisionmission">
- 
+     <div class="notices">
+    <div class="notice-board">
+      <div class="notice-title"> Latest Notices</div>
+      <div class="date-time" id="dateTime"></div>
+      <div id="generalNoticesContainer" class="notices-wrapper active-tab">
+        <div class="notices-content" id="generalNoticeContent">
+          <div class="loading" id="generalNoticeLoading" style="display: none;">Loading notices...</div>
+        </div>
+        <button id="loadMoreGeneralButton" class="load-more-btn" style="display:none;">Load More</button>
+      </div>
+    </div>
+  </div>
   <div class="vision">
     <h1>Our Vision & Mission</h1>
     <div class="vision-mission-container">
@@ -161,36 +172,36 @@ Through its commitment to academic excellence and social responsibility, PRUTSIM
   </div>
 </section>
 
-<section class="features">
-  <!-- <h2>Explore Our Courses</h2> -->
+<!-- <section class="features">
+
   <div class="features-grid">
     <div class="feature-card">
-      <!-- <div class="feature-icon">🏆</div> -->
+  
       <h3>PRUTSIM Life</h3>
       <p>Life @PRUTSIM is Awesome</p>
     </div>
     <div class="feature-card">
-      <!-- <div class="feature-icon">🔬</div> --> 
+   
       <h3>MMS/MBA Program</h3>
       <p>2 Years Full Time</p>
     </div>
     <div class="feature-card">
-      <!-- <div class="feature-icon">🌍</div> -->
+   
       <h3>Industrial Visit</h3>
       <p>VIsit To Dubai, Manali, Dalhouse.</p>
     </div>
     <div class="feature-card">
-      <!-- <div class="feature-icon">🎓</div> -->
+     
       <h3>Add On Certification</h3>
       <p>College known for excellence to ensure a high-quality education that aligns with your career goals.</p>
     </div>
      <div class="feature-card">
-      <!-- <div class="feature-icon">🎓</div> -->
+      
       <h3>Add On Certification</h3>
       <p>College known for excellence to ensure a high-quality education that aligns with your career goals.</p>
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="publications-magazines">
   <div class="container">
@@ -531,5 +542,6 @@ Through its commitment to academic excellence and social responsibility, PRUTSIM
     gsap.registerPlugin(ScrollTrigger);
 </script>
 <script src="{{ url_for('static', filename='js/gsap-animations.js') }}"></script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
 {% endblock %}
 {% endblock content %}

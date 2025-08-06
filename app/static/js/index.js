@@ -413,24 +413,62 @@ function initCarousel() {
 }
 
 /**
- * Notice board functionality including auto-scrolling and API-based notice fetching
+ * Notice board functionality with smooth auto-scrolling
  */
 function initNoticeBoard() {
   // Notice fetch variables
   let currentGeneralPage = 1;
-  let currentExamPage = 1;
   const perPage = 5;
   let loading = false;
-  let scrollTimer = null;
+  let autoScrollInterval = null;
+  let isAutoScrolling = false;
   
   // Get notice content elements
   const generalNoticeContent = document.getElementById('generalNoticeContent');
-  const examNoticeContent = document.getElementById('examNoticeContent');
   const generalNoticesContainer = document.getElementById('generalNoticesContainer');
-  const examNoticesContainer = document.getElementById('examNoticesContainer');
   
   // Check if elements exist
-  if (!generalNoticeContent || !examNoticeContent) return;
+  if (!generalNoticeContent) return;
+
+  // Auto-scroll functionality
+  function startAutoScroll() {
+    if (isAutoScrolling || !generalNoticeContent) return;
+    
+    isAutoScrolling = true;
+    autoScrollInterval = setInterval(() => {
+      const container = generalNoticeContent;
+      const scrollHeight = container.scrollHeight;
+      const clientHeight = container.clientHeight;
+      const currentScroll = container.scrollTop;
+      
+      // If we're at the bottom, scroll back to top
+      if (currentScroll + clientHeight >= scrollHeight - 5) {
+        container.scrollTop = 0;
+      } else {
+        // Scroll down smoothly, 1 pixel at a time
+        container.scrollTop += 1;
+      }
+    }, 50); // Scroll every 50ms for smooth animation
+  }
+  
+  function stopAutoScroll() {
+    if (autoScrollInterval) {
+      clearInterval(autoScrollInterval);
+      autoScrollInterval = null;
+    }
+    isAutoScrolling = false;
+  }
+  
+  // Pause auto-scroll on hover
+  if (generalNoticeContent) {
+    generalNoticeContent.addEventListener('mouseenter', () => {
+      stopAutoScroll();
+    });
+    
+    generalNoticeContent.addEventListener('mouseleave', () => {
+      startAutoScroll();
+    });
+  }
 
   // Format dates in IST timezone
   function formatDate(dateString) {
@@ -443,33 +481,25 @@ function initNoticeBoard() {
     return new Date(dateString).toLocaleDateString('en-IN', options);
   }
 
-  // Fetch notices from the API
+  // Fetch notices from the API (only general notices)
   async function fetchNotices(page, type = 'general') {
     try {
       loading = true;
-      const loadingElement = document.getElementById('noticeLoading');
+      const loadingElement = document.getElementById('generalNoticeLoading');
       if (loadingElement) loadingElement.style.display = 'block';
 
-      const response = await fetch(`/api/notices?page=${page}&per_page=${perPage}&type=${type}`);
+      const response = await fetch(`/api/notices?page=${page}&per_page=${perPage}&type=general`);
       const data = await response.json();
       
-      // Select the appropriate container based on notice type
-      const noticeContainer = type === 'general' 
-        ? document.getElementById('generalNoticeContent') 
-        : document.getElementById('examNoticeContent');
+      // Always use general notice container
+      const noticeContainer = document.getElementById('generalNoticeContent');
       
       if (!noticeContainer) return;
       
-      // Filter notices to only show those from the past 2 days
-      const twoDaysAgo = new Date();
-      twoDaysAgo.setDate(twoDaysAgo.getDate() - 2);
+      // Show all notices (removed date filter)
+      const allNotices = data.notices;
       
-      const recentNotices = data.notices.filter(notice => {
-        const noticeDate = new Date(notice.date_uploaded);
-        return noticeDate >= twoDaysAgo;
-      });
-      
-      recentNotices.forEach(notice => {
+      allNotices.forEach(notice => {
         const noticeElement = document.createElement('div');
         noticeElement.className = 'notice';
         noticeElement.innerHTML = `
@@ -487,6 +517,16 @@ function initNoticeBoard() {
       if (loadMoreButton) {
         loadMoreButton.style.display = data.has_next ? 'block' : 'none';
       }
+      
+      // Start auto-scroll after loading notices and ensuring there's content to scroll
+      if (page === 1 && allNotices.length > 0) {
+        setTimeout(() => {
+          // Only start if container has scrollable content
+          if (noticeContainer.scrollHeight > noticeContainer.clientHeight) {
+            startAutoScroll();
+          }
+        }, 2000); // Start auto-scroll 2 seconds after notices load
+      }
     } catch (error) {
       console.error(`Error fetching ${type} notices:`, error);
     } finally {
@@ -498,7 +538,6 @@ function initNoticeBoard() {
 
   // Initial fetch of notices
   fetchNotices(currentGeneralPage, 'general');
-  fetchNotices(currentExamPage, 'exam');
 
   // Set up load more button functionality
   const loadMoreGeneralBtn = document.getElementById('loadMoreGeneralButton');
@@ -510,101 +549,12 @@ function initNoticeBoard() {
       }
     });
   }
-
-  const loadMoreExamBtn = document.getElementById('loadMoreExamButton');
-  if (loadMoreExamBtn) {
-    loadMoreExamBtn.addEventListener('click', () => {
-      if (!loading) {
-        currentExamPage++;
-        fetchNotices(currentExamPage, 'exam');
-      }
-    });
-  }
-
-  // Set up hover event listeners to pause/resume animation
-  if (generalNoticeContent) {
-    generalNoticeContent.addEventListener('mouseenter', function() {
-      this.style.animationPlayState = 'paused';
-    });
-    
-    generalNoticeContent.addEventListener('mouseleave', function() {
-      this.style.animationPlayState = 'running';
-    });
-  }
-  
-  if (examNoticeContent) {
-    examNoticeContent.addEventListener('mouseenter', function() {
-      this.style.animationPlayState = 'paused';
-    });
-    
-    examNoticeContent.addEventListener('mouseleave', function() {
-      this.style.animationPlayState = 'running';
-    });
-  }
-  
-  // Allow manual scrolling on the container
-  if (generalNoticesContainer) {
-    generalNoticesContainer.addEventListener('wheel', function(e) {
-      // Prevent default behavior only if inside container
-      e.stopPropagation();
-      
-      // Manual scrolling
-      if (e.deltaY > 0) {
-        // Scrolling down
-        this.scrollTop += 30;
-      } else {
-        // Scrolling up
-        this.scrollTop -= 30;
-      }
-    });
-  }
-  
-  if (examNoticesContainer) {
-    examNoticesContainer.addEventListener('wheel', function(e) {
-      // Prevent default behavior only if inside container
-      e.stopPropagation();
-      
-      // Manual scrolling
-      if (e.deltaY > 0) {
-        // Scrolling down
-        this.scrollTop += 30;
-      } else {
-        // Scrolling up
-        this.scrollTop -= 30;
-      }
-    });
-  }
-  
-  // Export pause/resume scroll functions for use in HTML
-  window.pauseScroll = function() {
-    const generalContent = document.querySelector('#generalNoticeContent');
-    const examContent = document.querySelector('#examNoticeContent');
-    
-    if (generalContent) generalContent.style.animationPlayState = 'paused';
-    if (examContent) examContent.style.animationPlayState = 'paused';
-    
-    if (scrollTimer) clearTimeout(scrollTimer);
-  };
-  
-  window.resumeScroll = function() {
-    const generalContent = document.querySelector('#generalNoticeContent');
-    const examContent = document.querySelector('#examNoticeContent');
-    
-    scrollTimer = setTimeout(() => {
-      if (generalContent) generalContent.style.animationPlayState = 'running';
-      if (examContent) examContent.style.animationPlayState = 'running';
-    }, 500);
-  };
   
   // Export these functions for use in HTML
   window.switchNoticeTab = function(type) {
-    // Update tab active state
-    document.getElementById('generalNoticeTab').classList.toggle('active', type === 'general');
-    document.getElementById('examNoticeTab').classList.toggle('active', type === 'exam');
-    
-    // Show/hide appropriate container
-    document.getElementById('generalNoticesContainer').style.display = type === 'general' ? 'block' : 'none';
-    document.getElementById('examNoticesContainer').style.display = type === 'exam' ? 'block' : 'none';
+    // Always show general notices only
+    document.getElementById('generalNoticeTab').classList.add('active');
+    document.getElementById('generalNoticesContainer').style.display = 'block';
   };
 }
 

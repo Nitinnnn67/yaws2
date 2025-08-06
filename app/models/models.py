@@ -5,7 +5,7 @@ import re
 db = SQLAlchemy()
 
 class Notice(db.Model):
-    __tablename__ = 'notices'
+    __tablename__ = 'yaws2_notices'
     
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(255), nullable=False)
@@ -37,7 +37,7 @@ class Notice(db.Model):
         }
 
 class Image(db.Model):
-    __tablename__ = 'images'
+    __tablename__ = 'yaws2_images'
     
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(255), nullable=False)
