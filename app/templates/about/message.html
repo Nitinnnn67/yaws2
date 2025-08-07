@@ -16,7 +16,7 @@
 Through its commitment to academic excellence and social responsibility, PRUTSIM continues to contribute significantly to the field of management education in the region.</p>
     </div>
     <div class="about-image">
-      <img src="https://saketcollege.edu.in/wp-content/uploads/2023/12/WhatsApp-Image-2022-01-20-at-1.07.43-PM.jpeg"
+      <img src="{{ url_for('static', filename='images/visit/collegecampus.jpg') }}"
         alt="Campus Life" style="width: 100%; border-radius: 10px;">
     </div>
   </div>
@@ -119,7 +119,7 @@ A vibrant industry interface through seminars, workshops, alumni interactions & 
 </div>
 <!-- -------------hhhhhhh------------- -->
 <div class="vision">
-    <h1>Our Vision & Mission</h1>
+    <h1>Our Vision, Mission & Values</h1>
     <div class="vision-mission-container">
       <div class="vision-mission-content">
         <div class="vm-box">
@@ -133,26 +133,36 @@ A vibrant industry interface through seminars, workshops, alumni interactions & 
              
             </div>
           </div>
+          
           <div class="content" id="mission">
             <h2>Our Mission</h2>
             <div class="expandable-content">
               <ul class="mission-list">
                 <li>To equip students with advanced knowledge and skills.</li>
+               
                 <li>To provide quality value-based education.</li>
+                 <div class="expanded-content">
                   <li>To metamorphose budding talent into managers par excellence.</li>
+                </div>
               </ul>
-              <div class="expanded-content">
-                <ul class="mission-list">
-
-                  <li>To instill a sense of social responsibility so as to create ethical leaders.</li>
-                  <li>To provide students with competitive edge in dynamic / global business environment scenario.</li>
+             
+              <button class="expand-btn" onclick="toggleContent('mission')">Read More</button>
+            </div>
+          </div>
+          <div class="content" id="values">
+            <h2>Our Values</h2>
+            <div class="expandable-content">
+              <ul class="mission-list">
+                <li>To instill a sense of social responsibility so as to create ethical leaders.</li>
+                <li>To provide students with competitive edge in dynamic / global business environment scenario.</li>
+                <div class="expanded-content">
                   <li>To enrich students with pragmatic knowledge.
                       To facilitate personality development of the students.</li>
                   <li>To offer a platform for student community to develop professionally.</li>
-                </ul>
-              </div>
-              <button class="expand-btn" onclick="toggleContent('mission')">Read More</button>
+                </div>
+              </ul>
             </div>
+            <button class="expand-btn" onclick="toggleContent('values')">Read More</button>
           </div>
         </div>
       </div>

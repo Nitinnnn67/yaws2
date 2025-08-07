@@ -337,6 +337,13 @@
 }
 
 /* Add media query for mobile responsiveness */
+@media (max-width: 1024px) {
+  .vision-mission-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
@@ -348,6 +355,7 @@
   
   .vision-mission-content {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   
   .vision h1 {
@@ -367,8 +375,9 @@
   padding: 40px 0;
   background-color: var(--m3-surface-container-low);
   border-radius: var(--m3-shape-large);
-  margin: 30px auto;
-  max-width: 1200px;
+ 
+  max-width: auto;
+  margin: 0 auto;
 }
 
 .vision h1 {
@@ -430,8 +439,8 @@
 
 .vision-mission-content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .vm-box {
