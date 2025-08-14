@@ -456,7 +456,7 @@ color: rgba(255, 255, 255, 0.7);
   
   .notice-title {
     font-size: 1.5rem;
-    color: #1976d2 !important;
+    color: var(--m3-on-surface-variant) !important;
     font-weight: 500;
     margin: 0;
     padding: 20px 24px 14px 24px;
@@ -480,7 +480,7 @@ color: rgba(255, 255, 255, 0.7);
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: #1a365d;
+    background: var(--m3-on-surface);
     border-radius: 2px;
   }
   
@@ -505,7 +505,7 @@ color: rgba(255, 255, 255, 0.7);
     padding: 0 24px 24px 24px;
     position: relative;
     z-index: 2;
-    background: #ffffff;
+    background:#f3efe8;
   }
 
   /* Notice container styling */
@@ -543,7 +543,7 @@ color: rgba(255, 255, 255, 0.7);
   
   .notice {
     padding: 12px;
-    background: #ffffff;
+    background: var(--index);
     border-radius: 8px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid #e0e0e0;
@@ -561,7 +561,7 @@ color: rgba(255, 255, 255, 0.7);
     left: 0;
     width: 4px;
     height: 100%;
-    background: #1976d2;
+    background: var(--m3-on-surface-variant);
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
@@ -569,12 +569,12 @@ color: rgba(255, 255, 255, 0.7);
     transform: translateY(-2px);
     background: #fafafa;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    border-color: #1976d2;
+    border-color: var(--m3-on-surface-variant);
   }
   
   .notice:hover::before {
     width: 6px;
-    background: #1565c0;
+    background: var(--m3-on-surface-variant);
   }
   
   .notice-date {
@@ -595,7 +595,7 @@ color: rgba(255, 255, 255, 0.7);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #1976d2;
+    color: var(--m3-on-surface-variant);
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
