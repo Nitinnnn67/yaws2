@@ -23,76 +23,158 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Faculty data matching the HTML structure
     const facultyData = {
-        'kavita': {
-            name: 'Dr. Kavita R Laghate',
-            position: 'Director / Professor',
-            email: 'durkhan@college.edu',
-            qualifications: 'Ph.D. in Management Studies',
-            expertise: 'Human Resource Management, Organizational Behaviour',
-            // image: '/static/images/ceo.png',
-            about: 'Dr. Kavita R Laghate has more than 9 years of teaching experience in the field of higher education. She started her career with Sydenham Institute of Management Studies, Mumbai as Faculty in HR. She is currently working as the Director at the institute.',
+        'prashant': {
+            name: 'Dr. Prashant Mishra',
+            position: 'Assistant Professor',
+            email: 'prashant@prutismedu.in',
+            qualifications: 'Ph.D. from Shri JJT University, Rajasthan',
+            expertise: 'Management Studies, Research Methodology',
+            image: '/static/images/default-profile.png',
+            about: 'Dr. Prashant Mishra has 7 years of teaching experience and 2 years in the labelling & packaging industry. He started as a management trainee and switched to the education industry. Currently serving as Assistant Professor at PRUTISM.',
             teachings: [
-                'Human Resource Management',
-                'Organizational Behaviour',
-                'Strategic HRM',
-                'Performance Management System'
+                'Management Studies',
+                'Research Methodology',
+                'Business Strategy',
+                'Operations Management'
             ],
             publications: [
-                'A Study on Association of Personality Traits with Graduation Stream and Specialization Choice of Management Students, 2018',
-                'Study of impact of Personality Traits on Academic Performance of Management Students, 2018',
-                'Gender Differences in Personality Traits in Relation to Academic Performance, 2020'
+                'Research papers published in national journals',
+                'Research papers published in international journals',
+                'Various academic contributions in management studies'
             ],
             awards: [
-                'Best Professors in Human Resource Management by World HRD Congress, Mumbai in 2019',
-                'Best Research Paper- Runner-Up award for research on Psychological well-being and gender differences, 2020'
+                'Attended many Faculty Development Programs (FDP)',
+                'Ph.D. completion from prestigious university',
+                'Industry-Academia transition achievement'
             ]
         },
-        'srinivasan': {
-            name: 'Dr. Srinivasan R. Iyengar',
-            position: 'Professor',
-            email: 'srinivasan@college.edu',
-            qualifications: 'Ph.D. in Management Studies, MBA',
-            expertise: 'Strategic Management, Business Policy',
-            image: '/static/images/faculty/prof1.jpg',
-            about: 'Dr. Srinivasan R. Iyengar is an accomplished professor with extensive experience in strategic management and business policy. He has contributed significantly to the field through his research and teaching.',
+        'duvannahdan': {
+            name: 'Mr. Duvannahdan Nadar',
+            position: 'Assistant Professor',
+            email: 'duvannahdan@prutismedu.in',
+            qualifications: 'BMS (Marketing), LLB, MBA, Ph.D. in progress (Dayanand College), NET qualified',
+            expertise: 'Marketing, Teaching, Research',
+            image: '/static/images/default-profile.png',
+            about: 'Mr. Duvannahdan Nadar is an educator and researcher with 8 years of total experience in academic and corporate sectors. He is NET qualified and currently pursuing Ph.D. from Dayanand College.',
+            teachings: [
+                'Marketing Management',
+                'Business Law',
+                'Research Methodology',
+                'Consumer Behavior'
+            ],
+            publications: [
+                'Research contributions in marketing domain',
+                'Academic papers in progress',
+                'Conference presentations'
+            ],
+            awards: [
+                'NET Qualification',
+                'Academic Excellence Recognition',
+                'Research Scholar Status'
+            ]
+        },
+        'anil': {
+            name: 'Mr. Anil Yadav',
+            position: 'Assistant Professor - Finance',
+            email: 'anil@prutismedu.in',
+            qualifications: 'M.Com in Finance, MBA in Finance, CFA Level 2 candidate, UGC NET qualified',
+            expertise: 'Equity Valuations, Derivatives, Financial Modelling',
+            image: '/static/images/default-profile.png',
+            about: 'Mr. Anil Yadav has 7 years of teaching experience and 2 years in corporate sector specializing in Equity Research & Derivatives Valuation. He is a CFA Level 2 candidate and UGC NET qualified.',
+            teachings: [
+                'Equity Valuations',
+                'Python for Finance',
+                'Derivatives Valuation',
+                'Financial Modelling',
+                'Investment Analysis'
+            ],
+            publications: [
+                'Research in Financial Markets',
+                'Papers on Equity Valuation Methods',
+                'Studies in Derivatives Trading'
+            ],
+            awards: [
+                'UGC NET Qualification',
+                'CFA Level 2 Candidacy',
+                'Corporate Finance Excellence'
+            ]
+        },
+        'brijesh': {
+            name: 'Mr. Brijesh Poojari',
+            position: 'Assistant Professor - Operations',
+            email: 'brijesh.poojari@prutismkalyan.edu.in',
+            qualifications: 'Master\'s in Management Studies (Welingkar Institute), Bachelor\'s in Engineering',
+            expertise: 'Strategic Management, Project Management, Process Improvement, Operations Management & IT',
+            image: '/static/images/default-profile.png',
+            about: 'Mr. Brijesh Poojari brings 21+ years of experience in IT & Operations spanning both industry and teaching. He has worked with renowned organizations like Wipro, Cummins, and TATA Technologies.',
             teachings: [
                 'Strategic Management',
-                'Business Policy',
-                'Corporate Strategy',
-                'International Business'
+                'Project Management',
+                'Operations Management',
+                'Process Improvement',
+                'IT Management'
             ],
             publications: [
-                'Strategic Management in Digital Era, 2023',
-                'Corporate Strategy: A New Perspective, 2022',
-                'Business Policy in Modern Organizations, 2021'
+                'Strategic Management in IT Industry',
+                'Process Improvement Methodologies',
+                'Project Management Best Practices'
             ],
             awards: [
-                'Excellence in Teaching Award, 2023',
-                'Outstanding Research Contribution Award, 2022'
+                'Industry Excellence at Wipro',
+                'Process Innovation at Cummins',
+                'Technology Leadership at TATA Technologies'
             ]
         },
-        'chandrahauns': {
-            name: 'Dr. Chandrahauns R. Chavan',
-            position: 'Professor',
-            email: 'chandrahauns@college.edu',
-            qualifications: 'Ph.D. in Computer Science, M.Tech',
-            expertise: 'Information Systems, Technology Management',
-            image: '/static/images/faculty/prof2.jpg',
-            about: 'Dr. Chandrahauns R. Chavan is a distinguished professor specializing in Information Systems and Technology Management. He brings vast industry experience to his academic role.',
+        'diana': {
+            name: 'Ms. Diana Fernandes',
+            position: 'Assistant Professor - HR',
+            email: 'diana@prutismkalyan.edu.in',
+            qualifications: 'M.S.M in Human Resource Management (Pramod Ram Ujagar Tiwari Institute), M.Com (Accountancy & Finance), B.Com (Saket College)',
+            expertise: 'Executive Talent Acquisition, Human Resources, Workplace Culture & Retention Techniques',
+            image: '/static/images/default-profile.png',
+            about: 'Ms. Diana Fernandes has 3 years of combined industry and academic experience. She specializes in Executive Talent Acquisition and Human Resources with focus on workplace culture and retention techniques.',
             teachings: [
-                'Information Systems Management',
-                'Technology Strategy',
-                'Digital Transformation',
-                'IT Project Management'
+                'Human Resource Management',
+                'Talent Acquisition',
+                'Workplace Culture',
+                'Employee Retention',
+                'Performance Management'
             ],
             publications: [
-                'Digital Transformation in Business Education, 2024',
-                'Information Systems in Modern Organizations, 2023',
-                'Technology Management: A Strategic Approach, 2022'
+                'Studies in Talent Acquisition',
+                'Research on Workplace Culture',
+                'Employee Retention Strategies'
             ],
             awards: [
-                'Best Technology Professor Award, 2024',
-                'Innovation in Teaching Award, 2023'
+                'Excellence in HR Practices',
+                'Talent Acquisition Specialist Recognition',
+                'Academic Achievement Awards'
+            ]
+        },
+        'samreen': {
+            name: 'Ms. Samreen Patel',
+            position: 'Assistant Professor - Finance',
+            email: 'samreen.patel@prutismkalyan.edu.in',
+            qualifications: 'Bachelor of Commerce (B.Com), Master\'s in Management Studies (Finance), Certified in Universal Human Values (UHV) and Financial Literacy',
+            expertise: 'Finance, Universal Human Values, Financial Literacy, Corporate Training',
+            image: '/static/images/default-profile.png',
+            about: 'Ms. Samreen Patel is a dedicated academician and mentor with expertise in Finance and Universal Human Values. She conducts FDPs, corporate training, workshops, and knowledge-sharing sessions with passion for student learning and engagement.',
+            teachings: [
+                'Financial Management',
+                'Universal Human Values',
+                'Financial Literacy',
+                'Investment Analysis',
+                'Corporate Finance'
+            ],
+            publications: [
+                'Research in Financial Literacy',
+                'Studies on Universal Human Values',
+                'Corporate Training Methodologies'
+            ],
+            awards: [
+                'UHV Certification',
+                'Financial Literacy Specialist',
+                'Excellence in Student Engagement'
             ]
         }
     };

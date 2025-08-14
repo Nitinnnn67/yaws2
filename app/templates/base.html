@@ -30,7 +30,7 @@
      
       <div class="facu">
         <a href="{{ url_for('frontend.facu', subpath='naac') }}">NAAC/IQAC</a>
-        <!-- <a href="{{ url_for('frontend.facu', subpath='staffs') }}">Staffs</a> -->
+        <a href="{{ url_for('frontend.facu', subpath='staffs') }}">Staffs</a>
         <a href="{{ url_for('frontend.facu', subpath='alumni') }}">Alumni</a>
         <a href="{{ url_for('frontend.facu', subpath='placement') }}">Placement</a>
         <a href="{{ url_for('frontend.facu', subpath='visit') }}">Visit</a>
@@ -98,7 +98,7 @@
               <li><a class="dropdown-item" href="#">MMS Curriculum</a></li> -->
             </ul>
           </li>
-          <li><a class="dropdown-item" href="#">Ph. D.</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('frontend.academics', subpath='phd') }}">Ph. D.</a></li>
           
         </ul>
       </li>
