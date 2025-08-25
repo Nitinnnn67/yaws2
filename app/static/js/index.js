@@ -569,14 +569,14 @@ class NoticeBoardController extends BaseComponent {
         return;
       }
 
-      if (!data.notices || data.notices.length === 0) {
-        console.log('No notices returned from API');
-        // Add some dummy notices for testing if no notices are returned
-        if (page === 1) {
-          this.addDummyNotices();
-        }
-        return;
-      }
+      // if (!data.notices || data.notices.length === 0) {
+      //   console.log('No notices returned from API');
+      //   // Add some dummy notices for testing if no notices are returned
+      //   if (page === 1) {
+      //     this.addDummyNotices();
+      //   }
+      //   return;
+      // }
 
       data.notices.forEach(notice => {
         console.log('Creating notice element for:', notice.title);
@@ -586,9 +586,9 @@ class NoticeBoardController extends BaseComponent {
       });
 
       // Always add extra dummy notices to ensure scrollable content for testing
-      if (page === 1) {
-        this.addDummyNotices();
-      }
+      // if (page === 1) {
+      //   this.addDummyNotices();
+      // }
 
       console.log(`Added ${data.notices.length} notices to the DOM`);
       console.log('Content scroll height:', this.elements.content.scrollHeight);
