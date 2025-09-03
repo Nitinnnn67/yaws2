@@ -427,14 +427,14 @@ header {
 }
 
 /* ============================================
-   Responsive Navigation Design
+   Enhanced Navigation Design with Perfect Alignment
 ============================================ */
 
 /* Desktop Navigation (Default) */
 .nav {
   background: linear-gradient(135deg, var(--m3-primary) 0%, var(--m3-primary-container) 100%);
   color: var(--m3-on-primary);
-  box-shadow: var(--m3-shadow-2);
+  box-shadow: var(--m3-shadow-3);
   position: sticky;
   top: 0;
   padding: 0;
@@ -442,18 +442,31 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   border-bottom: 1px solid var(--m3-outline-variant);
+  transition: all var(--animation-standard);
+}
+
+.nav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(57, 36, 4, 0.95) 0%, rgba(97, 75, 41, 0.9) 100%);
+  z-index: -1;
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
   justify-content: center;
   position: relative;
+  min-height: 70px;
 }
 
 .nav-list {
@@ -463,33 +476,41 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  min-height: 70px;
   position: relative;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   width: auto;
-  gap: 5px;
+  gap: 2px;
+  flex-shrink: 0;
 }
 
 .nav-list li {
   position: relative;
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .nav-list a,
 .nav-list .nav-link {
   color: var(--m3-on-primary);
   text-decoration: none;
-  padding: 18px 24px;
+  padding: 20px 20px;
   display: flex;
   align-items: center;
+  justify-content: center;
   transition: all var(--animation-standard);
   font-weight: 500;
   font-size: 0.95rem;
   text-transform: none;
   position: relative;
   border-radius: var(--m3-shape-small);
-  letter-spacing: 0.25px;
+  letter-spacing: 0.3px;
+  min-height: 70px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  border: 1px solid transparent;
 }
 
 .nav-list a::before {
@@ -508,9 +529,10 @@ header {
 .nav-list .nav-link:hover,
 .nav-list .nav-link:focus {
   color: var(--m3-on-primary);
-  background: var(--m3-surface-container-low);
-  transform: translateY(-2px);
-  box-shadow: var(--m3-shadow-1);
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+  box-shadow: var(--m3-shadow-2);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .nav-list .nav-link:hover::before {
@@ -518,19 +540,20 @@ header {
 }
 
 .nav-dropdown-icon {
-  font-size: 14px;
-  margin-left: 8px;
+  font-size: 16px;
+  margin-left: 6px;
   transition: transform var(--animation-standard);
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 /* Enhanced hover effects */
 .nav-list > li > a:hover,
 .nav-list > li > .nav-link:hover {
-  background: var(--m3-surface-container-low);
-  color: var(--m3-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--m3-shadow-1);
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--m3-on-primary);
+  transform: translateY(-3px);
+  box-shadow: var(--m3-shadow-2);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .nav-list a:hover .nav-dropdown-icon,
@@ -542,69 +565,78 @@ header {
 /* Active state */
 .nav-list .nav-link.active,
 .nav-list .nav-link.current {
-  background: var(--m3-surface-container);
-  color: var(--m3-primary);
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--m3-on-primary);
   font-weight: 600;
-  box-shadow: var(--m3-shadow-1);
+  box-shadow: var(--m3-shadow-2);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .nav-list .nav-link.active::before,
 .nav-list .nav-link.current::before {
   width: 100%;
-  background: var(--m3-secondary);
+  background: var(--m3-tertiary);
 }
 
-/* Compact Dropdown Menu Design - Always Down */
+/* Enhanced Dropdown Menu Design - Always Down with Perfect Positioning */
+.nav-item.dropdown {
+  position: relative;
+}
+
 .nav-item.dropdown .dropdown-menu {
-  background: var(--m3-surface-container-highest);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
   border: 1px solid var(--m3-outline-variant);
-  border-radius: var(--m3-shape-small);
-  box-shadow: var(--m3-shadow-2);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-4);
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: 8px;
   transition: all var(--animation-standard);
-  min-width: 180px;
-  max-width: 240px;
-  padding: 8px 0;
+  min-width: 220px;
+  max-width: 280px;
+  padding: 12px 0;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-12px) scale(0.95);
+  transform: translateX(-50%) translateY(-15px) scale(0.95);
   z-index: 1001;
+  border-top: 3px solid var(--m3-primary);
 }
 
 .nav-item.dropdown:hover .dropdown-menu,
 .nav-item.dropdown .dropdown-menu.show {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0) scale(1);
-  animation: dropdownSlideDown 0.2s ease-out;
+  transform: translateX(-50%) translateY(0) scale(1);
+  animation: dropdownSlideDown 0.3s ease-out;
 }
 
 .nav-item.dropdown .dropdown-item {
   color: var(--m3-on-surface);
-  padding: 8px 16px;
+  padding: 12px 20px;
   transition: all var(--animation-standard);
   position: relative;
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   border-radius: 0;
-  margin: 0;
+  margin: 0 8px;
   display: block;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  border-left: 3px solid transparent;
 }
 
 .nav-item.dropdown .dropdown-item::before {
   content: '';
   position: absolute;
-  left: 0;
+  left: -8px;
   top: 0;
   width: 3px;
   height: 0;
-  background: var(--m3-secondary);
+  background: var(--m3-primary);
   transition: height var(--animation-standard);
 }
 
@@ -612,7 +644,9 @@ header {
 .nav-item.dropdown .dropdown-item:focus {
   background: var(--m3-surface-variant);
   color: var(--m3-primary);
-  transform: none;
+  transform: translateX(5px);
+  border-left-color: var(--m3-primary);
+  border-radius: var(--m3-shape-small);
 }
 
 .nav-item.dropdown .dropdown-item:hover::before {
@@ -622,52 +656,58 @@ header {
 .nav-item.dropdown .dropdown-header {
   color: var(--m3-primary);
   font-weight: 600;
-  padding: 6px 16px;
-  font-size: 0.75rem;
+  padding: 10px 20px;
+  font-size: 0.8rem;
   text-transform: uppercase;
   border-bottom: 1px solid var(--m3-outline-variant);
-  margin-bottom: 4px;
+  margin: 0 8px 8px;
   letter-spacing: 0.5px;
+  background: var(--m3-surface-container-low);
+  border-radius: var(--m3-shape-small);
 }
 
 .nav-item.dropdown .dropdown-divider {
   border-color: var(--m3-outline-variant);
-  margin: 4px 0;
+  margin: 8px 12px;
+  opacity: 0.5;
 }
 
-/* Compact Submenu Design - Always Right and Down */
-.dropdown-submenu-menu {
-  position: absolute;
-  left: 100%;
-  top: 0;
-  min-width: 200px;
-  max-width: 260px;
-  display: none;
-  background: var(--m3-surface-container-highest);
-  border: 1px solid var(--m3-outline-variant);
-  border-radius: var(--m3-shape-small);
-  box-shadow: var(--m3-shadow-2);
-  z-index: 1003;
-  transition: all var(--animation-standard);
-  opacity: 0;
-  visibility: hidden;
-  padding: 8px 0;
-  margin-left: 8px;
-  overflow: hidden;
-  transform: translateX(-12px) scale(0.95);
-}
-
-/* Compact Right-Side Submenu Design */
+/* Enhanced Submenu Design - Always Right and Down with Smart Positioning */
 .dropdown-submenu {
   position: relative;
 }
 
+.dropdown-submenu-menu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  min-width: 240px;
+  max-width: 300px;
+  display: none;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--m3-outline-variant);
+  border-radius: var(--m3-shape-medium);
+  box-shadow: var(--m3-shadow-4);
+  z-index: 1003;
+  transition: all var(--animation-standard);
+  opacity: 0;
+  visibility: hidden;
+  padding: 12px 0;
+  margin-left: 12px;
+  overflow: hidden;
+  transform: translateX(15px) scale(0.95);
+  border-left: 3px solid var(--m3-secondary);
+}
+
+/* Smart positioning for edge cases */
 .dropdown-submenu:hover .dropdown-submenu-menu,
 .dropdown-submenu-menu.show {
   display: block;
   opacity: 1;
   visibility: visible;
   transform: translateX(0) scale(1);
+  animation: slideInRight 0.25s ease-out;
 }
 
 .dropdown-submenu .dropdown-toggle::after {
@@ -676,44 +716,45 @@ header {
 
 .dropdown-submenu .nav-dropdown-icon {
   float: right;
-  margin-top: 1px;
-  margin-left: 8px;
+  margin-top: 2px;
+  margin-left: 12px;
   transition: transform var(--animation-standard);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--m3-outline);
 }
 
 .dropdown-submenu:hover .nav-dropdown-icon {
-  transform: rotate(90deg);
+  transform: rotate(0deg);
   color: var(--m3-primary);
 }
 
-/* Compact submenu item styling */
+/* Enhanced submenu item styling */
 .dropdown-submenu-menu .dropdown-item {
   color: var(--m3-on-surface);
-  padding: 8px 16px;
-  margin: 0;
-  border-radius: 0;
+  padding: 10px 18px;
+  margin: 0 8px;
+  border-radius: var(--m3-shape-small);
   transition: all var(--animation-standard);
   position: relative;
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   display: block;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  border-left: 3px solid transparent;
 }
 
 .dropdown-submenu-menu .dropdown-item::before {
   content: '';
   position: absolute;
-  left: 0;
+  left: -8px;
   top: 0;
   width: 0;
   height: 100%;
   background: var(--m3-secondary);
   transition: width var(--animation-standard);
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 .dropdown-submenu-menu .dropdown-item:hover::before {
@@ -723,10 +764,11 @@ header {
 .dropdown-submenu-menu .dropdown-item:hover {
   background: var(--m3-surface-variant);
   color: var(--m3-primary);
-  transform: none;
+  transform: translateX(5px);
+  border-left-color: var(--m3-secondary);
 }
 
-/* Compact hover behavior for parent submenu item */
+/* Enhanced hover behavior for parent submenu item */
 .dropdown-submenu > .dropdown-item {
   transition: all var(--animation-standard);
   position: relative;
@@ -735,28 +777,51 @@ header {
 .dropdown-submenu:hover > .dropdown-item {
   background: var(--m3-surface-variant);
   color: var(--m3-primary);
-  transform: none;
+  border-left-color: var(--m3-secondary);
 }
 
-/* Prevent Bootstrap from interfering with nested dropdowns */
-.dropdown-submenu .dropdown-toggle {
-  cursor: pointer;
+/* Auto-adjust submenu position if it would overflow viewport */
+.dropdown-submenu:nth-last-child(-n+2) .dropdown-submenu-menu {
+  left: auto;
+  right: 100%;
+  margin-left: 0;
+  margin-right: 12px;
+  transform: translateX(-15px) scale(0.95);
+  border-left: none;
+  border-right: 3px solid var(--m3-secondary);
 }
 
-.dropdown-submenu .dropdown-toggle:focus {
-  outline: none;
-  box-shadow: none;
+.dropdown-submenu:nth-last-child(-n+2):hover .dropdown-submenu-menu {
+  transform: translateX(0) scale(1);
 }
 
-/* Desktop hover behavior for Bootstrap dropdowns */
+/* Desktop hover behavior for Bootstrap dropdowns with enhanced timing */
 @media (min-width: 992px) {
+  .nav-item.dropdown {
+    transition: all var(--animation-standard);
+  }
+  
   .nav-item.dropdown:hover > .dropdown-menu {
     display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0) scale(1);
   }
   
   .dropdown-submenu:hover > .dropdown-submenu-menu {
     display: block;
+    opacity: 1;
+    visibility: visible;
     transform: translateX(0) scale(1);
+  }
+  
+  /* Enhanced timing for smooth transitions */
+  .nav-item.dropdown:hover {
+    z-index: 1002;
+  }
+  
+  .dropdown-submenu:hover {
+    z-index: 1004;
   }
   
   /* Ensure submenus stay open when hovering over them */
@@ -766,53 +831,75 @@ header {
     visibility: visible;
   }
   
-  /* Auto-adjust submenu position if it would overflow viewport */
-  .dropdown-submenu:last-child .dropdown-submenu-menu,
+  /* Smart positioning for overflow prevention */
   .dropdown-menu .dropdown-submenu:nth-last-child(-n+2) .dropdown-submenu-menu {
     left: auto;
     right: 100%;
     margin-left: 0;
-    margin-right: 8px;
-    transform: translateX(12px) scale(0.95);
+    margin-right: 12px;
+    transform: translateX(-15px) scale(0.95);
+    border-left: none;
+    border-right: 3px solid var(--m3-secondary);
   }
   
-  .dropdown-submenu:last-child:hover .dropdown-submenu-menu,
   .dropdown-menu .dropdown-submenu:nth-last-child(-n+2):hover .dropdown-submenu-menu {
     transform: translateX(0) scale(1);
   }
+  
+  /* Viewport edge detection and smart positioning */
+  .dropdown-submenu .dropdown-submenu-menu {
+    will-change: transform, opacity;
+  }
+  
+  /* Enhanced hover delays for better UX */
+  .nav-item.dropdown .dropdown-menu,
+  .dropdown-submenu .dropdown-submenu-menu {
+    transition-delay: 0ms;
+  }
+  
+  .nav-item.dropdown:not(:hover) .dropdown-menu,
+  .dropdown-submenu:not(:hover) .dropdown-submenu-menu {
+    transition-delay: 150ms;
+  }
 }
 
-/* Professional Navigation Enhancements */
+/* Enhanced Professional Navigation Enhancements */
 .nav-breadcrumb {
   background: var(--m3-surface-container);
-  padding: 8px 20px;
+  padding: 12px 20px;
   border-bottom: 1px solid var(--m3-outline-variant);
   font-size: 0.875rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .nav-breadcrumb a {
   color: var(--m3-primary);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all var(--animation-standard);
+  padding: 4px 8px;
+  border-radius: var(--m3-shape-small);
 }
 
 .nav-breadcrumb a:hover {
   color: var(--m3-secondary);
-  text-decoration: underline;
+  background: var(--m3-surface-variant);
+  text-decoration: none;
 }
 
 /* Enhanced focus states for accessibility */
 .nav-list a:focus,
 .nav-list .nav-link:focus {
-  outline: 2px solid var(--m3-tertiary);
-  outline-offset: -2px;
-  background: rgba(255, 255, 255, 0.15);
+  outline: 3px solid var(--m3-tertiary);
+  outline-offset: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 1005;
 }
 
 .dropdown-item:focus {
   outline: 2px solid var(--m3-primary);
   outline-offset: -2px;
   background: var(--m3-surface-variant);
+  z-index: 1005;
 }
 
 /* Loading state for navigation */
@@ -827,18 +914,35 @@ header {
   top: 0;
   left: -100%;
   width: 100%;
-  height: 2px;
+  height: 3px;
   background: linear-gradient(90deg, transparent, var(--m3-tertiary), transparent);
-  animation: loading 1.5s infinite;
-}
-
-@keyframes loading {
-  0% { left: -100%; }
-  100% { left: 100%; }
+  animation: loading 2s infinite;
 }
 
 /* Professional Animations */
 @keyframes dropdownSlideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes fadeInDown {
   from {
     opacity: 0;
     transform: translateY(-15px) scale(0.95);
@@ -849,21 +953,10 @@ header {
   }
 }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-12px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateX(-12px) scale(0.98);
+    transform: translateX(-15px) scale(0.95);
   }
   to {
     opacity: 1;
@@ -874,7 +967,7 @@ header {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -882,11 +975,17 @@ header {
   }
 }
 
+@keyframes loading {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
 /* Navigation indicator for current page */
 .nav-list .nav-link.current {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   font-weight: 600;
   position: relative;
+  box-shadow: var(--m3-shadow-2);
 }
 
 .nav-list .nav-link.current::after {
@@ -898,11 +997,6 @@ header {
   width: 100%;
 }
 
-/* Smooth scroll behavior for navigation links */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Navigation search integration */
 .nav-search {
   display: inline-flex;
@@ -912,43 +1006,57 @@ html {
 }
 
 .nav-search input {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--m3-shape-small);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--m3-shape-medium);
   color: var(--m3-on-primary);
-  padding: 8px 12px;
+  padding: 10px 16px;
   font-size: 0.875rem;
-  transition: all 0.3s ease;
-  min-width: 200px;
+  transition: all var(--animation-standard);
+  min-width: 220px;
+  backdrop-filter: blur(10px);
 }
 
 .nav-search input:focus {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   border-color: var(--m3-tertiary);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(147, 121, 83, 0.3);
+  box-shadow: 0 0 0 3px rgba(147, 121, 83, 0.3);
+  transform: scale(1.02);
 }
 
 .nav-search input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
 }
 
-@media (max-width: 968px) {
+@media (max-width: 1200px) {
   .nav-search {
     display: none;
   }
 }
 
 
-/* Responsive Mobile Navigation */
+/* Enhanced Responsive Mobile Navigation */
 .mobile-nav-header {
   display: none;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
   background: linear-gradient(135deg, var(--m3-primary) 0%, var(--m3-primary-container) 100%);
-  box-shadow: var(--m3-shadow-2);
+  box-shadow: var(--m3-shadow-3);
   border-bottom: 1px solid var(--m3-outline-variant);
+  position: relative;
+}
+
+.mobile-nav-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(57, 36, 4, 0.95) 0%, rgba(97, 75, 41, 0.9) 100%);
+  z-index: -1;
 }
 
 .hamburger {
@@ -957,30 +1065,41 @@ html {
   gap: 4px;
   background: none;
   border: none;
-  padding: 10px;
-  border-radius: var(--m3-shape-small);
+  padding: 12px;
+  border-radius: var(--m3-shape-medium);
   cursor: pointer;
   transition: all var(--animation-standard);
   position: relative;
   z-index: 1001;
+  min-width: 48px;
+  min-height: 48px;
+  justify-content: center;
+  align-items: center;
 }
 
 .hamburger:hover {
-  background: var(--m3-surface-container-low);
-  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.08);
+  box-shadow: var(--m3-shadow-1);
+}
+
+.hamburger:active {
+  transform: scale(0.95);
 }
 
 .hamburger span {
-  width: 24px;
+  width: 26px;
   height: 3px;
   background: var(--m3-on-primary);
   transition: all var(--animation-standard);
   border-radius: 2px;
   transform-origin: center;
+  display: block;
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
+  transform: rotate(45deg) translate(7px, 7px);
+  background: var(--m3-tertiary);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -989,25 +1108,30 @@ html {
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(7px, -7px);
+  background: var(--m3-tertiary);
 }
 
 .mobile-nav-header .mobile-home {
   color: var(--m3-on-primary);
   text-decoration: none;
-  padding: 12px 16px;
-  border-radius: var(--m3-shape-small);
+  padding: 12px 18px;
+  border-radius: var(--m3-shape-medium);
   font-weight: 500;
   font-size: 1.1rem;
   transition: all var(--animation-standard);
   display: flex;
   align-items: center;
   gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .mobile-nav-header .mobile-home:hover {
-  background: var(--m3-surface-container-low);
-  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: var(--m3-shadow-1);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* ============================================
@@ -2225,5 +2349,97 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   
   #back-to-top i {
     font-size: 18px;
+  }
+}
+
+/* Additional mobile specific styles for smaller screens */
+@media (max-width: 480px) {
+  .college-name h1 {
+    font-size: 1rem;
+  }
+
+  .college-name p {
+    font-size: 0.7rem;
+  }
+
+  .facu a {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+  }
+
+  .nav-link {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+
+  .dropdown-item {
+    padding: 10px 30px;
+    font-size: 0.9rem;
+  }
+
+  .dropdown-submenu-menu .dropdown-item {
+    padding-left: 50px;
+  }
+}
+
+/* Enhanced animations for better UX */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropdownSlideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+.nav-link:focus,
+.dropdown-item:focus {
+  outline: 2px solid var(--m3-primary);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .nav,
+  .footer,
+  #back-to-top {
+    display: none;
   }
 }

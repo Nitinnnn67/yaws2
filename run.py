@@ -6,4 +6,4 @@ environment = os.environ.get('FLASK_ENV', 'development')
 app = create_app(environment)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001, debug=(environment == 'development'))
+    app.run(host='0.0.0.0', port=5000, debug=(environment == 'development'))
