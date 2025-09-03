@@ -16,15 +16,18 @@
 
   <!-- Faculty Section -->
   <section id="faculty" class="staff-section active">
-    <div class="staff-header">
-      <h1>We Have World Class Professors and Renowned Visiting Faculty Members</h1>
-    </div>
-
-    <div class="faculty-grid">
-      <!-- Dr. Shrikesh Poojari -->
+    <div class="faculty-container">
+      <!-- Left side - Faculty grid -->
+      <div class="faculty-content">
+        <div class="staff-header">
+          <h1>Our Faculty Members</h1>
+        </div>
+        
+        <div class="faculty-grid">
+      <!-- 1) Dr. Shrikesh Poojari -->
       <div class="faculty-member" data-faculty-id="shrikesh">
         <div class="faculty-image">
-          <img src="{{ url_for('static', filename='images/default-profile.png') }}" alt="Dean Academics">
+          <img src="{{ url_for('static', filename='images/staffs-images/ShrikeshSir.jpg') }}" alt="Dean Academics">
           <div class="faculty-overlay">
             <h3>Dr. Shrikesh Poojari</h3>
             <span>Dean Academics</span>
@@ -32,10 +35,10 @@
         </div>
       </div>
 
-      <!-- Dr. Prashant Mishra -->
+      <!-- 2) Dr. Prashant Mishra -->
       <div class="faculty-member" data-faculty-id="prashant">
         <div class="faculty-image">
-          <img src="{{ url_for('static', filename='images/default-profile.png') }}" alt="Professor">
+          <img src="{{ url_for('static', filename='images/staffs-images/PrashantSir.jpg') }}" alt="Professor">
           <div class="faculty-overlay">
             <h3>Dr. Prashant Mishra</h3>
             <span>Professor</span>
@@ -43,10 +46,10 @@
         </div>
       </div>
 
-      <!-- Prof Jayant -->
+      <!-- 3) Prof Jayant -->
       <div class="faculty-member" data-faculty-id="jayant">
         <div class="faculty-image">
-          <img src="{{ url_for('static', filename='images/default-profile.png') }}" alt="Professor">
+          <img src="{{ url_for('static', filename='images/staffs-images/jayant.jpg') }}" alt="Professor">
           <div class="faculty-overlay">
             <h3>Prof Jayant</h3>
             <span>Professor</span>
@@ -54,10 +57,21 @@
         </div>
       </div>
 
-      <!-- Prof Duvannadhan Nadar -->
+      <!-- 4) Prof Brijesh Poojari -->
+      <div class="faculty-member" data-faculty-id="brijesh">
+        <div class="faculty-image">
+          <img src="{{ url_for('static', filename='images/staffs-images/Brijesh.jpg') }}" alt="Professor">
+          <div class="faculty-overlay">
+            <h3>Prof Brijesh Poojari</h3>
+            <span>Professor</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5) Prof Duvannadhan Nadar -->
       <div class="faculty-member" data-faculty-id="duvannahdan">
         <div class="faculty-image">
-          <img src="{{ url_for('static', filename='images/default-profile.png') }}" alt="Professor">
+          <img src="{{ url_for('static', filename='images/staffs-images/NadarSir.jpg') }}" alt="Professor">
           <div class="faculty-overlay">
             <h3>Prof Duvannadhan Nadar</h3>
             <span>Professor</span>
@@ -65,10 +79,10 @@
         </div>
       </div>
 
-      <!-- Prof Sameen Patel -->
+      <!-- 6) Prof Sameen Patel -->
       <div class="faculty-member" data-faculty-id="sameen">
         <div class="faculty-image">
-          <img src="{{ url_for('static', filename='images/default-profile.png') }}" alt="Professor">
+          <img src="{{ url_for('static', filename='images/staffs-images/SameenMam.jpg') }}" alt="Professor">
           <div class="faculty-overlay">
             <h3>Prof Sameen Patel</h3>
             <span>Professor</span>
@@ -76,10 +90,10 @@
         </div>
       </div>
 
-      <!-- Prof Diana Fernandes -->
+      <!-- 7) Prof Diana Fernandes -->
       <div class="faculty-member" data-faculty-id="diana">
         <div class="faculty-image">
-          <img src="{{ url_for('static', filename='images/default-profile.png') }}" alt="Professor">
+          <img src="{{ url_for('static', filename='images/staffs-images/DianaMam.jpg') }}" alt="Professor">
           <div class="faculty-overlay">
             <h3>Prof Diana Fernandes</h3>
             <span>Professor</span>
@@ -87,10 +101,10 @@
         </div>
       </div>
 
-      <!-- Prof Naveen Fernando -->
+      <!-- 8) Prof Naveen Fernando -->
       <div class="faculty-member" data-faculty-id="naveen">
         <div class="faculty-image">
-          <img src="{{ url_for('static', filename='images/default-profile.png') }}" alt="Professor">
+          <img src="{{ url_for('static', filename='images/staffs-images/navin.jpg') }}" alt="Professor">
           <div class="faculty-overlay">
             <h3>Prof Siluvai Navin T. Fernando</h3>
             <span>Professor</span>
@@ -98,27 +112,38 @@
         </div>
       </div>
 
-      <!-- Prof Deepika Rao -->
+      <!-- 9) Prof Deepika Rao -->
       <div class="faculty-member" data-faculty-id="deepika">
         <div class="faculty-image">
-          <img src="{{ url_for('static', filename='images/default-profile.png') }}" alt="Professor">
+          <img src="{{ url_for('static', filename='images/staffs-images/deepika.jpg') }}" alt="Professor">
           <div class="faculty-overlay">
             <h3>Prof Deepika Rao</h3>
             <span>Professor</span>
           </div>
         </div>
       </div>
+        </div>
+      </div>
+      
+      <!-- Right side - Faculty info -->
+      <div class="faculty-info-sidebar">
+        <h2 class="faculty-title">We Have</h2>
+        <h3 class="faculty-subtitle">World Class Professors and</h3>
+        <h3 class="faculty-subtitle">Renowned Visiting Faculty Members</h3>
+      </div>
     </div>
   </section>
 
   <!-- Non-Teaching Staff Section -->
   <section id="non-teaching" class="staff-section">
-    <div class="staff-header">
-      <h1>Our Administrative and Support Staff</h1>
-      <p>The backbone of our institution, ensuring smooth operations and student support.</p>
-    </div>
-
-    <div class="faculty-grid">
+    <div class="faculty-container">
+      <!-- Left side - Staff grid -->
+      <div class="faculty-content">
+        <div class="staff-header">
+          <h1>Our Administrative and Support Staff</h1>
+        </div>
+        
+        <div class="faculty-grid">
       <!-- Mr. Ganesh Parab -->
       <div class="faculty-member" data-faculty-id="ganesh">
         <div class="faculty-image">
@@ -133,7 +158,7 @@
       <!-- Mr. Vinayak Mane -->
       <div class="faculty-member" data-faculty-id="vinayak">
         <div class="faculty-image">
-          <img src="{{ url_for('static', filename='images/default-profile.png') }}" alt="Administrative Officer">
+          <img src="{{ url_for('static', filename='images/staffs-images/vinayak.jpg') }}" alt="Administrative Officer">
           <div class="faculty-overlay">
             <h3>Vinayak Mane</h3>
             <span>Administrative Officer</span>
@@ -155,7 +180,7 @@
       <!-- Ms. Shruti More -->
       <div class="faculty-member" data-faculty-id="shruti">
         <div class="faculty-image">
-          <img src="{{ url_for('static', filename='images/default-profile.png') }}" alt="Admin Assistant">
+          <img src="{{ url_for('static', filename='images/staffs-images/shruti.jpg') }}" alt="Admin Assistant">
           <div class="faculty-overlay">
             <h3>Ms. Shruti More</h3>
             <span>Admin Assistant</span>
@@ -177,12 +202,21 @@
       <!-- Ms. Komika Singh -->
       <div class="faculty-member" data-faculty-id="komika">
         <div class="faculty-image">
-          <img src="{{ url_for('static', filename='images/default-profile.png') }}" alt="Admin Assistant">
+          <img src="{{ url_for('static', filename='images/staffs-images/komika.jpg') }}" alt="Admin Assistant">
           <div class="faculty-overlay">
             <h3>Komika Singh</h3>
             <span>Admin Assistant</span>
           </div>
         </div>
+      </div>
+        </div>
+      </div>
+      
+      <!-- Right side - Staff info -->
+      <div class="faculty-info-sidebar">
+        <h2 class="faculty-title">Supporting</h2>
+        <h3 class="faculty-subtitle">The backbone of our institution,</h3>
+        <h3 class="faculty-subtitle">ensuring smooth operations and student support.</h3>
       </div>
     </div>
   </section>

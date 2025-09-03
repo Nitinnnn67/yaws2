@@ -180,6 +180,17 @@
   transition: var(--compact-transition);
   z-index: 1001;
   padding: 6px 0; /* Increased padding */
+  list-style: none; /* Remove bullet points */
+}
+
+.compact-dropdown-menu ul {
+  list-style: none; /* Remove bullet points from ul elements */
+  margin: 0;
+  padding: 0;
+}
+
+.compact-dropdown-menu li {
+  list-style: none; /* Remove bullet points from li elements */
 }
 
 .compact-nav-item.dropdown:hover .compact-dropdown-menu {
@@ -234,6 +245,17 @@
   z-index: 1002;
   padding: 6px 0; /* Increased padding */
   margin-left: 4px;
+  list-style: none; /* Remove bullet points */
+}
+
+.compact-submenu-menu ul {
+  list-style: none; /* Remove bullet points from ul elements */
+  margin: 0;
+  padding: 0;
+}
+
+.compact-submenu-menu li {
+  list-style: none; /* Remove bullet points from li elements */
 }
 
 .compact-dropdown-submenu:hover .compact-submenu-menu {

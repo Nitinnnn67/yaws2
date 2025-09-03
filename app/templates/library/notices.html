@@ -7,51 +7,63 @@
     .notices-container {
         padding: 2rem 0;
         min-height: 60vh;
+        background: linear-gradient(135deg, #f8f9ff 0%, #e3f2fd 100%);
     }
 
     .notices-header {
-        background: linear-gradient(135deg, var(--m3-primary) 0%, var(--m3-primary-container) 100%);
-        color: var(--m3-on-primary);
+        background: linear-gradient(135deg, var(--m3-primary) 0%, #1976d2 100%);
+        color: white;
         padding: 3rem 2rem;
-        border-radius: var(--m3-shape-medium);
+        border-radius: 16px;
         margin-bottom: 2rem;
         text-align: center;
         position: relative;
         overflow: hidden;
+        box-shadow: 0 8px 32px rgba(25, 118, 210, 0.3);
     }
 
     .notices-header::before {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="25" cy="75" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="75" cy="25" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-        opacity: 0.3;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translate(-25%, -25%) rotate(0deg); }
+        50% { transform: translate(-25%, -25%) rotate(180deg); }
     }
 
     .notices-title {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
         margin: 0;
-        font-weight: 600;
+        font-weight: 700;
         position: relative;
         z-index: 1;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        letter-spacing: -0.5px;
     }
 
     .notices-subtitle {
-        font-size: 1.1rem;
-        margin: 0.5rem 0 0 0;
-        opacity: 0.9;
+        font-size: 1.2rem;
+        margin: 1rem 0 0 0;
+        opacity: 0.95;
         position: relative;
         z-index: 1;
+        font-weight: 300;
     }
 
     .notices-content {
-        background: var(--m3-surface-container);
-        border-radius: var(--m3-shape-medium);
-        box-shadow: var(--m3-shadow-2);
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.1);
         overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.2);
+        backdrop-filter: blur(10px);
     }
 
     .notices-list {
@@ -61,10 +73,11 @@
     }
 
     .notice-item {
-        border-bottom: 1px solid var(--m3-outline-variant);
-        transition: all var(--animation-standard);
+        border-bottom: 1px solid #f0f0f0;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         overflow: hidden;
+        background: white;
     }
 
     .notice-item:last-child {
@@ -72,18 +85,19 @@
     }
 
     .notice-item:hover {
-        background: var(--m3-surface-variant);
-        transform: translateX(4px);
+        background: linear-gradient(135deg, #f8f9ff 0%, #e3f2fd 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
 
     .notice-link {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        padding: 1.5rem 2rem;
-        color: var(--m3-on-surface);
+        gap: 1.5rem;
+        padding: 2rem;
+        color: #333;
         text-decoration: none;
-        transition: all var(--animation-standard);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
     }
 
@@ -92,32 +106,54 @@
         position: absolute;
         left: 0;
         top: 0;
-        width: 4px;
-        height: 0;
-        background: var(--m3-secondary);
-        transition: height var(--animation-standard);
+        width: 0;
+        height: 100%;
+        background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1;
     }
 
     .notice-item:hover .notice-link::before {
-        height: 100%;
+        width: 4px;
     }
 
     .notice-icon {
         flex-shrink: 0;
-        width: 48px;
-        height: 48px;
-        background: var(--m3-primary);
-        color: var(--m3-on-primary);
-        border-radius: 50%;
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+        color: white;
+        border-radius: 16px;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all var(--animation-standard);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+        position: relative;
+        z-index: 2;
+    }
+
+    .notice-icon::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(135deg, #1976d2, #2196f3, #03a9f4);
+        border-radius: 18px;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .notice-item:hover .notice-icon {
-        background: var(--m3-secondary);
-        transform: scale(1.1);
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 8px 25px rgba(25, 118, 210, 0.4);
+    }
+
+    .notice-item:hover .notice-icon::before {
+        opacity: 1;
     }
 
     .notice-details {
@@ -126,38 +162,47 @@
     }
 
     .notice-title {
-        font-size: 1.1rem;
-        font-weight: 500;
-        margin: 0 0 0.5rem 0;
-        color: var(--m3-primary);
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 0 0 0.75rem 0;
+        color: #1a1a1a;
         line-height: 1.4;
         word-wrap: break-word;
+        position: relative;
+        z-index: 2;
     }
 
     .notice-meta {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1.5rem;
         flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
     }
 
     .notice-date {
-        font-size: 0.875rem;
-        color: var(--m3-on-surface-variant);
+        font-size: 0.9rem;
+        color: #666;
         display: flex;
         align-items: center;
-        gap: 0.3rem;
+        gap: 0.5rem;
+        background: #f8f9fa;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: 500;
     }
 
     .notice-type {
-        background: var(--m3-tertiary-container);
-        color: var(--m3-on-tertiary-container);
-        padding: 0.25rem 0.75rem;
-        border-radius: var(--m3-shape-small);
-        font-size: 0.75rem;
-        font-weight: 500;
+        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        color: #1565c0;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        border: 1px solid #e1f5fe;
     }
 
     .notice-arrow {
@@ -371,7 +416,7 @@
                 </div>
                 <h2 class="empty-title">No Notices Available</h2>
                 <p class="empty-description">
-                    There are currently no library notices to display. 
+                    There are currently no li notices to display. 
                     Please check back later for updates and announcements.
                 </p>
             </div>
